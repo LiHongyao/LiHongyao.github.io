@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/index.js"],"names":["test","modifyData","asyncLoading","testPie","testGauge","testAdvanced1"],"mappings":";;AAEAA;;AAEAC;;AAEAC;;AAEAC;;AAEAC;;AAEAC","file":"index.js","sourcesContent":["\n\ntest();\n\nmodifyData();\n\nasyncLoading();\n\ntestPie();\n\ntestGauge();\n\ntestAdvanced1();\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"]}

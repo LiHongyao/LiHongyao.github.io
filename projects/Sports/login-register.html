@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>户外运动专卖 | 登录</title>
+    <link rel="stylesheet" href="css/normalized.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login-register.css">
+</head>
+<body>
+
+
+<!--头部-->
+<header id="header">
+    <div class="top-bar">
+        <div class="top-wrap k-width flex-row-col-cen">
+            <a href="index.html" class="go-back flex-row-col-cen">返回首页</a>
+        </div>
+    </div>
+</header>
+
+<!--内容-->
+<main id="content">
+    <div class="container">
+        <div class="top-box">
+            <a href="index.html">
+                <img src="imgs/public/logo-01.png" alt="" class="logo">
+            </a>
+            <p class="title" id="login-register-title">登陆</p>
+            <p class="welcome">欢迎访问 <span>SPORTS GOODS</span></p>
+        </div>
+        <div class="login-register-box">
+            <!--登陆-->
+            <div class="login login-register-page show">
+                <form class="loginForm" name="loginForm">
+                    <div class="ipt-box flex-row-col-cen">
+                        <label for="login-acct">手机/用户/邮箱</label>
+                        <input type="text" class="login-acct" id="login-acct" placeholder="请输入账号">
+                    </div>
+                    <div class="ipt-box flex-row-col-cen">
+                        <label for="login-psw">密码</label>
+                        <input type="password" class="login-psw" id="login-psw" placeholder="请输入密码">
+                    </div>
+                    <div class="check-box remember-box">
+                        <input id="remember-checkbox" type="checkbox">
+                        <span>记住密码</span>
+                    </div>
+                    <div class="split-line"></div>
+                    <div class="btns">
+                        <span class="btn login-btn">登陆</span>
+                        <span class="btn go-register-btn">注册</span>
+                    </div>
+                    <div class="login_icon_qq_btn flex-row-col-cen">
+                        <span>第三方账号登陆：</span>
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="find-psw">
+                        <a href="javascript:;">忘记密码？点这里找回！</a>
+                    </div>
+                </form>
+            </div>
+            <!--注册-->
+            <div class="register login-register-page">
+                <form class="registerForm" name="register">
+                    <div class="ipt-box flex-row-col-cen">
+                        <label for="register-acct">手机/用户/邮箱</label>
+                        <input type="text" class="register-acct" id="register-acct" placeholder="请输入账号">
+                    </div>
+                    <div class="ipt-box flex-row-col-cen">
+                        <label for="register-psw">设置密码</label>
+                        <input type="password" class="register-psw" id="register-psw" placeholder="请输入密码">
+                    </div>
+                    <div class="ipt-box flex-row-col-cen">
+                        <label for="register-cfm-psw">确认密码</label>
+                        <input type="password" class="register-cfm-psw error" id="register-cfm-psw" placeholder="请确认密码">
+                    </div>
+                    <div class="check-box agreement-box">
+                        <input id="agreement-checkbox" type="checkbox">
+                        <span>我同意《用户手册》和《保密条款》</span>
+                    </div>
+                    <div class="btns clearFix">
+                        <span class="btn register-btn fl">注册</span>
+                        <span class="btn go-login-btn fr">已经有账号了？点击登陆</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script type="text/javascript" src="plugin/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/login-register.js"></script>
+
+</body>
+</html>
+
+

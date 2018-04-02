@@ -1,0 +1,649 @@
+
+/*指定编码格式*/
+@charset "UTF-8";
+
+/*浮动*/
+.fl { float: left;  }
+.fr { float: right; }
+
+
+/*`*`：通配符*/
+* {
+    /*外边距*/
+    margin:  0;
+    /*内间距*/
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%; height: 100%;
+}
+
+header {
+    /*宽度*/
+    width: 100%;
+    /*高度*/
+    height: 90px;
+    /*最小宽度*/
+    min-width: 1200px;
+    /*背景颜色*/
+    /*background-color: pink;*/
+    /*相对定位*/
+    position: relative;
+}
+
+
+/*class：'.' */
+/*子类选择器：'>' */
+.logo-box {
+    /*文本居中*/
+    text-align: center;
+    /*绝对定位*/
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    /*transform：变形转换*/
+    /*translateY：在y轴上位移*/
+    transform: translateY(-50%);
+}
+.logo-box > img {
+    height: 48px;
+}
+
+.menu-list {
+    /*去除项目标号*/
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 8%;
+}
+
+.menu-list > li {
+    /*修改显示方式*/
+    /*inline-block：行内块元素，具备大小，不独立成行*/
+    display: inline-block;
+    height: 90px;
+    /*修改鼠标指针样式*/
+    cursor: pointer;
+    /*设置行高*/
+    line-height: 90px;
+    /*padding: 垂直间距 水平间距;*/
+    padding: 0 20px;
+    position: relative;
+}
+
+/*:after 在指定元素后面添加内容*/
+.menu-list > li:after {
+    /*内容*/
+    content: "";
+    /*修改显示方式：块级元素，具备大小，独立成行*/
+    display: block;
+    width: 100%;
+    height: 0px;
+    background-color: #9e0101;
+    /*不透明度*/
+    opacity: 0;
+    /*添加过渡效果*/
+    transition: all .25s linear ;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+}
+
+/*:hover 鼠标悬浮在指定元素上时*/
+.menu-list > li:hover:after {
+    opacity: 1;
+    bottom: 0;
+    height: 5px;
+}
+
+
+.banner {
+    width: 100%;
+    min-width: 1200px;
+    height: calc(100% - 90px);
+    min-height: 500px;
+    /*url("背景图片路径")*/
+    /*no-repeat：不平铺*/
+    background: url("../images/banner.jpg") no-repeat;
+    /*设置背景图片大小*/
+    /*cover：等比例缩放铺满容器*/
+    background-size: cover;
+    position: relative;
+}
+
+/*后代选择器：空格*/
+.banner .des-area {
+    padding: 35px 30px;
+    background-color: rgba(158, 2, 0, .75);
+    position: absolute;
+    top: 45%;
+    right: 15%;
+}
+
+.banner .title {
+    /*字体颜色*/
+    color: white;
+    /*字体粗细*/
+    font-weight: lighter;
+}
+.banner .main-title {
+    margin-bottom: 15px;
+}
+
+
+.content {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.content .title {
+    width: 140px;
+    /*设置字体大小*/
+    font-size: 28px;
+    /*设置字体粗细*/
+    font-weight: bolder;
+    /*文本居中对齐*/
+    text-align: center;
+    /*设置字符间距*/
+    letter-spacing: 2px;
+    /*外边距：四个方向同时设置*/
+    /*外边距：垂直 水平*/
+    /*外边距：上 水平 下*/
+    /*外边距：上 右 下 左*/
+    margin: 110px auto 0;
+    /*设置下方的内间距*/
+    padding-bottom: 20px;
+    /*设置下边框*/
+    /*border-bottom:边框宽度 边框样式 边框颜色*/
+    border-bottom: 5px solid #9e0101;
+}
+
+.about-us .des {
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.about-us-box {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    background-color: pink;
+}
+.about-us-box .fl {
+    width: 50%;
+    height: 100%;
+    background: url("../images/about.jpg") center center;
+    background-size: cover;
+}
+.about-us-box .fr {
+    width: 50%;
+    height: 100%;
+    background-color: #9e0101;
+    color: white;
+    padding: 60px 3% 0 0;
+
+    /*IE盒子模型*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+.about-us-box .fr > p {
+    margin-top: 25px;
+}
+
+/*:before 在指定元素前面添加内容*/
+.about-us-box .fr:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120px;
+    /*用边框画一个倒三角型*/
+    border-right:  120px solid #9e0101;
+    border-bottom: 400px solid transparent;
+}
+
+
+.service .des {
+    margin-top: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 15%;
+}
+
+.service .SP-box {
+    width: 100%;
+    height: 460px;
+    margin-top: 20px;
+    background: url("../images/skillsbg.jpg") center center;
+    background-size: cover;
+    /*解决第一个子元素设置margin-top异常问题*/
+    overflow: hidden;
+}
+
+.service .SP-box h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 28px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.service .SP-item-wrap {
+    width: 87%;
+    height: 50%;
+    /*块级元素居中显示*/
+    margin: 0 auto;
+
+    /*弹性布局->未来布局发展方向*/
+    /*约束子元素*/
+    display: flex;
+    /*设置主轴对齐方式——>空格在元素之间*/
+    justify-content: space-between;
+}
+
+.service .SP-item {
+    width: 18%;
+    height: 100%;
+    background: rgba(183,207,235,.15);
+    border: 1px solid #53668b;
+    /*设置圆角*/
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+
+    /*设置文本样式*/
+    font-size: 24px;
+    color: white;
+    /*声明弹性布局*/
+    display: flex;
+    /*主轴对齐方式：居中*/
+    justify-content: center;
+    /*交叉轴对齐方式：居中*/
+    align-items: center;
+
+    position: relative;
+    /*超出部分不显示*/
+    overflow: hidden;
+}
+
+.service .SP-item > .infos {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, .75);
+    padding: 12px;
+    box-sizing: border-box;
+    /*超出部分滚动*/
+    overflow: scroll;
+    /*inherit：继承*/
+    border-radius: inherit;
+    /*过渡效果*/
+    transition: all .25s linear;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.service .SP-item:hover > .infos {
+    top: 0;
+}
+
+/*隐藏.infos 上的滚动条*/
+.service .SP-item > .infos::-webkit-scrollbar {
+    display: none;
+}
+
+
+.product .des {
+    margin: 20px 0;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 25px;
+    padding: 0 15%;
+}
+
+.product-list {
+    list-style: none;
+    width: 75%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*允许换行*/
+    flex-wrap: wrap;
+}
+
+.product-list li {
+    width: 32%;
+    overflow: hidden;
+}
+/*nth-child：指定元素父元素的第n个子元素*/
+.product-list > li:nth-child(1),
+.product-list > li:nth-child(2),
+.product-list > li:nth-child(3) {
+   margin-bottom: 2%;
+}
+
+.product-list img {
+    width: 100%;
+    /*解决因图片撑起容器高度多出现几像素的异常问题*/
+    vertical-align: middle;
+    transition: all .25s linear;
+}
+
+
+.product-list li:hover img {
+    /*放大*/
+    transform: scale(1.3, 1.3);
+}
+
+
+.partner {
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+    /*fixed：背景固定*/
+    background: url("../images/testimonialsbg.jpg") fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.partner h1 {
+    font-size: 28px;
+    margin-top: 60px;
+}
+.partner hr {
+    width: 45px;
+    height: 5px;
+    background: white;
+    margin: 20px auto;
+}
+
+
+.contact-infos {
+    margin-top: 55px;
+    box-sizing: border-box;
+    padding: 0 20%;
+}
+
+.map {
+    width: 80%;
+    height: 500px;
+    background: pink;
+    margin: 30px auto;
+}
+
+
+footer {
+    width: 100%;
+    min-width: 1200px;
+    background: #9e0101;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+
+.go-top {
+    width: 32px;
+    height: 32px;
+    background: url("../images/up-arrow.png");
+    /*固定定位：相对于浏览器边界定位*/
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.go-top:hover {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

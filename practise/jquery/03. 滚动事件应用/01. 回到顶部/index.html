@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - 回到顶部</title>
+    <!--styles-->
+    <style>
+        section {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            box-shadow: 0 0 20px 1px #000 inset;
+        }
+
+        .top-btn {
+            width: 28px;
+            height: 64px;
+            background: url("imgs/topcio.png") no-repeat;
+            cursor: pointer;
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+            display: none;
+        }
+        .top-btn:hover {
+            background-position: -28px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-btn"></div>
+
+
+
+
+
+<!--js-->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+
+    $(function () {
+
+        // 循环创建元素撑起高度
+        for(var i = 0; i < 15; i++) {
+            $("script").eq(0).before("<section></section>");
+        }
+
+        // 事件
+        $(window).scroll(function () {
+            var t = $(this).scrollTop();
+            if(t > 200) {
+                $(".top-btn").stop().fadeIn('fast');
+            }else {
+                $(".top-btn").stop().fadeOut('fast');
+            }
+
+        });
+
+        $(".top-btn").click(function () {
+            $("body, html").stop().animate({
+                scrollTop: 0
+            }, 500);
+        });
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

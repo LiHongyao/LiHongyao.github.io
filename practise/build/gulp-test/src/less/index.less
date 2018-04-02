@@ -1,0 +1,47 @@
+
+
+@bgColor: red;
+@kWidth: 500px;
+@kHeight: 500px;
+
+body {
+  background: #fff;
+}
+
+.wrap {
+  width: 500px;
+  height: 500px;
+  background: purple;
+  margin: 0 auto;
+}
+.box {
+  width: @kWidth;
+  height: @kHeight;
+  background: @bgColor;
+  text-align: center;
+  animation: animation 1s linear;
+  margin: 100px auto;
+  border-radius: 50%;
+}
+
+
+@keyframes animation {
+  from { background: pink; }
+  to { background: orange; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

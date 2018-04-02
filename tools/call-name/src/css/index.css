@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+body {
+    background: #333;
+    min-width: 768px;
+    max-width: 1200px;
+}
+
+header {
+    padding: 50px 0;
+}
+
+.title {
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 3px #000;
+}
+
+.handle-btn {
+    display: block;
+    width: 100px;
+    height: 35px;
+    outline: none;
+    border: none;
+    margin: 50px auto;
+    color: whitesmoke;
+    background: transparent;
+    box-shadow: 0 0 1px 0 #fff inset;
+    border-radius: 5px;
+}
+
+
+.res {
+    width: 300px;
+    height: 105px;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    box-shadow: 0 0 1px 0 #fff inset;
+    color: #fff;
+    text-align: center;
+    line-height: 103px;
+    font-size: 48px;
+    letter-spacing: 5px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

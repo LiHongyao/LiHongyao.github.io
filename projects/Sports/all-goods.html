@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>户外运动专卖 | 所有商品</title>
+    <link rel="stylesheet" href="css/normalized.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/all-goods.css">
+</head>
+<body>
+
+
+<!--头部-->
+<header id="header">
+    <!--top bar-->
+    <div class="top-bar">
+        <ul class="top-list k-width clearFix">
+            <li class="time fl">
+                <img src="imgs/public/time.png" alt="时间">
+                <span>在线时间 08:30~21:30</span>
+            </li>
+            <li class="welcome fl">
+                <span>欢迎访问户外运动专卖商城！</span>
+            </li>
+            <li class="widget fr">
+                <div class="widget-item">
+                    <img src="imgs/public/search.png" alt="搜索">
+                </div>
+                <div class="widget-item">
+                    <img id="personal-cen" src="imgs/public/personal-center.png" alt="个人中心">
+                    <ul class="personal-cen-list">
+                        <li><a href="#" id="personal-datas-btn">个人资料</a></li>
+                        <li><a href="#" id="mine-order-btn">我的订单</a></li>
+                        <li><a href="#" id="exit-btn">安全退出</a></li>
+                    </ul>
+                </div>
+                <div class="widget-item">
+                    <img src="imgs/public/shopping-cart.png" alt="购物车">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--mid bar-->
+    <div class="mid-bar">
+        <div class="mid-wrap k-width flex-row-col-cen">
+            <img src="imgs/public/logo-01.png" alt="logo" class="logo">
+            <form name="myForm" class="search-form flex-row-col-cen">
+                <input type="text" placeholder="搜索商品关键字">
+                <a href="javascript:;" class="flex-row-col-cen">
+                    <img src="imgs/public/search-white.png" alt="搜索按钮">
+                </a>
+            </form>
+        </div>
+    </div>
+    <!--nav-->
+    <nav class="nav">
+        <ul class="menu-list k-width" >
+            <li><a href="index.html">商城首页</a></li>
+            <li><a href="all-goods.html" class="active">所有商品</a></li>
+            <li><a href="mall-dynamic.html">商城动态</a></li>
+            <li><a href="payment-methods.html">支付方式</a></li>
+            <li><a href="about-store.html">关于店铺</a></li>
+            <li><a href="offline-store.html">线下门店</a></li>
+        </ul>
+    </nav>
+</header>
+<!--内容-->
+<main id="content">
+    <div class="container k-width">
+        <div class="top-wrap">
+            <ul class="wrap-list">
+                <li class="bg clearFix">
+                    <div class="fl nav">
+                        <a href="index.html">首页</a>
+                        <span>/</span>
+                        <span>所有商品</span>
+                    </div>
+                    <form class="fr goods-search flex-row-col-cen">
+                        <input type="text" placeholder="搜索商品关键字">
+                        <span class="search-btn"></span>
+                    </form>
+                </li>
+                <li>
+                    <ul class="filter-keys-list" data-keys="classify" >
+                        <li class="bg">所有分类</li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="0">全部</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="0">滑雪服</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="0">滑雪眼镜</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="0">滑雪配件</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="filter-keys-list" data-keys="origin">
+                        <li class="bg">产地</li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="1">全部</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="1">中国</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="1">德国</a></li>
+                        <li><a href="JavaScript:;" @click="clickFillters" data-idx="1">美国</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="filter-keys-list" data-keys="color">
+                        <li class="bg">颜色分类</li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">全部</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">橙色</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">红色</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">蓝色</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">黄色</a></li>
+                        <li><a href="javascript:;" @click="clickFillters" data-idx="2">黑色</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul class="goods-list flex-row-col-cen" id="goods-list">
+            <template>
+                <li v-for="goods in fillterArr(infos)">
+                    <img :src="'imgs/all_goods/'+goods.imgName" alt="">
+                    <p class="price">{{goods.price}}</p>
+                    <p class="name">{{goods.name}}</p>
+                </li>
+            </template>
+        </ul>
+    </div>
+</main>
+
+
+<!--尾部-->
+<footer id="footer">
+    <div class="sports-list flex-row-col-cen">
+        <img src="imgs/public/brand-logo-01.png" alt="">
+        <img src="imgs/public/brand-logo-02.png" alt="">
+        <img src="imgs/public/brand-logo-03.png" alt="">
+        <img src="imgs/public/brand-logo-04.png" alt="">
+        <img src="imgs/public/brand-logo-05.png" alt="">
+        <img src="imgs/public/brand-logo-06.png" alt="">
+        <img src="imgs/public/brand-logo-07.png" alt="">
+        <img src="imgs/public/brand-logo-08.png" alt="">
+    </div>
+    <div class="ft-wrap k-width">
+        <ul class="ft-top-list flex-row-col-cen">
+            <li>
+                <img src="imgs/public/special-logo-01.png" alt="">
+                <h1 class="title">满1000元全国包邮</h1>
+                <h3 class="sub-title">全场订单满1000元全国包邮</h3>
+            </li>
+            <li>
+                <img src="imgs/public/special-logo-02.png" alt="">
+                <h1 class="title">下单送精美礼品</h1>
+                <h3 class="sub-title">本店购买任意商品赠送精美礼品</h3>
+            </li>
+            <li>
+                <img src="imgs/public/special-logo-03.png" alt="">
+                <h1 class="title">贴心的售后服务</h1>
+                <h3 class="sub-title">7x24小时售后随时为您服务</h3>
+            </li>
+            <li>
+                <img src="imgs/public/special-logo-04.png" alt="">
+                <h1 class="title">店铺优惠劵</h1>
+                <h3 class="sub-title">每日整点可领取限量优惠劵</h3>
+            </li>
+        </ul>
+        <ul class="ft-mid-list flex-row-col-cen">
+            <li>
+                <h1 class="title">关于产品</h1>
+                <p class="des">本店商品非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+            </li>
+            <li>
+                <h1 class="title">售后服务</h1>
+                <p class="des">
+                    消費者保障服务<br/>
+                    七天无理由退款<br/>
+                    假一赔三<br/>
+                </p>
+            </li>
+            <li>
+                <h1 class="title">退换货政策</h1>
+                <p class="des">本店商品非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+            </li>
+            <li>
+                <h1 class="title">售后服务</h1>
+                <p class="des">本店商品非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+            </li>
+            <li>
+                <h1 class="title">支付方式</h1>
+                <img class="pay" src="imgs/public/pay-union.png" alt="银联支付">
+                <img class="pay" src="imgs/public/pay-zfb.png" alt="支付宝支付">
+                <img class="pay" src="imgs/public/pay-wechat.png" alt="微信支付">
+            </li>
+            <li>
+                <h1 class="title">关于商城</h1>
+                <p class="des">本店商品非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+            </li>
+            <li>
+                <h1 class="title">关于产品</h1>
+                <p class="des">本店商品非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+            </li>
+            <li>
+                <img class="ft-logo" src="imgs/public/logo-02.png" alt="">
+                <img class="qr-code" src="imgs/public/qr-code.jpg" alt="">
+                <p class="des">搜索微信号：HUAYU</p>
+            </li>
+        </ul>
+        <div class="ft-bottom-info">
+            <div class="shares">
+                <img src="imgs/public/sina.png" alt="">
+                <img src="imgs/public/we_chat.png" alt="">
+                <img src="imgs/public/facebook_icon.png" alt="">
+                <img src="imgs/public/twitter.png" alt="">
+                <img src="imgs/public/linkedin.png" alt="">
+                <img src="imgs/public/yutube.png" alt="">
+            </div>
+            <p class="copy-right">
+                Copyright © 2010-2015户外运动商品专卖 All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+<!--侧边栏-->
+<aside class="right-nav-bar">
+    <ul class="bar-list">
+        <li class="flex-row-col-cen">
+            <i class="icon"></i>
+        </li>
+        <li class="flex-row-col-cen">
+            <i class="icon"></i>
+        </li>
+        <li class="flex-row-col-cen goTop">
+            <i class="icon"></i>
+        </li>
+    </ul>
+</aside>
+
+
+
+
+
+<script type="text/javascript" src="plugin/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script type="text/javascript" src="js/datas.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/all-goods.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

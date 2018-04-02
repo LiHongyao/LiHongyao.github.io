@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>key</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+
+<div id="app">
+    <template v-if="loginType == 'tel'">
+        <span>手机：</span>
+        <input type="tel" placeholder="请输入手机号">
+    </template>
+    <template v-else>
+        <span>邮箱：</span>
+        <input type="email" placeholder="请输入邮箱">
+    </template>
+    <p>
+        <button type="button" @click="toggleLogin">切换登陆方式</button>
+    </p>
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+let vm = new Vue({
+    el: "#app",
+    data: {
+        loginType: "tel"
+    },
+    methods: {
+        toggleLogin: function () {
+            this.loginType = this.loginType == "tel" ? "email" : "tel";
+        }
+    }
+});
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

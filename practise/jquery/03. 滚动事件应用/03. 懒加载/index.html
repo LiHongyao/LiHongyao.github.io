@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - 懒加载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "times new roman";
+        }
+
+        .header {
+            width: 100%;
+            height: 100px;
+            background: #333;
+        }
+        .banner {
+            width: 100%;
+            height: 500px;
+            background: pink;
+        }
+        .content {
+            width: 100%;
+            background: orange;
+            box-sizing: border-box;
+            padding: 50px 20%;
+            text-align: center;
+            font-weight: lighter;
+            color: #fff;
+        }
+
+        .footer {
+            width: 100%;
+            height: 500px;
+            background: #333;
+        }
+
+        .content > .title, .content > .des {
+            position: relative;
+            top: 50px;
+            opacity: 0;
+            transition: all .5s linear;
+        }
+        .content .title {
+            transition-delay: .3s;
+            margin-bottom: 20px;
+        }
+        .content .des {
+            transition-delay: .8s;
+        }
+        .content .on {
+            top: 0;
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<header class="header"></header>
+<div    class="banner"></div>
+<div    class="content">
+    <h3 class="title">About This Site </h3>
+    <p class="des">Learning how and when to use jQuery is a different process for each and every web developer, depending largely on experience with the primary tools for front-end development (HTML, CSS, and JavaScript) and knowledge of general programming principles. Over the years developers of all stripes have come to rely on our API documentation for help figuring out how to do exactly what they need to do.</p>
+</div>
+<footer class="footer"></footer>
+
+
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script>
+
+
+    $(function () {
+
+
+        $(window).scroll(function () {
+            lazyLoading(".title");
+            lazyLoading(".des");
+        });
+
+
+        function lazyLoading(el, className) {
+            className = className || 'on';
+            var // 窗口高度
+                wHeight   = $(window).height() * 0.5,
+                // 当前元素在页面上的位置
+                position  = $(el).offset().top,
+                // 当前窗口scrollTop值
+                scrollTop = $(window).scrollTop();
+            if(scrollTop > position - wHeight) {
+                $(el).addClass(className);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

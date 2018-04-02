@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<students>
+    <student>
+        <name>李强</name>
+        <gender>男</gender>
+        <grade>2012</grade>
+        <major>软件技术</major>
+        <native_place>四川省成都市</native_place>
+    </student>
+    <student>
+        <name>张莉</name>
+        <gender>女</gender>
+        <grade>2008</grade>
+        <major>软件工程</major>
+        <native_place>四川省乐山市</native_place>
+    </student>
+    <student>
+        <name>刘东</name>
+        <gender>男</gender>
+        <grade>2015</grade>
+        <major>信息技术</major>
+        <native_place>四川省自贡市</native_place>
+    </student>
+    <student>
+        <name>王林</name>
+        <gender>男</gender>
+        <grade>2011</grade>
+        <major>电子商务</major>
+        <native_place>四川省泸州市</native_place>
+    </student>
+    <student>
+        <name>霍宇</name>
+        <gender>男</gender>
+        <grade>2016</grade>
+        <major>网络技术</major>
+        <native_place>四川省绵阳市</native_place>
+    </student>
+</students>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

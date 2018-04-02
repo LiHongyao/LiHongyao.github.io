@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+
+/*欢迎*/
+.content .welcome {
+    width:  100%;
+    height: 240px;
+    box-sizing: border-box;
+    padding: 0 100px;
+    background-color: rgb(38, 38, 39);
+
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .welcome .img {
+    width:  210px;
+    height: 210px;
+    border-radius: 50%;
+    background: url("../imgs/welcome.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.content .welcome-box {
+    width: 450px;
+    color: #fff;
+}
+
+.content .welcome-box h1 {
+    font-weight: lighter;
+    margin-bottom: 25px;
+}
+.content .welcome-box p {
+    line-height: 20px;
+}
+
+
+/*关于*/
+
+
+.content .about {
+    box-sizing: border-box;
+    padding: 0px 100px;
+}
+
+.content .about p { text-align: center; }
+
+/*最新设计*/
+.content .new-design .img-box {
+    /*calc：计算函数*/
+    width: calc(100% - 200px);
+    height: 460px;
+    margin: 0 auto;
+
+    display: flex;
+    display: -webkit-flex;
+    /*换行*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.content .new-design .img-box img  {
+    width: 32%;
+}
+
+
+/*描述*/
+.content .des { width: 100%; margin: 50px auto; position: relative; }
+.content .des img {
+    width: inherit;
+    /*解决因图片撑起父级元素高度增加的问题*/
+    vertical-align: middle;
+}
+.content .des .text {
+    width: 45%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+    padding: 120px 20px 40px 20px;
+
+    color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: lighter;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*技术服务*/
+.content .tec-service .details-box {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+
+.content .tec-service .details-item {
+    width: 24%;
+}
+
+
+.content .tec-service .details-item span:first-child {
+    color: rgb(102, 43, 11);
+    font-size: 28px;
+}
+.content .tec-service .details-item span:last-child {
+    color: rgb(173, 98, 43);
+    font-size: 20px;
+}
+.content .tec-service .details-item img {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.content .tec-service .details-item p {
+    margin: 10px 0px;
+
+    color: #333333;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+.content .tec-service .details-item a {
+    display: inline-block;
+    padding-top: 5px;
+
+    color: #333333;
+    border-top: 2px solid rgb(102, 43, 11);
+}
+
+.content .tec-service .details-item a:hover {
+    color: #008800;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+
+/*
+@infos：轮播图
+--------------------------------------------------------------------------*/
+
+#content .flash-container { width:100%; height: 600px; position: relative; }
+#content .flash-wrap .flash-item { width: 100%; height: 600px; position: absolute; top: 0; left: 0; display: none;}
+#content .flash-wrap .flash-item.active { display: block;}
+
+#content .flash-infos { position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-align: center;}
+#content .flash-infos .title { font: 700 52px arial; color: #fff; text-shadow: 0px 0px 4px #666666; }
+#content .flash-infos .enter-btn { display: inline-block; width: 220px; height: 65px; margin-top: 65px; background: #fff; text-align: center; font: bold 14px/65px 微软雅黑; color: rgb(0, 29, 93); transition: background .25s linear; }
+#content .flash-infos .enter-btn:hover { background: rgb(240, 240, 240); }
+
+/*
+@infos：内容
+--------------------------------------------------------------------------*/
+#content .ct-item { margin: 65px auto 50px; box-sizing: border-box; }
+#content .ct-item .ct-hdr { padding-bottom: 8px; border-bottom: 1px solid #bababa;}
+#content .ct-item .title { position: relative; font-size: 20px; color: #333; display: inline-block; margin-right: 8px;}
+#content .ct-item .title:after { content: ''; display: block; width: calc(100% + 2px); height: 2px; background: #1365f2; position: absolute; top: 35px; left: 0; }
+#content .ct-item .sub-title {vertical-align: bottom; }
+
+#content .ct-item-wrap { width: 95%; margin: 30px auto; position: relative; }
+
+/*
+@infos：关于我们
+--------------------------------------------------------------------------*/
+#content .about-us  .ct-item-wrap img { width: 100%;}
+#content .about-us  .ct-item-wrap .brand-story { width: 45%; padding: 12px 0 12px 12px; position: absolute; top: 20%; left: 20px; color: rgb(24, 24, 24); box-shadow: 0px 0px 20px 1px #fff inset; border-radius: 10px;}
+#content .about-us  .ct-item-wrap .brand-story h1 { letter-spacing: 2px; font-weight: lighter;}
+#content .about-us  .ct-item-wrap .brand-story p {  margin-top: 26px; line-height: 25px;font-size: 14px;text-indent: 2em; font-weight: lighter;}
+
+/*
+@infos：热卖商品
+--------------------------------------------------------------------------*/
+#content .hot-prod .goods-list { display: flex; display: -webkit-flex; justify-content: space-between; flex-wrap: wrap; }
+#content .hot-prod .goods-list li { width: 24%; margin-bottom: 3%; padding: 20px 0; border: 1px solid #d3d3d3; display: inline-block; text-align: center; cursor: pointer; transition: all .25s ease-in-out; }
+#content .hot-prod .goods-list .img { width: 95%; margin: 0 auto 30px auto; overflow: hidden; }
+#content .hot-prod .goods-list .img > img { width: 100%; transition: transform .5s linear; }
+#content .hot-prod .goods-list .goods-name { font-size: 15px; line-height: 21px; color: #555555 !important; margin-top: 12px; }
+#content .hot-prod .goods-list .line { width: 0; height: 1px; background: #d3d3d3; margin: 12px 0; transition: width .5s linear; }
+#content .hot-prod .goods-list .goods-price { font-size: 15px; color: #666; }
+
+
+#content .hot-prod .goods-list li:hover { transform: translateY(-5px); box-shadow: 1px 1px 30px 2px #d3d3d3; }
+#content .hot-prod .goods-list li:hover img { transform: scale(1.1); }
+#content .hot-prod .goods-list li:hover .line { width: 100%; }
+
+/*
+@infos：最热资讯
+--------------------------------------------------------------------------*/
+
+#content .hot-news .articles { width: 67%; height: 100%; display: flex; display: -webkit-flex; flex-direction: column; justify-content: space-between; }
+#content .hot-news .articles .article-item { width: 100%; height: 48%; box-sizing: border-box; border: 1px solid #d3d3d3; display: flex; justify-content: space-around; align-items: center;}
+#content .hot-news .article-img { width: 35%; height: 95%; overflow: hidden;}
+#content .hot-news .article-img img {height: 100%; }
+#content .hot-news .article-infos { width: 63%; height: 95%; line-height: 22px; box-sizing: border-box; padding: 20px 0 20px 8px;}
+#content .hot-news .article-infos .art-title { font-size: 16px; color: #333; }
+#content .hot-news .article-infos .art-date { font-size: 13px; color: #999; margin: 6px 0 12px 0;}
+#content .hot-news .article-infos .art-des { font-size: 14px; color: #777;  }
+#content .hot-news .fr-img { width: 31%; height: 100%; background: url(../imgs/index/climber-02.jpg) no-repeat center center; background-size: cover; }
+
+/*
+@infos：滚动
+--------------------------------------------------------------------------*/
+#content .scroll-item { width: 100%; height:800px; text-align: center;color: #fff;}
+#content .scroll-item:nth-child(1) { background: url("../imgs/index/flash-02.jpg") no-repeat fixed  center center; background-size: cover; }
+#content .scroll-item:nth-child(2) { background: url("../imgs/index/flash-01.jpg") no-repeat fixed  center center; background-size: cover; }
+#content .scroll-item:nth-child(3) { background: url("../imgs/index/climber-01.jpg") no-repeat fixed center center; background-size: cover; }
+
+#content .scroll-item .title { font: 700 52px arial;  text-shadow: 0px 0px 4px #666666; margin-bottom: 30px; }
+#content .scroll-item .des { line-height: 35px; text-transform: uppercase;}
+
+
+/*
+@infos：动画
+--------------------------------------------------------------------------*/
+@-webkit-keyframes left-move-animations {
+    from { opacity: 0; margin-left: 500px;}
+    to   { opacity: 1; margin-left: 0px;}
+}
+@keyframes left-move-animations {
+    from { opacity: 0; margin-left: 500px;}
+    to   { opacity: 1; margin-left: 0px;}
+}
+
+@-webkit-keyframes scale-animations {
+    from { opacity: 0; transform: scale(.5);}
+    to   { opacity: 1; transform: scale(1);}
+}
+@keyframes scale-animations {
+    from { opacity: 0; transform: scale(.5);}
+    to   { opacity: 1; transform: scale(1);}
+}
+
+.left-move-animation { opacity: 0; animation: left-move-animations 1s linear .1s  forwards paused; }
+.left-move-animation.move { animation-play-state: running; }
+
+#content .ct-item-wrap { opacity: 0; animation: scale-animations 1s linear 1s forwards paused; }
+#content .scale { animation-play-state: running; }
+
+
+
+
+
+
+
+
+
+
+

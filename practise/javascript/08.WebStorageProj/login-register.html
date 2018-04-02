@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>PROJ - 登陆</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login-register.css">
+    <link rel="stylesheet" href="plugin/LHYAlertView.css">
+</head>
+<body>
+
+<div class="container">
+    <!--头部-->
+    <header>
+        <h1 id="title" class="title">LOGIN</h1>
+    </header>
+    <!--内容-->
+    <div class="content">
+        <!--登陆页面-->
+        <div id="login-page" class="page page-show">
+            <form name="login-form" id="login-form">
+                <div class="ipt-box">
+                    <span>账号：</span>
+                    <input id="login-act-ipt" type="text" placeholder="请输入账号" maxlength="10">
+                </div>
+                <div class="ipt-box">
+                    <span>密码：</span>
+                    <input id="login-psw-ipt" type="password" placeholder="请输入密码" maxlength="8">
+                </div>
+                <div class="tips-box">
+                    <span>记住密码？</span>
+                    <input id="checkbox" type="checkbox">
+                    <a href="javascript:;" class="button" id="go-register-btn">没有账号？点击注册</a>
+                </div>
+                <div id="login-btn" class="btn">登陆</div>
+            </form>
+        </div>
+        <!--注册页面-->
+        <div id="register-page" class="page">
+            <form name="register-form" id="register-form">
+                <div class="ipt-box">
+                    <span>账号：</span>
+                    <input id="register-act-ipt" type="text" placeholder="请输入账号" maxlength="10">
+                </div>
+                <div class="ipt-box">
+                    <span>密码：</span>
+                    <input id="register-psw-ipt" type="password" placeholder="请输入密码" maxlength="8">
+                </div>
+                <div class="tips-box">
+                    <a href="javascript:;" class="button" id="go-login-btn">返回登陆</a>
+                </div>
+                <div id="register-btn" class="btn">注册</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="alert-box"></div>
+
+
+
+<script type="text/javascript" src="plugin/LHYAlertView.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/login-register.js"></script>
+
+</body>
+</html>

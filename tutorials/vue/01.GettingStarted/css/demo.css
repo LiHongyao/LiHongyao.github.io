@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+input {
+    box-sizing: border-box;
+    width: 200px; height: 30px;
+    padding-left: 8px;
+    outline: none;
+    border: 1px solid grey;
+    font-size: 16px;
+}
+input:focus { border-color: green; }
+input.error { border-color: red; }
+input.error:focus { border-color: red; }
+[name="myForm"] span { display: inline-block; width: 55px;}
+
+
+.tips {
+    color: red;
+    font-size: 12px;
+}
+
+.login-btn {
+
+    box-sizing: border-box; width: 200px;  height: 35px;
+    margin-left: 60px;
+    background: green;
+    text-align: center; line-height: 35px;color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+<div id="app">
+    <p v-if="yes">Hello, vue.js!</p>
+    <p v-if="no">Hey, girl!</p>
+    <p v-if="age > 18">Welcome!</p>
+    <p v-if="name.indexOf('Henrry') >= 0">Hello, {{ name }}!</p>
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            yes: true,
+            no: false,
+            age: 16,
+            name: "Henrry Lee"
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

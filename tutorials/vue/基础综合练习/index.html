@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE 基础综合练习</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<fieldset class="container" id="app">
+    <legend class="title">王者荣耀英雄资料</legend>
+    <form name="myForm" class="form">
+        <p>
+            <span>英雄昵称：</span>
+            <input type="text" v-model="hero.name">
+        </p>
+        <p>
+            <span>英雄定位：</span>
+            <input type="text" v-model="hero.position">
+        </p>
+        <p>
+            <span>英雄技能：</span>
+            <input type="text" v-model="hero.skill">
+        </p>
+        <p>
+            <span>英雄方位：</span>
+            <select name="" id="" v-model="hero.road">
+                <option value="上路">上路</option>
+                <option value="中路">中路</option>
+                <option value="下路">下路</option>
+                <option value="野区">野区</option>
+            </select>
+        </p>
+        <div class="createBtn" @click="createHero"> {{buttonName}}</div>
+    </form>
+    <table class="heros-list" cellspacing="0" cellpadding="8">
+        <thead>
+            <tr>
+                <th>昵称</th>
+                <th>定位</th>
+                <th>技能</th>
+                <th>方位</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(hero, index) in heros">
+                <td> {{ hero.name }}</td>
+                <td> {{ hero.position }}</td>
+                <td> {{ hero.skill }}</td>
+                <td> {{ hero.road  }}</td>
+                <td>
+                    <span class="btn edit" @click="editHero(index)">编辑</span>
+                    <span class="btn delete" @click="deleteHero(index)">删除</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

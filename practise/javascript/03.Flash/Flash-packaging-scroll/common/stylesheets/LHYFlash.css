@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+body {margin: 0; padding: 0;}
+
+.lhy-flash-box {
+    width:  100%;
+    height: auto;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.lhy-flash-box .img-box {
+    height: auto;
+    position: relative;
+}
+
+/*按钮*/
+.lhy-flash-box .btn-box .btn {
+    width:  50px;
+    height: 50px;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .15s linear;
+
+    position: absolute;
+    top: 45%;
+}
+.lhy-flash-box:hover .btn{
+    opacity: 1;
+}
+
+.lhy-flash-box .btn-box .next {
+    right: 30px;
+}
+.lhy-flash-box .btn-box .prev {
+    left: 30px;
+}
+
+/*小圆点*/
+.lhy-flash-box .idot-box {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+.lhy-flash-box .idot-box .idot {
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: orange;
+
+    cursor: pointer;
+}
+.lhy-flash-box .idot-box .idot.active {
+    background-color: purple;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

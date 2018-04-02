@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>data-error 示例</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+
+<div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+</div>
+
+<script type="text/javascript" src="plugin/vue.js"></script>
+<script>
+    let data = {
+        counter:0
+    }
+    let vm = new Vue({
+       el: "#app",
+       components: {
+           "my-component": {
+               template: "<button type='button' @click='counter += 1'> {{ counter }}</button>",
+               data: function () {
+                   return data
+               }
+           }
+       }
+    });
+</script>
+
+
+</body>
+</html>

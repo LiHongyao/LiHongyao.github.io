@@ -1,0 +1,157 @@
+@charset 'utf-8';
+
+.wrapper1 {
+	margin-top: 50px;
+}
+.wrapper1,.wrapper2, .wrapper3, .wrapper4 {
+	text-align: center;
+}
+
+.wrapper1 div , .wrapper2 div, .wrapper3 div, .wrapper4 div{
+	display: inline-block;
+	margin-right: 30px;
+
+}
+.wrapper1 div:first-child {
+	border-top:20px green solid;
+	border-right:20px red solid;
+	border-bottom:20px orange solid;
+	border-left:20px purple solid;
+	width:50px;
+	height:50px;
+}
+
+.wrapper1 div:nth-child(2) {
+	border-top:45px green solid;
+	border-right:45px red solid;
+	border-bottom:45px orange solid;
+	border-left:45px purple solid;
+	width:0px;
+	height:0px;
+}
+
+.wrapper1 div:nth-child(3) {
+	border-top: 45px green solid;
+	border-right: 45px transparent solid;
+	border-bottom: 45px orange solid;
+	border-left: 45px transparent solid;
+}
+.wrapper1 div:last-child {
+	border-top: 45px transparent solid;
+	border-right: 45px red solid;
+	border-bottom: 45px transparent solid;
+	border-left: 45px purple solid;
+}
+
+
+
+/*分割线*/
+
+.wrapper2 div:first-child {
+	border-top:45px green solid;
+	border-right:45px transparent solid;
+	border-bottom:45px transparent solid;
+	border-left:45px transparent solid;
+	width:0px;
+	height:0px;
+
+	position: relative;
+	top: 45px;
+}
+
+.wrapper2 div:nth-child(2) {
+	border-top:45px transparent solid;
+	border-right:45px red solid;
+	border-bottom:45px transparent solid;
+	border-left:45px transparent solid;
+	width:0px;
+	height:0px;
+}
+
+.wrapper2 div:nth-child(3) {
+	border-top:45px transparent solid;
+	border-right:45px transparent solid;
+	border-bottom:45px transparent solid;
+	border-left:45px purple solid;
+	width:0px;
+	height:0px;
+}
+
+.wrapper2 div:last-child {
+	border-top:45px transparent solid;
+	border-right:45px transparent solid;
+	border-bottom:45px orange solid;
+	border-left:45px transparent solid;
+	width:0px;
+	height:0px;
+}
+
+/*
+斜角的组合规律如下：
+border-left和border-top组成从左上到右下的斜线
+border-right和border-top组成从右上到左下的斜线
+border-right和border-bottom组成从右下到左上的斜线
+border-left和border-bottom组成从左下到右上的斜线
+
+*/
+.wrapper3 div:first-child {
+	border-top:45px transparent solid;
+	border-right:45px red solid;
+	border-bottom:45px red solid;
+	border-left:45px transparent solid;
+	width:0px;
+	height:0px;
+	background-color: green;
+}
+
+.wrapper3 div:last-child {
+	border-top:45px red solid;
+	border-right:45px red solid;
+	border-bottom:45px transparent solid;
+	border-left:45px transparent solid;
+	width:0px;
+	height:0px;
+	background-color: green;
+}
+
+
+/*分割线*/
+
+.wrapper4 div {
+	width: 100px;
+	height: 60px;
+	border: 1px gray solid;
+	border-radius: 10px;
+	position: relative;
+	text-align: center;
+	line-height: 60px;
+}
+
+.wrapper4 div:before {
+	content: '';
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: -20px;
+	left: 30px;
+	border: 10px solid;
+	border-color: gray transparent transparent transparent;
+
+}
+
+.wrapper4 div:after {
+	content: '';
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: -16px;
+	left: 32px;
+	border: 8px solid;
+	border-color: white transparent transparent transparent;
+
+}
+
+
+

@@ -1,0 +1,87 @@
+
+@charset "UTF-8";
+
+
+.title {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 56px;
+    letter-spacing: 2px;
+    margin: 100px auto 1000px;
+}
+
+
+.list {
+    padding: 0 20%;
+}
+.list-item {
+    height: 160px;
+    background: mediumpurple;
+    margin: 100px auto;
+    animation: scale  .75s linear forwards paused;
+}
+
+.list-item:nth-child(odd) {
+    background: sandybrown;
+}
+
+.running {
+    animation-play-state: running;
+}
+
+
+/**
+定义动画
+ */
+@keyframes scale  {
+    from {
+        opacity: 0;
+        transform: scale(.25);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    from {
+        opacity: 0;
+        margin-left: 500px;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>侦听器</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+<div id="app">
+    <input type="text" :class="{error:error}" v-model="username" placeholder="请输入用户名">
+    <p class="tips" v-if="showTips">只能输入字母、数字以及下划线</p>
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+let vm = new Vue({
+    el: "#app",
+    data: {
+        username: "",
+        showTips: false,
+        error: false
+    },
+    watch: {
+        username: function (newValue) {
+            if(!/^[0-9A-Za-z_]*$/.test(newValue)) {
+                this.showTips = this.error = true;
+            }else  {
+                this.showTips = this.error = false;
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

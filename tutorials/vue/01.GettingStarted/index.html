@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+<!--view-->
+<div id="app">
+    <input type="text" v-model="message">
+    <h1> {{ message }}</h1>
+
+    <li v-for="n in evenNumbers">{{ n }}</li>
+
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+    // model
+    var model = {
+        message: "Hello, world!",
+        numbers: [ 1, 2, 3, 4, 5 ]
+    }
+    // viewModel
+    let vm = new Vue({
+        el: "#app",
+        data: model,
+        computed: {
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0
+                });
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

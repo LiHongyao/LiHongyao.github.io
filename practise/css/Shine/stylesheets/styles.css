@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body {
+    background-color: #000;
+    -webkit-background
+}
+
+/*定义动画*/
+@keyframes shine {
+    0%    { box-shadow: 0px 0px 5px  0px  #fff; }
+    70%   { box-shadow: 0px 0px 20px 10px #ff0000; }
+    100%  { box-shadow: 0px 0px 5px  0px  #fff; }
+}
+
+div.box {
+    width:  200px;
+    height: 200px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+
+    animation: shine 1s linear infinite;
+}
+div.box span {
+    color: #ff0000;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+
+
+
+
+
+
+
+
+

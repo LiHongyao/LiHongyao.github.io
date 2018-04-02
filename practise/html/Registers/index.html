@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>表单-注册</title>
+</head>
+<body style="min-width: 1100px;">
+
+<h1 align="center">注册</h1>
+
+<form align="center" name="myForm" action="javascript:(void);" method="POST" target="_self">
+
+	<!--账号-->
+	<label>账号：</label>
+	<input type="text" name="" placeholder="请输入账号"  required>
+	<label>（必填）</label>
+	<br><br>
+
+	<!--密码-->
+	<label>密码：</label>
+	<input type="password" name="" placeholder="请输入密码" required>
+	<label>（必填）</label>
+	<br><br>
+
+	<!--性别-->
+	<label>性别：</label>
+	<label>保密</label><input type="radio" name="gender" checked>
+	<label>男</label><input type="radio" name="gender">
+	<label>女</label><input type="radio" name="gender">
+	<label>（选填）</label>
+	<br><br>
+
+	<!--邮箱-->
+	<label>邮箱：</label><input type="email" name="" placeholder="请输入邮箱地址">
+	<label>（选填）</label>
+	<br><br>
+
+	<!--电话-->
+	<label>电话：</label><input type="tel" name="" placeholder="请输入联系电话" required>
+	<label>（必填）</label>
+	<br><br>
+
+	<!--行业-->
+	<select>
+		<option value="0">--请选择行业--</option>
+		<option value="1">互联网/电子商务</option>
+		<option value="2">房地产/建筑/建材/工程</option>
+		<option value="3">贸易/进出口</option>
+		<option value="4">教育/培训/院校</option>
+		<option value="5">媒体/出版/影视/文化传播</option>
+
+	</select>
+	<br><br>
+
+	<!--所在地-->
+	<input type="text" name="" placeholder="输入或选择您所在的城市" size="25" list="citys">
+	<datalist id="citys">
+		<option value="北京"></option>
+		<option value="上海"></option>
+		<option value="深圳"></option>
+		<option value="成都"></option>
+		<option value="重庆"></option>
+	</datalist>
+	<br><br>
+
+	<!--个性签名-->
+	<textarea placeholder="请输入您的个性签名，不超过120字符" rows="5" cols="55" maxlength="120"></textarea>
+	<br><br>
+
+	<fieldset style="width: 370px; margin: 0 auto;">
+		<legend>健康信息</legend>
+		<label for="height">身高：</label><input type="text" id="height" name="healthInfor">
+		<label for="weight">体重：</label><input type="text" id="weight" name="healthInfor">
+	</fieldset>
+	<br><br>
+
+	<!--兴趣爱好-->
+	<fieldset align="center">
+		<legend>兴趣爱好</legend>
+		<label for="swim">游泳</label><input type="checkbox" name="hobby" id="swim">
+		<label for="sing">唱歌</label><input type="checkbox" name="hobby" id="sing">
+		<label for="shoot">摄影</label><input type="checkbox" name="hobby" id="shoot">
+		<label for="sport">运动</label><input type="checkbox" name="hobby" checked id="sport">
+		<label for="game">游戏</label><input type="checkbox" name="hobby" id="game">
+		<label for="code">撸代码</label><input type="checkbox" name="hobby" checked id="code">
+	</fieldset>
+	<br><br>
+
+
+	<!--按钮-->
+	<button type="submit">注册</button>&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="button">取消</button>
+	
+</form>
+
+	
+</body>
+</html>

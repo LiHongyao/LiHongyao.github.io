@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+
+<div id="app">
+    <span style="font-size: 12px; color: grey; margin-bottom: 30px;">
+        ( 账号：admin；密码：123 )
+    </span>
+    <form name="myForm">
+        <p>
+            <span>账号：</span>
+            <input type="text" placeholder="请输入账号" v-model="username">
+        </p>
+        <p>
+            <span>密码：</span>
+            <input type="password" placeholder="请输入密码" v-model="password">
+        </p>
+        <div class="login-btn" @mouseenter="mouseenter" @mouseout="mouseout"  @click="login">登陆</div>
+    </form>
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            username: "",
+            password: ""
+        },
+        methods: {
+            mouseenter: function (event) {
+                event.target.style.cssText = "background-color: darkgreen";
+            },
+            mouseout: function (event) {
+                event.target.style.cssText = "background-color: green";
+            },
+            login: function (event) {
+                if(!this.username || !this.password){
+                    alert("请输入账号或密码！")
+                }else if(this.username === "admin" && this.password == "123") {
+                    alert(`Hello, ${this.username} !`);
+                }else {
+                    alert(`账号或密码错误，请重新输入！`);
+                    this.username = this.password = "";
+                }
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

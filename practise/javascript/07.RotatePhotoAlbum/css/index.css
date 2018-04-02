@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {
+    margin: 0; padding: 0;
+}
+
+body {
+    background: #000;
+}
+
+.container {
+    perspective: 1500px;
+}
+
+.img-wrap {
+    width:  100px;
+    height: 100px;
+    margin: 200px auto;
+    position: relative;
+    
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-20deg);
+    -moz-transform: rotateX(-20deg);
+    -ms-transform: rotateX(-20deg);
+    -o-transform: rotateX(-20deg);
+    transform: rotateX(-20deg);
+}
+
+
+.img-wrap > img {
+
+    position: absolute;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -webkit-box-shadow: 0 0 8px #eee;
+    -moz-box-shadow: 0 0 8px #eee;
+    box-shadow: 0 0 8px #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+

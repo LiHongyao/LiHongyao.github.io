@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.wrap section { width:  300px; height: 300px; margin: 50px auto; background: orange}
+.wrap section:nth-child(odd)  { background-color: purple; }
+
+.rocket-btn { width:  28px; height: 64px; background: url("../imgs/topcio.png") no-repeat left top; display: none; position: fixed; right:  30px; bottom: 30px; }
+.rocket-btn:hover { background-position: -28px center; }
+
+

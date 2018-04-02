@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="idCard" placeholder="请输入您的身份证号">
+    <p>出生日期：{{ getBirth }}</p>
+</div>
+
+<script type="text/javascript" src="plugin/vue.min.js"></script>
+<script>
+
+
+let vm = new Vue({
+   el: "#app",
+   data: {
+       idCard: ""
+   },
+    computed: {
+       getBirth: function () {
+           if(this.idCard.length != 18 || isNaN(Number(this.idCard))) {
+               return;
+           }
+           let idCard = this.idCard;
+           let year   = idCard.slice( 6, 10),
+               month  = idCard.slice(10, 12),
+               day    = idCard.slice(12, 14);
+           return `${year}年${month}月${day}日`;
+       }
+    }
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
