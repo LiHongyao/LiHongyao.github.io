@@ -38,6 +38,7 @@ nav {
     text-align: center;
     line-height: 35px;
     font-size: 16px;
+    position: relative;
 }
 
 .menu-list li:not(:first-child) {
@@ -56,10 +57,23 @@ nav {
 .menu-list > li:hover a {
     text-decoration: underline;
 }
+.menu-list > li:hover::after {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-size: .2em;
+    font-weight: lighter;
+    background: deepskyblue;
+    content: attr(data-msg);
+}
+
 .menu-list > li:active {
     background: #b5bd08;
 }
-
 
 
 
