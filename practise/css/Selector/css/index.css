@@ -4,6 +4,7 @@
 body {
     margin: 0;
     padding: 0;
+    background: lightcyan;
 }
 
 ul {
@@ -33,7 +34,7 @@ nav {
     display: inline-block;
     width: 120px;
     height: 35px;
-    background: #333;
+    background: #600;
     cursor: pointer;
     text-align: center;
     line-height: 35px;
@@ -41,9 +42,17 @@ nav {
     position: relative;
 }
 
+
 .menu-list li:not(:first-child) {
     border-left: 1px solid #eaeaea;
 }
+.menu-list li:first-child {
+    border-top-left-radius: 18px;
+}
+.menu-list li:last-child {
+    border-bottom-right-radius: 18px;
+}
+
 
 .menu-list a {
     color: #fff;
@@ -87,7 +96,7 @@ nav {
     height: 35px;
     padding-left: 8px;
     outline: none;
-    border: 1px solid #333;
+    border: 1px solid #600;
     font-size: 16px;
     font-weight: lighter;
     border-radius: 5px;
@@ -119,7 +128,7 @@ article {
 }
 
 article .title {
-    color: #333;
+    color: #600;
     font-size: 28px;
     font-weight: 200;
     margin: 35px 0;
@@ -161,7 +170,7 @@ article .paragraph:first-child:first-letter {
 footer {
     width: 100%;
     min-width: 1100px;
-    background: #333;
+    background: #600;
     padding: 30px 0;
 }
 
@@ -184,7 +193,7 @@ footer a:hover {
 /*滚动条*/
 ::-webkit-scrollbar {
     width: 15px;
-    background: #333;
+    background: #600;
 }
 
 ::-webkit-scrollbar-thumb {
