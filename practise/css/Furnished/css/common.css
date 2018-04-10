@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body, html { height: 100%; }
+body, html { height: 100%; background-image: url("../imgs/bg.png");}
 body, ul, p, h1, h2, h3, h4, h5, h6, input, textarea, button { margin: 0; padding: 0; }
 
 a  { text-decoration: none; }
@@ -20,13 +20,17 @@ ul { list-style: none; }
 .content {
     padding: 0px 0px 30px;
 }
-
-header, footer, .content {
+header, 
+footer {
+    width: 100%;
+    min-width: 1100px;
+    height: auto;
+}
+.content {
     width: 75%;
     min-width: 1100px;
     height: auto;
     margin: 0 auto;
-    background-image: url("../imgs/bg.png");
     position: relative;
 }
 
@@ -70,6 +74,40 @@ header .logo {
     top: 0;
 }
 
+
+/*欢迎*/
+header .welcome {
+    width:  100%;
+    height: 240px;
+    box-sizing: border-box;
+    padding: 0 100px;
+    background-color: rgb(38, 38, 39);
+
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header .welcome .img {
+    width:  210px;
+    height: 210px;
+    border-radius: 50%;
+    background: url("../imgs/welcome.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+header .welcome-box {
+    width: 450px;
+    color: #fff;
+}
+
+header .welcome-box h1 {
+    font-weight: lighter;
+    margin-bottom: 25px;
+}
+header .welcome-box p {
+    line-height: 20px;
+}
 /*设置内容样式*/
 .content { overflow: hidden; }
 .content .title {
