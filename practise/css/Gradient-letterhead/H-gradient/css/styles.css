@@ -8,7 +8,7 @@ article   .title { text-align: center; text-shadow: 1px 1px 2px #000; letter-spa
 
 /* @infos:  内容样式
 ----------------------------------------------------------------------------------------------------------*/
- main { width:  1100px; height: 500px; margin: 30px auto; background: url("../imgs/bg.jpeg") no-repeat; background-size: 1100px 500px; font-family: maozedong; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; font-family: lixukemaobixse58b89d7c194b0;}
+ main { width:  1100px; height: 500px; margin: 30px auto; background: url("../imgs/bg.jpeg") no-repeat; background-size: 1100px 500px; font-family: maozedong; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; font-family: "cyjianxk1153931655194b0";}
 
 .item { width:  450px; height: 70%; background: repeating-linear-gradient(transparent, transparent 60px, green 61px); }
 .item h3, .item p { line-height: 60px; margin: 0; padding: 0; text-align: center; font-size: 25px; }
