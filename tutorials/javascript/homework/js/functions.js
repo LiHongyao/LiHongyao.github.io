@@ -35,6 +35,7 @@ function calculate(firIpt, secIpt, select, callBack) {
         }break;
     }
 
+
     // 通过回调函数返回结果
     if(callBack) {
         callBack(result);
