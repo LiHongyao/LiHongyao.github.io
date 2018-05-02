@@ -1,0 +1,51 @@
+form {
+    width:  600px;
+    height: 120px;
+    border-radius: 10px 10px 0px 0px;
+    border-top: 10px solid purple;
+    background: cyan;
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+}
+
+input, label, select {
+    margin: 0px 5px;
+    color: purple;
+    font-size: 18px;
+}
+
+input {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    padding: 0px 5px;
+}
+input, select {
+    outline: none;
+}
+input:focus, select:focus {
+    box-shadow: 0px 0px 8px 2px purple inset;
+}
+
+#operator {
+    width:  45px;
+    height: 35px;
+}
+
+#result {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+
+
+
+
+
+
