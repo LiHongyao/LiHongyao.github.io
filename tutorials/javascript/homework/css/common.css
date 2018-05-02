@@ -1,36 +1,21 @@
 @charset "UTF-8";
 
-body {
-    background: lightcyan;
-}
-h1 { margin: 0; padding: 0;}
-
-
-#header, #content {
-    width: 80%;
-    min-width: 1100px;
-    margin: 50px auto;
+* {
+    margin: 0; 
+    padding: 0;
 }
 
-#header > .sub-title, #header > .title {
-    display: inline-block;
-    letter-spacing: 2px;
+
+.instructions {
+    width: 1000px;
+    margin: 100px auto 0;
+    padding-top: 20px;
+    border-top: 8px lightcoral solid;
+    color: lightsalmon;
 }
-#header > .sub-title {
-    margin-left: 18px;
-    font-size: 13px;
+.instructions .des {
+    white-space: pre-wrap;
 }
 
-main {
-    letter-spacing: 2px;
-}
-#footer {
-    letter-spacing: 2px;
-    text-align: center;
-    margin: 50px 0;
-}
-#footer a {
-    color: cornflowerblue;
-}
 
 

@@ -11,8 +11,8 @@ function calculate(firIpt, secIpt, select, callBack) {
         return;
     }
     // 获取文本输入框输入的数字
-    var firValue = parseInt(firIpt.value);
-    var secValue = parseInt(secIpt.value);
+    var firValue = parseFloat(firIpt.value);
+    var secValue = parseFloat(secIpt.value);
     // 获取运算符
     var options = select.options;
     var idx = select.selectedIndex;

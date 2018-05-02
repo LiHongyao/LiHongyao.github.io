@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>简易计算器</title>
-    <link rel="stylesheet" href="css/number.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/number.css">
 </head>
 <body>
 
@@ -19,6 +20,27 @@
     <label>=</label>
     <label id="result">0</label>
 </form>
+
+<div class="instructions">
+    <h3 class="title">作业要求与须知：</h1>
+    <div class="des">
+        1、获取元素方法：document.querySelector(选择器);
+
+        2、监听输入框改变：element.oninput = function() {…}
+
+        3、监听选择框改变：element.onchange = function() {…}
+
+        4、获取表单值：ipt.value
+
+        5、获取选择框选择的元素下标：selectedIndex
+
+        6、获取选择框的值：options
+        
+        7、获取选择框选中的值：options[selectedIndex]
+    </div> 
+
+
+</div>
 
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/number.js"></script>
