@@ -1,0 +1,295 @@
+@charset "UTF-8";
+
+/* 标签选择器：通过标签名字查找元素 */
+/* 群组选择器（逗号）：同时设置多个元素样式 */
+html, body {
+    height: 100%;
+}
+body {
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+    color: #333;
+}
+
+* {
+    /* 外边距 */
+    margin: 0;
+    /* 内间距 */
+    padding: 0;
+}
+
+ul { 
+    /* 去除列表项目标号 */
+    list-style: none; 
+}
+
+a {
+    /* 去除超链接下划线 */
+    text-decoration: none;
+}
+img {
+    vertical-align: middle;
+}
+/* 浮动->脱离文档流 */
+.fl { float: left;}
+.fr { float: right;}
+/* 清除浮动 */
+.clearFix {zoom: 1; /*兼容IE*/}
+.clearFix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both; /*清除浮动*/
+}
+
+/* #：ID选择器，根据id属性值查找元素 */
+#header, #banner, #content, #footer {
+    width: 100%;
+    min-width: 1200px;
+}
+
+#content {
+    padding-top: 70px;
+}
+
+#content .container {
+    width: 1100px;
+    margin: 0 auto 100px;
+}
+
+#header {
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+    /* 固定定位 */
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+/* 头部样式 */
+/* >：子类选择的器 */
+/* 空格：后代选择器 */
+#header .top-wrap {
+    width: 1100px;
+    margin: 0 auto;
+    height: 80px;
+}
+#header .logo-area {
+    height: 100%;
+    /* 弹性布局声明 */
+    display: flex;
+    display: -webkit-flex;
+    /* 设置主轴对齐方式 */
+    justify-content: center;
+    /* 设置交叉轴对齐方式 */
+    align-items: center;
+}
+#header .logo {
+    height: 70px;
+}
+#header .c-name {
+    width: 500px;
+    /* 设置行高 */
+    line-height: 80px;
+    /* 设置左侧外边距 */
+    margin-left: 8px;
+    /* 设置字体粗细 */
+    font-weight: lighter;
+    /* 设置字体大小 */
+    font-size: 28px;
+}
+#header .menu-list {
+    /* 解决因inline-block产生的默认间距问题 */
+    font-size: 0;
+}
+#header .menu-list li {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: lighter;
+    /* 修改鼠标指针样式->手指头 */
+    cursor: pointer;
+    /* padding: 10px  */
+    /* padding: 垂直 水平 */
+    /* padding: 上 水平 下 */
+    /* padding: 上 右 下 左 */
+    padding: 0 12px;
+    position: relative;
+}
+#header .menu-list li.selected {
+    background: #de0f18;
+}
+#header .menu-list li.selected a {
+    color: #fff;
+}
+#header .menu-list li:not(.selected)::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    background: #de0f18;
+    /* 不透明度 */
+    opacity: 0;
+    /* 过渡效果 */
+    transition: all .35s ease-in;
+    /* 绝对定位，会脱离文档流 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 修改视图层级 */
+    z-index: -1;
+}
+#header .menu-list li a {
+    transition: all .3s ease-out;
+}
+#header .menu-list li:hover::before {
+    opacity: 1;
+    height: 100%;
+}
+#header .menu-list li:hover a {
+    color: #fff;
+}
+
+#header .menu-list a {
+    /* 设置字体颜色 */
+    color: #333;
+    line-height: 80px;
+}
+
+/* 横幅样式 */
+#banner {
+    margin-top: 80px;
+}
+#banner > img {
+    width: 100%;
+}
+
+#banner .location {
+    width: 75%;
+    min-width: 1100px;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+    /* ie盒子模型 */
+    box-sizing: border-box;
+    padding-left: 50px;
+
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #333;
+    font-size: 15px;
+}
+#banner .location a {
+    color: #333;
+}
+#banner .location a:hover {
+    /* 添加下划线 */
+    text-decoration: underline;
+}
+#banner .location img {
+    width: 26px;
+    height: 17px;
+    margin-right: 14px;
+    position: relative;
+    top: -4px;
+}
+
+
+
+/* 尾部样式 */
+#footer {
+    background: #494443;
+}
+#footer .links-area {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0 50px;
+}
+#footer .link-list {
+    font-size: 0;
+    position: relative;
+}
+#footer .link-list > li {
+    /* 垂直对齐方式 */
+    vertical-align: top;
+    padding: 0 90px 0 25px;
+    display: inline-block; 
+}
+#footer .link-list > li:not(:last-child) {
+    position: relative;
+}
+#footer .link-list > li:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 75%;
+    background: lightgray;
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+
+#footer .link-list  .title {
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+}
+#footer .link-list a, #footer .c-infos {
+    font-size: 13px;
+    font-weight: lighter;
+    color: #989898;
+    line-height: 28px;
+    /* 字符间距 */
+    letter-spacing: 1px;
+}
+#footer .link-list a:hover {
+    color: #fff;
+}
+#footer .qr-code {
+    height: 110px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#footer .c-infos {
+    /* 文字水平居中 */
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

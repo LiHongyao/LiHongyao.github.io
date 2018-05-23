@@ -1,0 +1,63 @@
+
+body { background: #323232; }
+
+#tab-container {
+    margin-top: 100px;
+    text-align: center;
+}
+.tab-ct-wrap {
+    display: inline-block;
+}
+
+/* 菜单 */
+.tab-menu {
+    text-align: left;
+}
+.tab-menu .tab-menu-item {
+    display: inline-block;
+    background: #767676;
+    padding: 6px 20px;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+}
+.tab-menu .selected {
+    background: #fff;
+    color: #767676;
+}
+/* 内容 */
+.tab-content {
+    position: relative;
+    padding: 8px;
+    background: #fff;
+}
+.tab-content .tab-content-item:not(:first-child) {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+}
+.tab-content .tab-content-item {
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+
+.tab-content .show {
+    opacity: 1;
+    z-index: 1 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

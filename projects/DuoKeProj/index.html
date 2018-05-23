@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- zh-CN：简体中文 -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四川多克科技</title>
+    <!-- 引入样式表 -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <div class="top-wrap">
+            <!-- 左侧logo区域 -->
+            <div class="logo-area fl">
+                <img class="logo" src="./images/public/logo.png" alt="">
+                <h3 class="c-name">四川多克科技有限公司</h3>
+            </div>
+            <!-- 右侧菜单区域 -->
+            <ul class="menu-list fr">
+                <li class="selected"><a href="./index.html">公司首页</a></li>
+                <li><a href="./pages/service-proj.html">服务项目</a></li>
+                <li><a href="./pages/make-process.html">制造流程</a></li>
+                <li><a href="./pages/case-display.html">案例展示</a></li>
+                <li><a href="./pages/about-us.html">关于我们</a></li>
+            </ul>
+       </div>
+    </header>
+    <!-- 横幅->轮播图 -->
+    <div id="banner" class="flash-wrap">
+        <!-- 轮播图显示区域 -->
+        <ul class="flash-list">
+            <li v-for="(flash,index) in flashInfos" :class="index == 0 ? 'show' : ''">
+                <img :src="path + flash.imgName" alt="">
+                <div class="infos">
+                    <h3 class="title">{{flash.title}}</h3>
+                    <p class="des">{{flash.des}}</p>
+                </div>
+            </li>
+        </ul>
+        <!-- 轮播图按钮 -->
+        <div class="btns">
+            <img @click="prevBtnClick" class="btn prev" src="./images/home/left-btn.png"/>
+            <img @click="nextBtnClick" class="btn next" src="./images/home/right-btn.png"/>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <main id="content">
+        <div class="container">
+            <div v-for="ct in contents" :class="['ct-item', ct.class]">
+                <!-- 头部 -->
+                <header>
+                    <p class="sub-title">{{ct.subTitle}}</p>
+                    <h1 class="title" v-html="ct.title"></h1>
+                    <p v-if="ct.des" class="des" v-html="ct.des"></p>
+                </header>
+                <!-- 内容 -->
+                <!-- 关于我们 -->
+                <template v-if="ct.class == 'about-us'">
+                    <div class="icons">
+                        <section class="icon-item" v-for="icon in ct.icons">
+                            <img :src="path + icon.imgName" alt="">
+                            <p>{{icon.title}}</p>
+                        </section>
+                    </div>
+                </template>
+                <!-- 我们做什么？ -->
+                <template v-else-if="ct.class == 'we-do'">
+                    <div class="item-ct clearFix">
+                        <div class="fl hot-company" :style="'background: url(' + path + ct.food.imgName + ') no-repeat center center'">
+                            <div class="infos">
+                                <p class="c-name">{{ct.food.cName}}</p>
+                                <p class="des">{{ct.food.des}}</p>
+                            </div>
+                        </div>
+                        <ul class="fr company-list">
+                            <li class="clearFix" v-for="item in ct.list">
+                                <div class="fl date">
+                                    <p class="day">{{item.date.day}}</p>
+                                    <p class="year-month">{{item.date.yearMonth}}</p>
+                                </div>
+                                <div class="fr details">
+                                    <p class="c-name">{{item.cname}}</p>
+                                    <p class="introduce">{{item.introduce}}</p>
+                                    <div class="links">
+                                        <img :src="path + item.link.tagName" alt="">
+                                        <a :href="item.link.net">{{item.link.text}}</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+                <!-- 服务项目 -->
+                <template v-else-if="ct.class == 'service-proj'">
+                    <ul class="service-proj-list">
+                        <li v-for="item in ct.items" :style="'background:' + item.bgColor">
+                            <img :src="path + item.imgName" alt="">
+                            <p class="des">{{item.des}}</p>
+                        </li>
+                    </ul>
+                </template>
+                <!-- 联系我们 -->
+                <template v-else-if="ct.class == 'contact-us'">
+                    <div class="contact-us-ct" :style="'background: url(' + path + ct.bgImgName + ') no-repeat center center;'">
+                            <img :src="path + ct.map" alt="">
+                            <form action="#" name="myForm">
+                                <p class="words">在线留言</p>
+                                <input type="text" placeholder="您的称呼">
+                                <input type="text" placeholder="联系方式">
+                                <textarea id="" cols="30" rows="10" placeholder="在线留言"></textarea>
+                                <p class="submit">提交</p>
+                                <p class="contact" v-html="ct.contact"></p>
+                            </form>
+                    </div>
+                </template>
+                <!-- 我们的客户 -->
+                <template v-else-if="ct.class == 'customer'">
+                    <div class="customer-wrap">
+                        <ul class="customer-list">
+                            <li v-for="items in ct.imgNames">
+                                <a href="javascript:;" v-for="imgName in items" >
+                                    <img :src="path + imgName" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </main>
+    <!-- 尾部 -->
+    <footer id="footer">
+        <!-- 友情链接 -->
+        <div class="links-area">
+            <ul class="link-list">
+                <li>
+                    <h3 class="title">服务范围</h3>
+                    <ul class="link-info-list">
+                        <li><a href="javascript:;">> IT外包服务</a></li>
+                        <li><a href="javascript:;">> IT咨询</a></li>
+                        <li><a href="javascript:;">> 网站建设</a></li>
+                    </ul>
+
+                </li>
+                <li>
+                    <h3 class="title">技术支持</h3>
+                    <ul class="link-info-list">
+                        <li><a href="javascript:;">> Windows 技术支持</a></li>
+                        <li><a href="javascript:;">> APP 技术支持</a></li>
+                        <li><a href="javascript:;">> Linux 技术支持</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="title">关于我们</h3>
+                    <ul class="link-info-list">
+                        <li><a href="javascript:;">> 公司介绍</a></li>
+                        <li><a href="javascript:;">> 技术优势</a></li>
+                        <li><a href="javascript:;">> 人才招聘</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="title">更多资讯</h3>
+                    <ul class="link-info-list">
+                        <li><a href="javascript:;">> 请关注右侧二维码</a></li>
+                        <li><a href="javascript:;">> QQ 24小时客服</a></li>
+                        <!-- 二维码 -->
+                        <img class="qr-code" src="./images/public/qr-code.jpg" alt="">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 公司信息 -->
+        <div class="c-infos">
+            四川多克科技有限公司官方网站技术支持及运营提供  Copyright  ©  2016 DuoKe All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- 引入js脚本/框架 -->
+    <script src="./js/datas.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
+
+

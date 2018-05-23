@@ -11,7 +11,7 @@ let vm = new Vue({
     mounted: function() {
          // 判断用户是否登陆，如果没有登陆，则跳转至登陆页面
         if(!sessionStorage.getItem("loginUser")) {
-            location.href = "../pages/login-register.html";
+            location.href = "./pages/login-register.html";
         }
 
         let targetDate  = new Date("October 1, 2018"),

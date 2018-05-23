@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.item {
+    margin-bottom: 50px;
+}
+.item .title {
+    margin-bottom: 20px;
+}
+.item-ct .des-list {
+    width: 650px;
+    height: 250px;
+    background: #EDF8FE url('../images/case-display/case-display-arrow-right.jpg') no-repeat top right;
+    background-size: contain;
+    padding-right: 50px;
+    padding-left: 16px;
+
+    font-size: 14px;
+    line-height: 35px;
+    font-weight: lighter;
+
+    /* 使用弹性布局垂直居中 */
+    display: flex;
+    /* 设置主轴方向为垂直方向 */
+    flex-direction: column;
+    /* 设置主轴对齐方式 */
+    justify-content: center;
+}
+
+.item:not(:last-child) img {
+    width: 300px;
+    position: relative;
+    top: 45px;
+}
+.item:last-child img {
+    height: 250px;
+}
+
+.item:nth-child(2n) .title {
+    text-align: right;
+}
+.item:nth-child(2n) .des-list {
+    background: #EDF8FE url('../images/case-display/case-display-arrow-left.jpg') no-repeat top left;
+    background-size: contain;
+    padding-left: 50px;
+    padding-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
