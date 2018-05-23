@@ -1,0 +1,48 @@
+
+
+.container {
+    width: 600px;
+    height: 450px;
+    margin: 100px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+}
+.small-box {
+    width: 180px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.small-box > .small-img {
+    width: 100%;
+}
+.small-box > .mirror {
+
+    display: none;
+
+    width: 80px;
+    height: 68px;
+
+    background: #ffffcc;
+    border: 1px solid #ccc;
+    opacity: .5;
+    cursor: move;
+    position: absolute;
+}
+
+
+.big-box {
+    width: 370px;
+    height: 330px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: none;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.big-box > .big-img {
+    position: absolute;
+}
