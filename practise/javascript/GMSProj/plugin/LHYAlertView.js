@@ -1,91 +1,92 @@
 
 ;(function (window) {
     let LHYAlertView = function (options) {
-        let _this = this;
-        // 设置默认属性
-        this.config = {
-            "id": "",
-            "type": "alert",
-            "title": "温馨提示",
-            "message": "",
-            "placeholder": "",
-            "cancelTitle": "取消",
-            "sureTitle": "确认",
-            "cancelCallBack": function () {},
-            "sureCallBack": function () {}
-        };
-        // 扩展默认属性
-        options && this.extend(this.config, options);
-
-        // 获取弹框依赖对象
-        this.parentNode = document.getElementById(this.config.id);
+        // 定义属性
         this.sureBtn    = null;
         this.cancelBtn  = null;
-        this.textIpt    = null;
+        this.textInput  = null;
+        // 设置默认属性
+        this.configs = {
+            "type": "default",
+            "title": "温馨提示",
+            "message": "",
+            "autoClose": 0,
+            "placeholder": "",
+            "cancelTitle": "取消",
+            "sureTitle": "确定",
+            "cancelCallBack": "",
+            "sureCallBack": ""
+        };
+        // 扩展默认属性
+        options && this.extend(this.configs, options);
         // 初始化方法
         this.init();
         // 事件添加
-        this.sureBtn   && this.sureBtn.addEventListener("click", function (e) {
-            e = e || event;
-            _this.btnClick(e);
-        }, "false");
-        this.cancelBtn && this.cancelBtn.addEventListener("click", function (e) {
-            e = e || event;
-            _this.btnClick(e);
-        }, "false");
+        this.sureBtn   && this.addEvent(this.sureBtn,   "click", this.btnClick.bind(this));
+        this.cancelBtn && this.addEvent(this.cancelBtn, "click", this.btnClick.bind(this));
         document.body.style.cssText = "overflow: hidden;";
+        // 判断是否自动关闭
+        this.configs.autoClose && setTimeout(this.close, this.configs.autoClose);
     };
-
     LHYAlertView.prototype = {
         init: function () {
-            let config = this.config;
-            let alertHtmls = "";
+            let config = this.configs,
+                alertHtmls = "";
             switch (config.type) {
-                case "alert": {
+                case "default": {
                     alertHtmls =
-                        "<LHY-alert>" +
-                        "<alert-wrap>" +
-                        "<alert-title>" + config.title + "</alert-title>" +
-                        "<alert-contbox>" + config.message + "</alert-contbox>" +
-                        "<alert-btnbox>" +
+                        "<LHY-alert>"     +
+                        "<alert-wrap>"    +
+                        "<alert-title>"   + config.title   + "</alert-title>"   +
+                        "<alert-content>" + config.message + "</alert-content>" +
+                        "</alert-wrap>"   +
+                        "</LHY-alert>";
+                } break;
+                case "alert"  : {
+                    alertHtmls =
+                        "<LHY-alert>"     +
+                        "<alert-wrap>"    +
+                        "<alert-title>"   + config.title   + "</alert-title>" +
+                        "<alert-content>" + config.message + "</alert-content>" +
+                        "<alert-btnbox>"  +
                         "<alert-btn id='lhy-alert-sure-btn' class='alert-sure-btn'>" + config.sureTitle + "</alert-btn>" +
                         "</alert-btnbox>" +
-                        "</alert-wrap>" +
+                        "</alert-wrap>"   +
                         "</LHY-alert>";
                 }break;
                 case "confirm": {
                     alertHtmls =
-                        "<LHY-alert>" +
-                        "<alert-wrap>" +
-                        "<alert-title>" + config.title + "</alert-title>" +
-                        "<alert-contbox>" + config.message + "</alert-contbox>" +
-                        "<alert-btnbox>" +
+                        "<LHY-alert>"     +
+                        "<alert-wrap>"    +
+                        "<alert-title>"   + config.title      + "</alert-title>"   +
+                        "<alert-content>" + config.message    + "</alert-content>" +
+                        "<alert-btnbox>"  +
                         "<alert-btn id='lhy-alert-canc-btn'>" + config.cancelTitle + "</alert-btn>" +
-                        "<alert-btn id='lhy-alert-sure-btn'>" + config.sureTitle + "</alert-btn>" +
+                        "<alert-btn id='lhy-alert-sure-btn'>" + config.sureTitle   + "</alert-btn>" +
                         "</alert-btnbox>" +
-                        "</alert-wrap>" +
+                        "</alert-wrap>"   +
                         "</LHY-alert>";
                 } break;
-                case "prompt": {
+                case "prompt" : {
                     alertHtmls =
-                        "<LHY-alert>" +
-                        "<alert-wrap>" +
-                        "<alert-title>" + config.title + "</alert-title>" +
-                        "<alert-contbox>" +
-                        "<input type='text' id='lhy-alert-text-ipt' class='lhy-alert-ipt' placeholder='" + config.placeholder + "'>" +
-                        "</alert-contbox>" +
-                        "<alert-btnbox>" +
-                        "<alert-btn id='lhy-alert-canc-btn'>" + config.cancelTitle + "</alert-btn>" +
-                        "<alert-btn id='lhy-alert-sure-btn'>" + config.sureTitle + "</alert-btn>" +
-                        "</alert-btnbox>" +
-                        "</alert-wrap>" +
+                        "<LHY-alert>"      +
+                        "<alert-wrap>"     +
+                        "<alert-title>"    + config.title     + "</alert-title>"   +
+                        "<alert-content>"  +
+                        "<input type='text' id='lhy-alert-text-ipt' class='lhy-alert-text-ipt' placeholder='" + config.placeholder + "'>" +
+                        "</alert-content>" +
+                        "<alert-btnbox>"   +
+                        "<alert-btn id='lhy-alert-canc-btn'>" + config.cancelTitle + "</alert-btn>"      +
+                        "<alert-btn id='lhy-alert-sure-btn'>" + config.sureTitle   + "</alert-btn>"      +
+                        "</alert-btnbox>"  +
+                        "</alert-wrap>"    +
                         "</LHY-alert>";
                 }break;
             }
-            this.parentNode.innerHTML = alertHtmls;
+            document.body.insertAdjacentHTML("beforeend", alertHtmls);
             this.sureBtn   = document.getElementById("lhy-alert-sure-btn");
             this.cancelBtn = document.getElementById("lhy-alert-canc-btn");
-            this.textIpt   = document.getElementById("lhy-alert-text-ipt");
+            this.textInput = document.getElementById("lhy-alert-text-ipt");
         },
         extend: function (oldObj, newObj) {
             for(let key in newObj) {
@@ -93,32 +94,38 @@
             }
             return oldObj;
         },
+        addEvent: function(el, type, callBack) {
+            if (el.attachEvent) {
+                el.attachEvent('on' + type, callBack);
+            } else {
+                el.addEventListener(type, callBack, false);
+            }
+        },
         btnClick: function (e) {
-
-            let _this = this;
-            let tarID = e.target.id;
-
-            switch(tarID) {
+            e = e || event;
+            let _this    = this,
+                _tarId   = e.target.id,
+                _configs = this.configs;
+            switch(_tarId) {
+                // 点击取消按钮
                 case "lhy-alert-canc-btn":{
-                    _this.config.cancelCallBack();
+                    _configs.cancelCallBack && _configs.cancelCallBack();
                 } break;
+                // 点击确认按钮
                 case "lhy-alert-sure-btn": {
-                    let text = "";
-                    if(_this.config.type == "prompt") {
-                        text = _this.textIpt.value;
-                    }
-                    _this.config.sureCallBack(text);
+                    let text = _configs.type == "prompt" ? _this.textInput.value : "" ;
+                    _configs.sureCallBack && _configs.sureCallBack(text);
                 }break;
             }
-
-            _this.parentNode.innerHTML = "";
+            this.close();
+        },
+        close: function () {
+            let alert = document.getElementsByTagName("lhy-alert")[0];
+            document.body.removeChild(alert);
             document.body.style.cssText = "overflow: auto;";
         }
     };
-
     window.LHYAlertView = LHYAlertView;
-
-
 })(window);
 
 

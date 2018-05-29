@@ -35,7 +35,7 @@
         for(let i = 0, len = _goodsIpts.length - 1; i < len; i++) {
             if(!_goodsIpts[i].value) {
                 new LHYAlertView({
-                    "id":"alert-box",
+                    "type": "alert",
                     "message": "请完善商品信息！"
                 });
                 return;
@@ -57,7 +57,7 @@
                 children[++idx].textContent = _good[key];
             });
             new LHYAlertView({
-                "id":"alert-box",
+                "type":"alert",
                 "message":"编辑成功！"
             });
         }else {        // 添加状态
@@ -66,7 +66,7 @@
             // 更新页面
             _tBody.insertAdjacentHTML("beforeend", createHtmls(_good, _model.get().length));
             new LHYAlertView({
-                "id":"alert-box",
+                "type":"alert",
                 "message":"添加成功！"
             });
         }
@@ -82,7 +82,6 @@
             _idx    = _target.dataset["idx"];
         if(_tarCls.contains("delete")) {       // 点击删除按钮
             new LHYAlertView({
-                "id":"alert-box",
                 "type":"confirm",
                 "message":"您确定要删除该项数据吗？",
                 "sureCallBack":function () {
