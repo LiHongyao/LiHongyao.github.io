@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 
-#header, #content {
+body {
     min-width: 1100px;
 }
 
@@ -20,7 +20,7 @@
 
 /* 内容 */
 #content {
-    width: 600px;
+    width: 650px;
     margin: 50px auto;
 }
 
