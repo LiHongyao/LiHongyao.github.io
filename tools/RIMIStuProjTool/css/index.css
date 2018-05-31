@@ -1,6 +1,10 @@
 @charset "utf-8";
 
 
+#header, #content {
+    min-width: 1100px;
+}
+
 /* 头部 */
 #header {
     background: cornflowerblue;
