@@ -10,8 +10,10 @@
 <body>
     
     <form action="#" name="myForm">
-        <input type="text" placeholder="请输入验证码">
-        <section  onselectstart="return false" class="validate-code"></section>
+        <section class="input-box hidden" data-msg="验证码不匹配，请重新输入！">
+            <input type="text" placeholder="请输入验证码">
+        </section>
+        <section  onselectstart="return false" class="validate-code" data-msg="验证码不匹配！"></section>
     </form>
 
     <script src="./js/tools.js"></script>

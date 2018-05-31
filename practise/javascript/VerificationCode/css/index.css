@@ -31,7 +31,23 @@
     border-color: green;
 }
 
-.validate-code {
+[name="myForm"] .input-box {
+    position: relative;
+}
+[name="myForm"] .input-box::after {
+    width: 200%;
+    content: attr(data-msg);
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    top: 100%;
+    left: 0;  
+}
+[name="myForm"] section.hidden::after {
+    display: none;
+}
+
+[name="myForm"] .validate-code {
     display: inline-block;
     width: 120px;
     height: 35px;
@@ -42,7 +58,10 @@
     text-align: center;
     background: linear-gradient(to bottom right, green, orange);
     cursor: pointer;
+    position: relative;
 }
+
+
 
 
 
