@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript - 随机生成验证码</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    
+    <form action="#" name="myForm">
+        <section class="input-box hidden" data-msg="验证码不匹配，请重新输入！">
+            <input type="text" placeholder="请输入验证码">
+        </section>
+        <section  onselectstart="return false" class="validate-code" data-msg="验证码不匹配！"></section>
+    </form>
+
+    <script src="./js/tools.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
