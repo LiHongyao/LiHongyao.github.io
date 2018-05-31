@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+
+/* 头部 */
+#header {
+    background: cornflowerblue;
+}
+#header > .title {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 8px;
+    text-shadow: 1px 1px 5px #000;
+    font: normal normal 28px/90px "宋体";
+}
+
+
+/* 内容 */
+#content {
+    width: 600px;
+    margin: 50px auto;
+}
+
+[name="myForm"] .form-item-box {
+    margin: 15px auto;
+    position: relative;
+}
+
+[name="myForm"] .form-item {
+    width: 100%; 
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #555;
+    font-size: 15px;
+    font-weight: lighter;
+    transition: all .25s linear;
+}
+
+[name="myForm"] .form-item:focus {
+    border-color: cornflowerblue;
+}
+
+[name="myForm"] .form-item-box:not(.option)::before {
+    content: "*";
+    color: #333;
+    display: block;
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+[name="myForm"] textarea {
+    height: 200px;
+    resize: vertical;
+}
+[name="myForm"] .submit-btn {
+    width: 100%;
+    height: 40px;
+    background: cornflowerblue;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 8px;
+    color: #fff;
+}
+
+[name="myForm"] .submit-btn:hover {
+    background: rgb(19, 97, 241);
+}
+
+
+

@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMOB - LOGIN</title>
+    <link rel="stylesheet" href="../plugins/LHYAlertView.css">
+    <link rel="stylesheet" href="../css/normalized.css">
+    <link rel="stylesheet" href="../css/login-register.css">
+</head>
+<body>
+    
+    <header>
+        <h1 class="title">LOGIN</h1>
+    </header>
+    <main>
+        <form action="#" name="myForm">
+            <section class="input-box" data-msg="用户名不合法，4到16位（字母，数字，下划线，减号）">
+                <input class="username" type="text" placeholder="请输入用户名">
+            </section>
+            <section class="input-box" data-msg="密码不合法，4到16位（字母，数字，下划线，减号）">
+                <input class="password" type="password" placeholder="请输入密码">
+            </section>
+            <section class="input-box register hidden" data-msg="邮箱不合法">
+                <input class="email" type="email" placeholder="请输入邮箱">
+            </section>
+            <section class="input-box register hidden" data-msg="电话不合法">
+                <input class="tel" type="tel" placeholder="请输入电话">
+            </section>
+            <div class="info-box clearFix">
+                <div class="fl remember-box login">
+                    <input class="remember" type="checkbox">
+                    <span>记住密码？</span>
+                </div>
+                <a class="fr go-register login" href="javascript:;">没有账号？点击注册</a>
+                <a class="fl go-login register hidden" href="javascript:;">返回登陆</a>
+            </div>
+            <button class="login-register-btn" type="button">登陆</button>
+        </form>
+    </main>
+
+    <script src="../plugins/jquery-3.3.1.min.js"></script>
+    <script src="../plugins/bmob-min.js"></script>
+    <script src="../plugins/LHYAlertView.js"></script>
+    <script src="../js/validate.js"></script>
+    <script src="../js/login-register.js"></script>
+</body>
+</html>
