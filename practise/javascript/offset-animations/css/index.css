@@ -1,6 +1,4 @@
-
 @charset "UTF-8";
-
 
 .title {
     text-align: center;
@@ -10,7 +8,6 @@
     margin: 100px auto 1000px;
 }
 
-
 .list {
     padding: 0 20%;
 }
@@ -18,7 +15,7 @@
     height: 160px;
     background: mediumpurple;
     margin: 100px auto;
-    animation: scale  .75s linear forwards paused;
+    animation: move  .75s linear forwards paused;
 }
 
 .list-item:nth-child(odd) {
