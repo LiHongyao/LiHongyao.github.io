@@ -20,10 +20,14 @@
             oTotalPage.textContent = totalPage;
             // 加载页面
             loadingHtml(oWrap, data, curIndex);
+        },
+        fail: function() {
+            alert("当前网网络不加，数据加载失败！");
         }
     });
     // 3. 事件
     oUp.onclick = function() {
+        if(!data){return;}
         if(curIndex == 1) {
             return;
         }else {
@@ -33,6 +37,7 @@
         oCurPage.textContent = curIndex;
     };
     oDown.onclick = function() {
+        if(!data){return;}
         if(curIndex == totalPage) {
             return;
         }else {
