@@ -102,10 +102,10 @@ class LHYPage {
      * 页面切换
      */
     tab() {
-        let curPage = this.curPage,
-            allPage = this.allPage;
+        let curPage = parseInt(this.curPage),
+            allPage = parseInt(this.allPage);
         // 1、【首页】仅在当前页大于等于4，且总页数大于等于6的情况下出现首页
-        if(curPage >= 4 && this.allPage >= 6) {
+        if(curPage >= 4 && allPage >= 6) {
             this.firstPage.style.display = "inline-block";
         }else {
             this.firstPage.style.display = "none";
