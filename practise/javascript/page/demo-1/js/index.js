@@ -22,12 +22,15 @@
             loadingHtml(oWrap, data, curIndex);
         },
         fail: function() {
-            alert("当前网网络不加，数据加载失败！");
+            alert("请求超时，数据加载失败！");
         }
     });
     // 3. 事件
     oUp.onclick = function() {
-        if(!data){return;}
+        if(!data){
+            alert('当前无数据，操作失败！');
+            return;
+        }
         if(curIndex == 1) {
             return;
         }else {
@@ -37,7 +40,10 @@
         oCurPage.textContent = curIndex;
     };
     oDown.onclick = function() {
-        if(!data){return;}
+        if(!data){
+            alert('当前无数据，操作失败！');
+            return;
+        }
         if(curIndex == totalPage) {
             return;
         }else {
