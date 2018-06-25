@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../css/shoppingcar.css">
+<root id="app">
+    <!-- 操作按钮 -->
+    <div class="handle-btn">
+        <span @click="cancle" v-if="isEditing"  class="btn cancle" >取消</span>
+        <span @click="remove" v-if="isEditing"  class="btn delete" >删除选中</span>
+        <span @click="edit" v-if="!isEditing" class="btn edit" >编辑</span>
+    </div>
+    <!-- 购物车数据 -->
+    <ul class="shopping-list">
+        <li v-for="book in shoppingcar">
+            <!-- 选中切换/按钮 -->
+            <div v-if="isEditing"  class="checkbox">
+                <input type="checkbox">
+            </div>
+            <div class="book-info">
+                <!-- 图片 -->
+                <img :src="book.cover" alt="">
+                <!-- 详情信息 -->
+                <div class="infos">
+                    <p class="bookname">{{book.name}}</p>
+                    <p class="author">{{book.author}}</p>
+                    <p class="price">¥ {{book.price}}</p>
+                </div>
+            </div>
+            <!-- 数量 -->
+            <div class="nums-btn">
+                <span class="item reduce">-</span>
+                <span class="item nums">1</span>
+                <span class="item add">+</span>
+            </div>
+        </li>
+    </ul>
+    <!-- 支付按钮 -->
+    <div class="pay-btn">前往支付</div>
+</root>
+<script src="../js/shoppingcar.js"></script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图书详情</title>
+    <link rel="stylesheet" href="../plugin/LHYAlertView.css">
+    <link rel="stylesheet" href="../css/normalnize.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/bookdetails.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="navigation-bar">
+        <i class="iconfont goHome backBtn">&#xe75b;</i>
+        <h1 class="title">图书详情</h1>
+    </header>
+    <main id="app" class="content">
+        <!-- 基本信息 -->
+        <div class="bookinfo">
+            <img class="img" :src="book.cover" alt="">
+            <div class="info">
+                <section class="item">
+                    <span class="title">作者</span>
+                    <span class="author">{{book.author}}</span>
+                </section>
+                <section class="item">
+                    <span class="title">页数</span>
+                    <span class="author">{{book.page}}</span>
+                </section>
+                <section class="item">
+                    <span class="title">书号</span>
+                    <span class="booknum">{{book.bookNum}}</span>
+                </section>
+                <section class="item">
+                    <span class="title">出版日期</span>
+                    <span class="author">{{book.date}}</span>
+                </section>
+                <section class="item">
+                    <span class="title">售价</span>
+                    <span class="price">¥ {{book.price}}</span>
+                </section>
+            </div>
+        </div>
+        <!-- 标题 -->
+        <h3 class="bookname">{{book.name}}</h3>
+        <!-- 按钮 -->
+        <div class="handle-btn">
+            <span @click="btnClick" class="btn insert-shopping">加入购物车</span>
+            <span @click="btnClick" class="btn buy">立即购买</span>
+        </div>
+        <!-- 详情 -->
+        <div class="details">
+            <div class="details-tem">
+                <span class="title">内容概要</span>
+                <p class="text">{{book.info1}}</p>
+            </div>
+            <div class="details-tem">
+                <span class="title">内容概要</span>
+                <p class="text">{{book.info1}}</p>
+            </div>
+            <div class="details-tem">
+                <span class="title">作者简介</span>
+                <p class="text">{{book.info1}}</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../plugin/jquery-3.3.1.min.js"></script>
+    <script src="../plugin/vue.min.js"></script>
+    <script src="../plugin/LHYAlertView.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/bookdetails.js"></script>
+</body>
+</html>
