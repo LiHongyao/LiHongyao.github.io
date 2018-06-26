@@ -2,7 +2,6 @@
 
 // 获取数据
 let get = (callback) => {
-    /*
     $.ajax({
         url: "../json/friends.json",
         type: "GET",
@@ -10,8 +9,7 @@ let get = (callback) => {
         success: (response) => {
             callback && callback(response);
         }
-    })*/
-    callback && callback(datas);
+    })
 }
 
 // 加载元素
