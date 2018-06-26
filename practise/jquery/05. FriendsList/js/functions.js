@@ -3,7 +3,7 @@
 // 获取数据
 let get = (callback) => {
     $.ajax({
-        url: "../json/friends.json",
+        url: "https://lihongyao.github.io/practise/jquery/05.%20FriendsList/json/friends.json",
         type: "GET",
         dataType: "json",
         success: (response) => {
