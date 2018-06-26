@@ -1,0 +1,31 @@
+
+
+html, body {
+     height: 100%;
+    }
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0; padding: 0;
+}
+
+ul {
+     list-style: none; 
+}
+
+
+@font-face {
+    font-family: 'iconfont';  /* project id 722361 */
+    src: url('//at.alicdn.com/t/font_722361_uqgnlhy2uu.eot');
+    src: url('//at.alicdn.com/t/font_722361_uqgnlhy2uu.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_722361_uqgnlhy2uu.woff') format('woff'),
+    url('//at.alicdn.com/t/font_722361_uqgnlhy2uu.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_722361_uqgnlhy2uu.svg#iconfont') format('svg');
+  }
+
+.iconfont {
+    font: normal 14px "iconfont";
+    color: gray;
+}
