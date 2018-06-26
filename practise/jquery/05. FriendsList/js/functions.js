@@ -2,14 +2,16 @@
 
 // 获取数据
 let get = (callback) => {
+    /*
     $.ajax({
-        url: "https://lihongyao.github.io/practise/jquery/05.%20FriendsList/json/friends.json",
+        url: "../json/friends.json",
         type: "GET",
         dataType: "json",
         success: (response) => {
             callback && callback(response);
         }
-    })
+    })*/
+    callback && callback(datas);
 }
 
 // 加载元素
