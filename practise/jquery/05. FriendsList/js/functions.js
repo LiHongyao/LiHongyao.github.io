@@ -37,7 +37,7 @@ let loadingHtml = (data) => {
                                     group.infos.forEach(friend => {
                                         htmlStr += `
                                             <li class="friend">
-                                                <div class="head-portrait" style="background: url(${friend.img}) no-repeat center center"></div>
+                                                <div class="head-portrait" style="background: url(${friend.img}) no-repeat top center"></div>
                                                 <div class="infos">
                                                     <p class="nikename ${friend.vip ? 'vip' : ''}">${friend.nikename} ${friend.vip ? "<i class='iconfont icon'>&#xe65e;</i>" : ""}</p>
                                                     <p class="des">[${friend.status}] ${friend.signature}</p>
