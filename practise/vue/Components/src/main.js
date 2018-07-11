@@ -3,9 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 引入需要使用的插件
+import { 
+  Button, 
+  Select 
+} from 'element-ui';
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import VueLazyload from 'vue-lazyload'
+
+
+Vue.use(VueAwesomeSwiper)
+Vue.use(VueLazyload)
+
+Vue.use(Button)
+Vue.use(Select)
 Vue.config.productionTip = false
-
 
 /* eslint-disable no-new */
 new Vue({

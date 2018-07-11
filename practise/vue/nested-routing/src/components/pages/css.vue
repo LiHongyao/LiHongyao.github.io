@@ -1,6 +1,7 @@
 <template>
     <div>
         <p>CSS -> 渲染层</p>
+        <p>路由参数传递：{{$route.params.msg}}</p>
     </div>
 </template>
 

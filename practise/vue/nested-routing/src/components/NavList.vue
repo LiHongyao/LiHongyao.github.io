@@ -1,9 +1,9 @@
 <template>
     <div>
         <ul class="menu-list">
-            <li><router-link :to="urlData.home">主页</router-link></li>
+            <li><router-link exact :to="urlData.home">主页</router-link></li>
             <li><router-link :to="urlData.course">课程</router-link></li>
-            <li><router-link :to="urlData.teachers">师资</router-link></li>
+            <li><router-link :to="{name:'teachers', params:{name:'LiHongyao', course: 'Web'}}">师资</router-link></li>
         </ul>
     </div>
 </template>

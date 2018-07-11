@@ -5,7 +5,7 @@
             <!-- 二级路由区域 -->
             <ul class="sub-menulist">
                 <li><router-link :to="urlData.html">HTML</router-link></li>
-                <li><router-link :to="urlData.css">CSS</router-link></li>
+                <li><router-link :to="{name: 'css', params: {msg: 123}}">CSS</router-link></li>
                 <li><router-link :to="urlData.javascript">JavaScript</router-link></li>
             </ul>
         </div>
@@ -13,7 +13,6 @@
             <!-- 视图区域 -->
             <router-view></router-view>
         </div>
-
     </div>
 </template>
 

@@ -12,6 +12,7 @@ import JavaScript from '@/components/pages/javascript'
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',
@@ -28,20 +29,24 @@ export default new Router({
       children: [
         {
           path: 'html',
+          name: 'html',
           component: HTML
         },
         {
-          path: 'css',
+          path: 'css/:msg',
+          name: 'css',
           component: CSS
         },
         {
           path: 'javascript',
+          name: 'javascript',
           component: JavaScript
         }
       ]
     },
     {
-      path: '/teachers',
+      // 动态路径参数 以冒号开头
+      path: '/teachers/:name/:course',
       name: 'teachers',
       component: Teachers
     }

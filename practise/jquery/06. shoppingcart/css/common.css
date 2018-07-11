@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+main {
+    width: 995px;
+    margin: 100px auto 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0; padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+

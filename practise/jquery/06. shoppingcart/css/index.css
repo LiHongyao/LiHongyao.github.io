@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+.header {
+    margin-bottom: 35px;
+}
+
+.header .title {
+    font: 300 24px 'Courier New', Courier, monospace;
+    letter-spacing: 5px;
+}
+
+
+.goods-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goods-list .item {
+    width: 240px;
+}
+
+.goods-list img {
+    width: 100%;
+}
+
+.goods-list .price {
+    color: #c00;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 35px;
+}
+.goods-list .title {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin: 8px 0 6px;
+}
+
+.goods-list .infos {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    color: #999;
+}
+.goods-list .evaluation {
+    border-left: 1px #ccc solid;
+    padding-left: 8px;
+}
+.goods-list .infos-item {
+    box-sizing: border-box;
+    width: 50%;
+} 
+.goods-list .sale-val {
+    color: #c49173;
+    cursor: pointer;
+}
+.goods-list .evaluation-val {
+    color: #38b;
+    cursor: pointer;
+}
+
+.goods-list .sale-val:hover, 
+.goods-list .evaluation-val:hover,
+.goods-list .title:hover {
+    text-decoration: underline;
+}
