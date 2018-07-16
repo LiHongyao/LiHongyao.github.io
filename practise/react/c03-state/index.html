@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+    <title>React State</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script type="text/babel">
+        // 1. 创建一个显示时间的组件
+        class LocaleTime extends React.Component {
+            // 构造器
+            constructor(props) {
+                // 在ES6中，子类的constructor中必须先调用super才能引用this
+                super(props);
+                // 初始化date状态
+                this.state = {
+                    date: new Date()
+                };
+            }
+            // 生命周期：组件挂载完成
+            componentDidMount() {
+                // 初始化定时器，并将该定时器绑定在组件实例上
+                this.timer = setInterval(
+                    () => this.updateDate(),
+                    1000
+                )
+            }
+            // 生命周期：组件即将卸载
+            componentWillUnmount() {
+                // 清除定时器
+                clearInterval(this.timer);
+            }
+            // 定义函数，更新date状态值
+            updateDate() {
+                this.setState({
+                    date: new Date()
+                })
+            }
+            render() {
+                return (
+                    <h1>北京时间：{this.state.date.toLocaleTimeString()}</h1>
+                )
+            }
+        }
+        // 2. 渲染组件
+        ReactDOM.render(
+            <LocaleTime />,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>
+    

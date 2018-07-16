@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+    <title>React jsx</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script type="text/babel">
+        // 定义组件
+        class Welcome extends React.Component {
+            render() {
+                return <h1>Hello, {this.props.name} !</h1>
+            }
+        }
+        // 组件嵌套使用
+        class App extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Welcome name='Admin' />
+                        <Welcome name='Jason' />
+                        <Welcome name='Henry' />
+                    </div>
+                )
+            }
+        }
+        // 使用组件
+        const element = <App />
+        ReactDOM.render(
+            element,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>
