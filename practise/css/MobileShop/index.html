@@ -1,0 +1,295 @@
+<!-- 声明文档类型 -->
+<!DOCTYPE html>
+<!-- 网页开始 -->
+<html lang="en">
+<!-- 网页配置信息 -->
+<head>
+    <!-- 设置编码格式 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入样式 -->
+    <!-- href:样式链接路径 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入swiper样式 -->
+    <link rel="stylesheet" href="./plugins/swiper-4.3.5.min.css">
+    <!-- 网页标题 -->
+    <title>Mobile Shop</title>
+</head>
+<!-- 网页内容 --> 
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <!-- 登陆/注册 -->
+        <div class="l-r-box">
+            <a href="#">
+                <i class="iconfont">&#xe604;</i>
+                My Account
+            </a>
+            <a href="#">
+                <i class="iconfont">&#xe600;</i>
+                Contact
+            </a>
+        </div>
+        <!-- logo/搜索/购物车 -->
+        <div class="info-box">
+            <img class="logo" src="./images/logo.png" alt="">
+            <div class="search-box">
+                <input type="text">
+                <span class="search-btn iconfont">&#xe627;</span>
+            </div>
+            <div class="shopping-car">
+                <i class="iconfont">&#xe8a2;</i>
+                CART: 0 ITEMS.
+            </div>
+        </div>
+        <!-- 导航栏 -->
+        <nav>
+            <ul class="menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">PC Computers</a></li>
+                <li><a href="#">Laptops & Notebooks</a></li>
+                <li><a href="#">Mobiles & Tablet</a></li>
+                <li><a href="#">Software</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 内容 -->
+    <main id="content">
+        <!-- 轮播图 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/main-banner1-1903x600.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/main-banner2-1903x600.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/main-banner3-1903x600.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <!-- 横幅 -->
+        <div class="sub-banner-f">
+            <img src="./images/sub-banner1.png" alt="">
+            <img src="./images/sub-banner2.png" alt="">
+            <img src="./images/sub-banner3.png" alt="">
+        </div>
+        <!-- 特别产品 -->
+        <div class="special-products">
+            <h1 class="title">SPECIAL PRODUCTS</h1>
+            <ul class="products-list">
+                <li>
+                    <img src="./images/iphone.png" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$188</span>
+                        <span class="original-price">$258</span>
+                    </div>
+                    <div class="star">★★★☆☆</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-s4.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$182</span>
+                        <span class="original-price">$246</span>
+                    </div>
+                    <div class="star">★★☆☆☆</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-note.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$98</span>
+                        <span class="original-price">$168</span>
+                    </div>
+                    <div class="star">★★★★★</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-note-3.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$119</span>
+                        <span class="original-price">$199</span>
+                    </div>
+                    <div class="star">★☆☆☆☆</div>
+                </li>
+            </ul>
+        </div>
+        <!-- 横幅 -->
+        <div class="sub-banner-l">
+            <img src="./images/sub-banner4.jpg" alt="">
+            <img src="./images/sub-banner5.png" alt="">
+        </div>
+        <!-- 新产品 -->
+        <div class="features-products">
+            <h1 class="title">FEATURE PRODUCTS</h1>
+            <ul class="products-list">
+                <li>
+                    <img src="./images/iphone.png" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$188</span>
+                        <span class="original-price">$258</span>
+                    </div>
+                    <div class="star">★★★☆☆</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-s4.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$182</span>
+                        <span class="original-price">$246</span>
+                    </div>
+                    <div class="star">★★☆☆☆</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-note.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$98</span>
+                        <span class="original-price">$168</span>
+                    </div>
+                    <div class="star">★★★★★</div>
+                </li>
+                <li>
+                    <img src="./images/galaxy-note-3.jpg" alt="">
+                    <div class="icons">
+                        <i class="iconfont">&#xe8a2;</i>
+                        <i class="iconfont">&#xe611;</i>
+                        <i class="iconfont">&#xe628;</i>
+                    </div>
+                    <p class="product-name">Aliquam erat volutpat</p>
+                    <div class="price">
+                        <span class="present-price">$119</span>
+                        <span class="original-price">$199</span>
+                    </div>
+                    <div class="star">★☆☆☆☆</div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <!-- 尾部 -->
+    <footer id="footer">
+        <div class="wrap">
+            <ul class="info-list">
+                <li>
+                    <img src="./images/logofooter.png" alt="">   
+                    <p class="des">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </li>
+                <li>
+                    <h1 class="title">Customer Service</h1>
+                    <ul class="link-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h1 class="title">My Account</h1>
+                    <ul class="link-list">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">Gift Vouchers</a></li>
+                        <li><a href="#">Specials</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h1 class="title">Contact Us</h1>
+                    <section class="info-item">
+                        <i class="iconfont">&#xe939;</i>
+                        <span>California, United States 3000009</span>
+                    </section>
+                    <section class="info-item">
+                        <i class="iconfont">&#xe6f0;</i>
+                        <span>028-8888888</span>
+                    </section>
+                    <section class="info-item">
+                        <i class="iconfont">&#xe626;</i>
+                        <span>lihy_online@163.com</span>
+                    </section>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <div class="cp-item">
+                Copyright © 2018.<a href="https://github.com/lihongyao">Li-HONGYAO</a> All rights reserved.
+            </div>
+            <div class="cp-item">
+                <img src="./images/visa-curved-32px.png" alt="">
+                <img src="./images/discover-curved-32px.png" alt="">
+                <img src="./images/maestro-curved-32px.png" alt="">
+                <img src="./images/paypal-curved-32px.png" alt="">
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 引入swiper脚本 -->
+    <script src="./plugins/swiper-4.3.5.min.js"></script>
+    <script>        
+        var mySwiper = new Swiper ('.swiper-container', {
+          direction: 'horizontal',
+          loop: true,
+          // 自动播放
+          autoplay: true,
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          }
+        });        
+    </script>
+</body>
+</html>
+<!-- 网页结束 -->
+

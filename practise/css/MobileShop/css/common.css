@@ -1,0 +1,240 @@
+@charset 'utf-8';
+/* 
+‘*’ 表示通用选择器
+‘.’ 表示class
+‘#’ 表示id
+‘>’ 表示儿子
+ */
+ @font-face {
+    font-family: 'iconfont';  /* project id 810220 */
+    src: url('//at.alicdn.com/t/font_810220_hbjrhapumud.eot');
+    src: url('//at.alicdn.com/t/font_810220_hbjrhapumud.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_810220_hbjrhapumud.woff') format('woff'),
+    url('//at.alicdn.com/t/font_810220_hbjrhapumud.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_810220_hbjrhapumud.svg#iconfont') format('svg');
+  }
+
+.iconfont {
+   /* 设置字体：样式 大小 名称 */
+   font: normal 18px 'iconfont';
+   /* 设置字体颜色 */
+   color: #333;
+}
+
+a {
+    /* 去除下划线 */
+    text-decoration: none;
+}
+
+ul {
+    /* 去除项目标号 */
+    list-style: none;
+}
+
+#header, #footer {
+   min-width: 1150px; 
+}
+#content {
+    width: 1150px;
+    /* 容器水平居中 */
+    margin: 0 auto;
+}
+
+* {
+    /* 设置边距 */
+    margin: 0;
+    /* 设置间距 */
+    padding: 0;
+}
+
+#header > .l-r-box {
+    height: 46px;
+    background: #f6f6f6;
+    /* 设置IE盒子模型 */
+    box-sizing: border-box;
+    /* calc() 计算 */
+    padding: 0 calc((100% - 1150px) / 2);
+    /* 弹性布局：设置子元素布局方式 */
+    display: flex;
+    /* 主轴对齐方式（默认水平） */
+    justify-content: flex-end;
+    /* 交叉轴对齐方式（默认垂直） */
+    align-items: center;
+}
+
+#header > .l-r-box > a {
+    color: #333; 
+    padding: 0 16px;
+    line-height: 30px;
+}
+/* :hover-> 当鼠标悬浮在元素上时触发的样式 */
+#header > .l-r-box > a:hover {
+    color: #428bca;
+}
+#header > .l-r-box > a:hover i {
+    color: #428bca;
+}
+#header > .l-r-box > a:last-child {
+    /* 右边框 */
+    border-left: 1px solid lightgray;
+    padding-right: 0;
+}
+
+#header > .info-box {
+    height: 175px;
+    /* 设置IE盒子模型 */
+    box-sizing: border-box;
+    /* calc() 计算 */
+    padding: 0 calc((100% - 1150px) / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header > .info-box input {
+    width: 250px;
+    height: 55px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    font-size: 16px;
+    padding-left: 8px;
+}
+#header > .info-box .search-btn {
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+    background: #333;
+    color: #fff;
+    /* 文本对齐方式 */
+    text-align: center;
+    /* 当行高等于容器高度时
+       文本垂直居中 */
+    line-height: 55px;
+    border-radius: 5px;
+    /* 设置鼠标指针为手指头 */
+    cursor: pointer;
+}
+
+#header > .info-box > .shopping-car {
+    width: 200px;
+    height: 55px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+}
+#header > .info-box > .shopping-car i{
+    color: #fff;
+}
+
+#header > nav {
+  height: 60px;
+  background: #111; 
+  /* 设置IE盒子模型 */
+  box-sizing: border-box;
+  /* calc() 计算 */
+  padding: 0 calc((100% - 1150px) / 2); 
+}
+
+#header .menu-list li {
+    display: inline-block;
+    height: 60px;
+    padding: 0 12px;
+    /* 过渡效果 */
+    transition:all .25s linear;
+}
+#header .menu-list li:hover {
+    background: #444;
+}
+#header .menu-list a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 16px;
+    line-height: 60px;
+}
+
+/* 尾部 */
+#footer .wrap {
+    background: #2A2A2A;
+    box-sizing: border-box;
+    padding: 0 calc((100% - 1150px) / 2);
+    color: #666;
+}
+#footer .info-list {
+    display: flex;
+}
+#footer .info-list > li {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 35px 25px;
+}
+
+#footer .des {
+    line-height: 1.6em;
+    margin-top: 12px;
+}
+#footer .title {
+    font-size: 23px;
+    color: #fff;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+#footer .link-list {
+    /* 设置项目标号为小圆圈 */
+    list-style: circle;
+    padding-left: 17px;
+}
+#footer .link-list a {
+    line-height: 1.6em;
+    color: #666;
+}
+#footer .link-list a:hover {
+    color: #888;
+    text-decoration: underline;
+}
+
+#footer .info-item {
+    margin-bottom: 12px;
+}
+#footer .info-item i {
+    margin-right: 6px;
+    color: #666;
+    font-size: 16px;
+}
+
+#footer .copyright {
+    box-sizing: border-box;
+    padding: 16px calc((100% - 1150px) / 2);
+    background: #393939;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .cp-item {
+    color: #666;
+}
+#footer .cp-item a {
+    margin: 0 6px;
+    color: #888;
+}
+#footer .cp-item a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
