@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>学员信息管理系统</title>
+</head>
+<body>
+    <header>
+        <h1 style="letter-spacing:5px; color: #333;">学员信息管理系统</h1>
+    </header>
+    <main class="content">
+        <form action="javascript:;" name="myForm" class="myForm">
+            <input class="form-item stu-num" type="number" placeholder="请输入学号">
+            <input class="form-item stu-name" type="text" placeholder="请输入姓名">
+            <select name="mySel" class="form-item sel-major">
+                <option value="">- 请选择性别 -</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+            <input class="form-item stu-age" type="num" placeholder="请输入年龄">
+            <select name="mySel" class="form-item sel-gender">
+                <option value="">- 请选择专业 -</option>
+                <option value="Web前端">Web前端</option>
+                <option value="Java">Java</option>
+                <option value="新媒体运用">新媒体运用</option>
+                <option value="软件测试">软件测试</option>
+                <option value="Python">Python</option>
+            </select>
+            <button type="button" class="form-item enter-btn">录入</button>
+        </form>
+        <ul class="stu-list">
+
+        </ul>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+</html>

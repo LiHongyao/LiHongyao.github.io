@@ -1,0 +1,75 @@
+body, html {
+    height: 100%;
+}
+* { margin: 0; padding: 0; box-sizing: border-box;}
+ul { list-style: none; }
+
+header, .content {
+    width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.form-item {
+    outline: none;
+    border: 1px solid #ccc;
+}
+input.form-item {
+    width: 160px;
+    height: 35px;
+    text-align: center;
+    padding: 0 8px;
+    transition: all .25s linear;
+    border-radius: 5px;
+}
+input.form-item:focus {
+    border-color: green;
+   
+}
+select.form-item {
+    height: 35px;
+}
+.enter-btn {
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    transition: all .25s linear;
+    cursor: pointer;
+}
+.enter-btn:hover {
+    background: #ccc;
+    color: #fff;
+}
+
+.stu-list {
+    margin-top: 80px;
+    color: #333;
+}
+.stu-list li{
+    display: flex;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.stu-list li:first-child {
+    font-weight: bold;
+    background: #999999	;
+}
+.stu-list li:not(:first-child):nth-child(2n - 1) {
+    background: #eee;
+}
+.stu-list li > span {
+    display: block;
+    width: 25%;
+    height: 35px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 35px;
+}
+
+.stu-list li:not(:last-child) span{
+    border-bottom: none;
+}
+.stu-list li > span:not(:last-child) {
+    border-right: none;
+}

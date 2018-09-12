@@ -9,7 +9,7 @@ $(function () {
     var timer = null,
         index = 0,
         flag  = false,
-        names = "杨洋、李赛寒、赵恒锐、邹林、赵文乐、温冲、张志威、刘金华、刘西、金星希、唐荣萍、张倩、彭丽、陶泽英、何仕林、冯豪、张吉丹、李德森、覃奋、刘伟、曾雪梅、曾金婷、吴宏宇、何晨霄",
+        names = "叶文玉、吴酥、苏小波、付巽、张亚超、谢艳军、陈静鸿、王旺、蒋志军、于莎、张欢、郑家伦、黄浩、周万美、马开成、喻柳萍、张吉浩、刘羽坤、冯句交、周潇、罗辑、禹舜、陈瑶、周凤",
         names = names.split(/[,、]/);
     $(".handle-btn").click(function () {
         // 更改状态
@@ -31,8 +31,8 @@ $(function () {
                 fontSize: "64px"
             }, 300);
             // 语音播放
-            $("main > embed").remove();
-            $("main").append($(`<embed src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text=${names[index]}" type="audio/mp3" style="width: 0">`))
+            // $("main > embed").remove();
+            // $("main").append($(`<embed src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text=${names[index]}" type="audio/mp3" style="width: 0">`))
         }
     });
 
