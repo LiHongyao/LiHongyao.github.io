@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 去除所有默认间距 */
+* { margin: 0; padding: 0; }
+/* 为html,body指定高度，便于子元素设置百分比高度 */
+html, body { width: 100%; height: 100%; }
+/* 去除超链接下划线 */
+a   { text-decoration: none; }
+/* 去除因只有图片撑起父级元素高度时不精确的问题 */
+img { vertical-align: middle; }
+/* 去除列表项目标号 */
+ul, li  { list-style: none; }
+/* 去除按钮及输入框默认的焦点效果及边框 */
+input, button { outline: none; border: none;}
+/* 左浮动 */
+.fl { float: left;}
+/* 有浮动 */
+.fr { float: right;}
+/* 清除浮动 */
+.clearFix { zoom: 1; }
+.clearFix:after { content: ''; display: block; height: 0; visibility: hidden; clear: both; }
+
+/* 元素垂直水平居中 */
+.flex-row-col-cen { display: flex; display: -webkit-flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+
+
+
+
+
+
+
+
+

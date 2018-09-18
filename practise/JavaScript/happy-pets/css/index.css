@@ -1,0 +1,380 @@
+@charset 'utf-8';
+
+.head, .content .foot { min-width: 1170px; }
+body { font-family: 'Source Sans Pro', sans-serif; }
+
+/* 头部样式 */
+.head .top-box {
+    height: 70px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.head .menu-list li {
+    display: inline-block;
+    line-height: 70px;
+    letter-spacing: 1px;
+    margin: 0 11px;
+}
+.head .menu-list a {
+    color: #fff;
+    font-family: 'Droid Serif', serif;
+    transition: all .25s linear;
+}
+.head .menu-list a:hover {
+    color: #2ad2c9;
+}
+
+.head .info-box  {
+    border-left: 1px solid gray;
+    vertical-align: top;
+}
+
+.head .info-box .login-btn {
+    display: block;
+    width: 125px;
+    height: 70px;
+    background: #2ad2c9;
+    color: #fff;
+    text-align: center;
+    font: 18px/70px 'Droid Serif', serif;
+    /* 手指头 */
+    cursor: pointer;
+    transition: all .25s linear;
+}
+.head .info-box .login-btn:hover {
+    background: #fff;
+    color: #333;
+}
+
+.head .info-box input {
+    width: 0;
+    height: 70px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    transition: all .25s linear;
+}
+.head .info-box input.show {
+    padding-left: 16px;
+    width: 200px;
+}
+
+/* 设置输入框占位符颜色 */
+.head .info-box input::-webkit-input-placeholder {
+    color: #fff;
+}
+.head .info-box .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head .info-box .search-img {
+    width: 80px;
+    height: 70px;
+    background: url('../images/search.png') no-repeat center center;
+    cursor: pointer;
+}
+.head .banner-box .banner-bg {
+    width: 100%;
+}
+.head .banner-box {
+    position: relative;
+}
+.head .banner-box .logo {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+}
+.head .banner-box .down {
+    width: 100%;
+    height: 57px;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.head .banner-box .down img {
+    cursor: pointer;
+}
+
+/* 内容样式 */
+.content .ct-item {
+    padding: 70px calc((100% - 1170px) / 2);
+}
+@media screen and (max-width: 1170px) {
+    .content .ct-item {
+        width: 1170px;
+    }
+}
+
+.content .ct-item:nth-child(2n) {
+    background: rgba(43, 192, 181, 0.1);
+}
+.content .title {
+    margin-bottom: 50px;
+    font-family: 'Droid Serif', serif;
+    color: #2ad2c9;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+.content .box {
+    width: 48%;
+}
+/* About Us */
+.content .about .ct-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.content .about .ct-l p {
+    color: #939393;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.content .about .icon-list {
+    display: flex;
+    justify-content: flex-start;
+}
+.content .about .icon-list li {
+    margin-right: 12px;
+    opacity: .5;
+    transition: all .25s linear;
+}
+.content .about .icon-list li:hover {
+    opacity: 1;
+}
+.content .about a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url('../images/ftr-icons.png');
+}
+.content .about a.twitter {
+    background-position: 105px 0;
+}
+.content .about a.gmail {
+    background-position: 70px 0;
+}
+.content .about a.dribble {
+    background-position: 35px 0;
+}
+.content .about .ct-r h3 {
+    color: #2ad2c9;
+    font-family: 'Droid Serif', serif;
+    font-size: 22px;
+}
+.content .about .ct-r p {
+    color: #6C6C6C;
+    line-height: 26px;
+}
+.content .about .list-num {
+    width: 45px;
+    height: 51px;
+    background: #2ad2c9;
+    color: #fff;
+}
+.content .about .infos {
+    width: 85%;
+}
+
+.content .about .ct-r-item {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+/* Our Team */
+.team .title {
+    color: #333;
+}
+.team .menmber-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team .menmber-list li {
+    width: 22%;
+}
+
+
+.team .menmber-list img {
+    width: 100%;
+}
+
+.team .infos {
+    text-align: center;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    border-radius: 0 0 5px 5px;
+}
+
+.team .name {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #000;
+    margin: 0em 0em 0.15em 0em;
+    font-family: 'Droid Serif', serif;
+}
+.team .des {
+    font-size: 1em;
+    font-weight: 400;
+    color: #939393;
+    line-height: 1.6em;
+}
+
+/* 服务 */
+.services  {
+    padding-bottom: 0 !important;
+}
+.services .ct-list {
+    display: flex;
+    /* 允许换行 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.services .ct-list li {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 70px;
+} 
+.services .ct-list h3 {
+    color: #2ad2c9;
+    font-family: 'Droid Serif', serif;
+    margin: 16px 0;
+}
+
+.services .ct-list p {
+    color: #939393;
+}
+
+/* 新闻 */
+.news {
+    display: flex;
+    justify-content: space-between;
+}
+.news .title {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.news .news-item {
+    width: 48%;
+}
+.news h3 {
+    /* 设置下方间距 */
+    margin-bottom: 20px;
+}
+
+.news p {
+    color: #939393;
+    font-size: 14px;
+}
+
+.news .more-btn {
+    display: block;
+    width: 120px;
+    height: 35px;
+    background: #2ad2c9;
+    /* 设置圆角 */
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 20px;
+    /* 设置鼠标指针样式 */
+    cursor: pointer;
+    /* 过渡效果 */
+    transition: all .25s linear;
+}
+.news .more-btn:hover {
+    background: #111;
+}
+/* gallery */
+.gallery  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery img {
+    width: 23%;
+    margin: 15px 0;
+}
+
+/* 联系 */
+.contact .myForm {
+    width: 750px;
+    /* 块级元素水平居中 */
+    margin: 0 auto;
+}
+
+.contact  .myForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contact input {
+    width: 48%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.contact textarea {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 20px;
+}
+.contact .send-btn {
+    width: 100px;
+    height: 35px;
+    background: #2ad2c9;
+    color: #fff;
+    border-radius: 5px;
+    transition: all .25s linear;
+    font-size: 16px;
+    cursor: pointer;
+}
+.contact .send-btn:hover {
+    background: #000;
+}
+
+.contact .form-item {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    /* 设置盒子模型为IE盒子模型 */
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+}
+.contact .form-item::-webkit-input-placeholder {
+    color: #000;
+}
+
+.foot {
+   line-height: 60px;
+   text-align: center;
+   color: #fff;
+   background: #000;
+   font-size: 14px;
+   letter-spacing: 2px;
+}
+.foot a {
+    color: #fff;
+}
+.foot a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
