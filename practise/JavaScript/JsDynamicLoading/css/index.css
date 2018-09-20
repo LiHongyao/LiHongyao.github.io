@@ -1,0 +1,48 @@
+@charset 'utf-8';
+
+* { margin: 0; padding: 0;}
+ul { list-style: none; }
+html, body { height: 100%; }
+img { vertical-align: middle; width: 100%; }
+
+
+.title {
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 150px;
+}
+.ct-list  {
+    width: 1200px;
+    margin: 0 auto;
+    zoom: 1;
+    font-family: 'Droid Serif', serif;
+    text-align: center;
+}
+.ct-list:after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.ct-list li {
+    width: 255px;
+    float: left;
+    cursor: pointer;
+    transition: all .35s linear;
+}
+.ct-list li:hover {
+    transform: translateY(-16px);
+}
+.ct-list li:not(:last-child) {
+    margin-right: calc((100% - 255px * 4) / 3);
+}
+ 
+.ct-list li .name {
+    font: bolder 18px/50px 'Droid Serif', serif;
+}
+
+
+
+
+

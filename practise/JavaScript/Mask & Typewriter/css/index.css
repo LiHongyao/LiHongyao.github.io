@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+.btn {
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    background: purple;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s linear;
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
+}
+
+.btn:hover {
+    background: brown;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, .65);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.mask .info-box {
+    width: 500px;
+    height: 300px;
+    background: #fff;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+}
+.mask.show {
+    display: block;
+}
+.mask .close-btn {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.mask .text {
+    text-align: center;
+    line-height: 300px;
+    font-size: 32px;
+    color: purple;
+    letter-spacing: 5px;
+    font-weight: bolder;
+}

@@ -73,3 +73,14 @@ select.form-item {
 .stu-list li > span:not(:last-child) {
     border-right: none;
 }
+
+.stu-list .nodata {
+    height: 120px;
+    color: #666;
+    padding-left: 16px;
+    line-height: 120px;
+    background: transparent !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
