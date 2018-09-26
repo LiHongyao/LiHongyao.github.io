@@ -1,0 +1,105 @@
+@charset 'UTF-8';
+
+.content {
+    text-align: center;
+    margin-bottom: 200px;
+    min-width: 700px;
+}
+
+.title {
+    color: #333;
+    display: inline-block;
+    margin: 70px auto 40px;
+    letter-spacing: 5px;
+    padding: 8px 50px;
+    border-bottom: 1px solid #333;
+}
+
+/* 公共样式 */
+.flash-wrapper {
+    position: relative;
+}
+.flash-wrapper .btn{
+    display: block;
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.flash-wrapper .prev {
+    left: 35px;
+    background: url("../images/arr_left.png") no-repeat center center;
+}
+.flash-wrapper .next {
+    right: 35px;
+    background: url("../images/arr_right.png") no-repeat center center;
+}
+
+.flash-wrapper .idot-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+.flash-wrapper .idot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: purple;
+    border: 1px solid purple;
+    margin: 0 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all .25s linear;
+}
+.flash-wrapper .idot:hover {
+    background: #fff;
+}
+.flash-wrapper .idot.selected {
+    background: #fff;
+}
+.flash-wrapper img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* 淡入淡出 */
+.fade-flash-wrapper img {
+    opacity: 0;
+    transition: opacity .75s linear;
+}
+.fade-flash-wrapper img:not(:first-child){
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fade-flash-wrapper img.show {
+    opacity: 1;
+}
+
+/* 滚动效果 */
+.scroll-flash-wrapper {
+    overflow: hidden;
+}
+.scroll-flash-wrapper .img-box {
+    width: calc(8 * 100%);
+    font-size: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.scroll-flash-wrapper img {
+    width: calc(100% / 8);
+}
+
+
+
+
+
+
+
+
+

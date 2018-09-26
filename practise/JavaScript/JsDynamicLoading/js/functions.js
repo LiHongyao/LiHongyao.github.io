@@ -5,7 +5,7 @@ function loadingTeam() {
     // 定义变量存储拼接的子元素标签
     var htmlStr = "";
     // 遍历数据
-    model.ctList.forEach(function(obj-) {
+    model.ctList.forEach(function(obj) {
         // 拼接子节点li
         htmlStr += 
             `<li>
