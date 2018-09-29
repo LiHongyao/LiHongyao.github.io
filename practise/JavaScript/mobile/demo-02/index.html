@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js - 移动端框架</title>
+    <link rel="stylesheet" href="./css/normalized.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="navigation-bar">
+        <span class="back-btn">< 返回</span>
+        <h1 class="title">主页</h1>
+    </header>
+    <!-- 内容 -->
+    <main class="content"></main>
+    <!-- 尾部 -->
+    <footer class="tab-bar flex-row-col-cen">
+        <section data-title="主页" data-link="home" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe6a2;</i>
+            主页
+        </section>
+        <section data-title="搜索" data-link="search" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe625;</i>
+            搜索
+        </section>
+        <section data-title="消息" data-link="message" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe617;</i>
+            消息
+        </section>
+        <section data-title="我的" data-link="mine" class="tabBar-item flex-col-row-cen">   
+            <i class="iconfont">&#xe600;</i>
+            我的
+        </section>
+        <div class="cursor"></div>
+    </footer>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

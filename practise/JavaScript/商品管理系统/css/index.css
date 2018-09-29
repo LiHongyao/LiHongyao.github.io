@@ -1,0 +1,240 @@
+@charset 'utf-8';
+
+body {font-size: 14px; font-weight: lighter;}
+.head {
+    min-width: 1200px;
+    height: 80px;
+    background: cornflowerblue;
+    color: #fff;
+}
+.head > .title {
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 8px;
+    font-weight: 300;
+    font-size: 22px;
+}
+.content {
+    width: 1100px;
+    margin: 50px auto;
+}
+
+/* 操作 */
+.operation-wrap {
+    font-size: 0;
+    vertical-align: top;
+}
+.operation-wrap >.operation-item {
+    display: inline-block;
+    height: 35px;
+}
+.operation-wrap > .btn {
+    padding: 0 12px;
+    background: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.operation-wrap > .search-input {
+    width: 200px;
+    border: 1px solid cornflowerblue;
+    padding-left: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: lighter;
+    vertical-align: middle;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.operation-wrap > .add-btn {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* 商品内容 */
+.goods-wrap {
+    height: 500px;
+    margin-top: 50px;
+}
+
+.row {
+    font-size: 0;
+}
+.td {
+    vertical-align: top;
+    display: inline-block;
+    width: 13.625%;  
+    height: 100%;
+    padding: 8px 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+}
+.td:first-child {
+    width: 5%;
+}
+.td:nth-child(2),
+.td:nth-child(5),
+.td:nth-child(6) {
+    width: 8%;
+}
+.td:nth-child(8)  {
+    width: 16.5%;
+}
+.td:not(:last-child) {
+    border-right: none;
+}
+/* 显示提示 */
+.td.tips {
+    position: relative;
+}
+
+.td.tips::after {
+    display: none;
+    content: attr(data-show);
+    width: 200px;
+    padding: 8px 6px;
+    text-align: left;
+    font-size: 12px;
+    border-radius: 5px;
+    background: orange;
+    border: 1px solid #ccc;;
+    color: #fff;
+    position: absolute;
+    left: 27%;
+    top: 92%;;
+    z-index: 1;
+}
+.td.tips::before {
+    display: none;
+    content: "";
+    width: 0;
+    padding: 0;
+    border-width: 12px 16px 9px 4px;
+    border-style: solid;
+    border-color: transparent transparent orange transparent;
+    position: absolute;
+    top: 14px;
+    left: 54px;
+    z-index: 2;
+}
+.td.tips:hover::after {
+    display: block;
+}
+.td.tips:hover::before {
+    display: block;
+}
+.title-row {
+    background: #eee;
+    font-weight: normal;
+    color: #555;
+}
+.title-row .td {
+    border-bottom: none;
+}
+
+.no-goods {
+    border: 1px solid #d3d3d3;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.goods-list .row:not(:first-child) span {
+    border-top: none;
+}
+
+.td .btn {
+    display: inline-block;
+    padding: 1px 12px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 3px;
+}
+.td .btn:last-child {
+    background: red;
+}
+/* 添加商品遮罩 */
+.mask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .65);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.mask.show {
+    display: block;
+}
+.mask > .info-box {
+    background: #fff;
+    width: 300px;
+    padding: 60px 0 40px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mask > .info-box input {
+    display: block;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    height: 35px;
+    width: 90%;
+    margin: 12px auto;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+    transition: all .25s linear;
+}
+.mask > .info-box input:focus {
+    border-color: cornflowerblue;
+    box-shadow: 0 0 2px inset cornflowerblue;
+}
+
+.mask > .info-box .sure-btn {
+    display: block;
+    height: 45px;
+    width: 90%;
+    background: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 25px auto 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mask .info-box .close-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .25s linear;
+    background: #fff;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+}
+.mask .info-box .close-btn:hover {
+    border-color: cornflowerblue;
+}

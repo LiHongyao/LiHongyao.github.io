@@ -1,63 +1,37 @@
+@charset 'utf-8';
 
-body { background: #323232; }
+body {background: #323232;}
 
-#tab-container {
-    margin-top: 100px;
-    text-align: center;
+.tab-wrapper {
+    width: 520px;
+    margin: 100px auto;
 }
-.tab-ct-wrap {
-    display: inline-block;
-}
-
 /* 菜单 */
-.tab-menu {
-    text-align: left;
-}
-.tab-menu .tab-menu-item {
+.tab-menu li {
     display: inline-block;
     background: #767676;
-    padding: 6px 20px;
     color: #fff;
+    padding: 6px 20px;
+    font-family: 'Droid Serif', serif;
+    letter-spacing: 2px;
     border-radius: 5px 5px 0 0;
-    text-decoration: none;
+    transition: all .15s linear;
+    cursor: pointer;
 }
-.tab-menu .selected {
-    background: #fff;
+.tab-menu li.selected {
     color: #767676;
+    background: #fff;
 }
 /* 内容 */
 .tab-content {
     position: relative;
-    padding: 8px;
-    background: #fff;
 }
-.tab-content .tab-content-item:not(:first-child) {
+.tab-content img {
     position: absolute;
-    top: 8px;
-    left: 8px;
-    z-index: -1;
-}
-.tab-content .tab-content-item {
+    border: 10px solid #fff;
     opacity: 0;
-    transition: opacity .5s linear;
+    transition: all .5s linear;
 }
-
-.tab-content .show {
+.tab-content img.show {
     opacity: 1;
-    z-index: 1 !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

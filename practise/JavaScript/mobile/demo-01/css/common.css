@@ -1,0 +1,86 @@
+@charset 'utf-8';
+
+@font-face {
+    font-family: 'iconfont';  /* project id 856358 */
+    src: url('//at.alicdn.com/t/font_856358_azfhfa34pcp.eot');
+    src: url('//at.alicdn.com/t/font_856358_azfhfa34pcp.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_856358_azfhfa34pcp.woff') format('woff'),
+    url('//at.alicdn.com/t/font_856358_azfhfa34pcp.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_856358_azfhfa34pcp.svg#iconfont') format('svg');
+  }
+.iconfont {
+    font: normal 20px "iconfont";
+    color: #fff;
+}
+/* 头部 */
+.navigation-bar {
+    height: 64px;
+    background: #333;
+    color: #fff;
+    position: relative;
+}
+.navigation-bar .title {
+    text-align: center;
+    line-height: 64px;
+    letter-spacing: 5px;
+    font-size: 18px;
+}
+.navigation-bar .back-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+}
+
+
+/* 页面 */
+.page-wrap {
+    height: calc(100% - 64px - 49px);
+    overflow-y: scroll;
+    position: relative;
+}
+.page-wrap .page {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.page-wrap .page.show {
+    left: 0;
+}
+
+
+
+
+/* 尾部 */
+.tab-bar {
+    height: 49px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    position: relative;
+    background: #333;
+}
+.tab-bar .tabBar-item {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-bar .tabBar-item i {
+    margin-bottom: 3px;
+}
+.tab-bar .cursor {
+    width: 25%;
+    height: 100%;
+    background: orange;
+    transition: all .25s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

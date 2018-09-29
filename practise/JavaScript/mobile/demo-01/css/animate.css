@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+
+@keyframes moveToL {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+@keyframes moveToR {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}

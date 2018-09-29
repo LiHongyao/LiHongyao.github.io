@@ -4,40 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript - Tab 选项卡</title>
+    <title>js - tab 选项卡</title>
     <link rel="stylesheet" href="./css/normalized.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    
-    <div id="tab-container">
-        <div class="tab-ct-wrap">
-            <!-- 选项卡菜单 -->
-            <div class="tab-menu">
-                <a href="javascript:;" class="tab-menu-item selected">主页</a>
-                <a href="javascript:;" class="tab-menu-item">新闻</a>
-                <a href="javascript:;" class="tab-menu-item">社会</a>
-                <a href="javascript:;" class="tab-menu-item">科技</a>
-            </div>
-            <!-- 选项卡内容 -->
-            <div class="tab-content">
-                <section class="tab-content-item show">
-                    <img src="./images/1.jpeg" alt="主页" title="主页">
-                </section>
-                <section class="tab-content-item">
-                    <img src="./images/2.jpeg" alt="新闻" title="新闻">
-                </section>
-                <section class="tab-content-item">
-                    <img src="./images/3.jpeg" alt="社会" title="社会">
-                </section>
-                <section class="tab-content-item">
-                    <img src="./images/4.jpeg" alt="科技" title="科技">
-                </section>
-            </div>
+    <div class="tab-wrapper">
+        <!-- 菜单 -->
+        <ul class="tab-menu">
+            <li class="selected">主页</li>
+            <li>搜索</li>
+            <li>发现</li>
+            <li>我的</li>
+        </ul>
+        <!-- 内容 -->
+        <div class="tab-content">
+            <img class="show" src="./images/1.jpeg" alt="图片加载失败...">
+            <img src="./images/2.jpeg" alt="图片加载失败...">
+            <img src="./images/3.jpeg" alt="图片加载失败...">
+            <img src="./images/4.jpeg" alt="图片加载失败...">
         </div>
     </div>
-
-    <script src="./js/functions.js"></script>
+    
     <script src="./js/index.js"></script>
 </body>
 </html>

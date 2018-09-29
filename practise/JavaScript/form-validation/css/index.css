@@ -1,0 +1,101 @@
+@charset 'utf-8';
+
+body {
+    font-family: 'Droid Serif', serif;
+}
+
+input, button {
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    min-width: 1100px;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 45px 0;
+}
+
+.myForm {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.myForm .form-item {
+    width: 100%;
+    height: 45px;
+    margin: 30px auto;
+}
+.myForm .form-item:after {
+    content: attr(data-msg);
+    font-size: 12px;
+    color: red;
+    letter-spacing: 1px;
+    /* 默认隐藏异常提示 */
+    display: none;
+    margin-top: 5px;
+}
+.myForm .form-item.error:after {
+    /* 显示异常提示 */
+    display: block;
+}
+
+.myForm input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: lighter;
+    border: 1px solid #ccc;
+    transition: all .25s linear;
+}
+.myForm input:focus {
+    border-color: green;
+}
+
+.myForm .verification-code-box {
+    margin-bottom: 50px;
+}
+.myForm .verification-code-box > span {
+    display: inline-block;
+    width: 120px;
+    height: 45px;
+    background: linear-gradient(to right bottom, #ccc, brown);
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.myForm .verification-code-box > input {
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+}
+.myForm .btn {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    letter-spacing: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s linear;
+    font-family: 'Droid Serif', serif;
+}
+.myForm .btn:hover {
+    background: #ccc;
+    color: #fff;
+    
+}

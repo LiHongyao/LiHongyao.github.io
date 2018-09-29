@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js - 移动端框架搭建</title>
+    <link rel="stylesheet" href="./css/normalized.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/message.css">
+    <link rel="stylesheet" href="./css/mine.css">
+    <link rel="stylesheet" href="./css/details.css">
+    <link rel="stylesheet" href="./css/login-register.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="navigation-bar">
+        <span class="back-btn">< 返回</span>
+        <h1 class="title">主页</h1>
+    </header>
+    <!-- 页面 -->
+    <main class="page-wrap">
+        <!-- 主页 -->
+        <div class="page tab-page home-page show">
+            <button class="go-details-btn" type="button">前往详情页</button>
+        </div>
+        <!-- 搜索 -->
+        <div class="page tab-page search-page">
+            搜索
+        </div>
+        <!-- 消息 -->
+        <div class="page tab-page message-page">
+            消息
+        </div>
+        <!-- 我的 -->
+        <div class="page tab-page mine-page">
+            我的
+        </div>
+        <!-- 详情页 -->
+        <div class="page details-page">
+            详情页
+        </div>
+        <!-- 登陆/注册 -->
+        <div class="page login-register-page"></div>
+    </main>
+    <!-- 尾部 -->
+    <footer class="tab-bar flex-row-col-cen">
+        <section data-title="主页" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe6a2;</i>
+            主页
+        </section>
+        <section data-title="搜索" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe625;</i>
+            搜索
+        </section>
+        <section data-title="消息" class="tabBar-item flex-col-row-cen">
+            <i class="iconfont">&#xe617;</i>
+            消息
+        </section>
+        <section data-title="我的" class="tabBar-item flex-col-row-cen">   
+            <i class="iconfont">&#xe600;</i>
+            我的
+        </section>
+        <div class="cursor"></div>
+    </footer>
+
+
+
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/home.js"></script>
+</body>
+</html>

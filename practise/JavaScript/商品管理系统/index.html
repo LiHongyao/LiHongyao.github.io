@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品管理系统</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./plugins/LHYAlertView.css">
+    <link rel="stylesheet" href="./css/normalized.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body> 
+    <!-- 头部 -->
+    <header class="head">
+        <h1 class="title">商品管理系统</h1>
+    </header>
+    <!-- 内容 -->
+    <main class="content">
+        <!-- 操作区域 -->
+        <div class="operation-wrap">
+            <span class="operation-item btn add-btn">添加商品</span>
+            <input class="operation-item search-input" type="search" placeholder="点击搜索...">
+        </div>
+        <!-- 商品列表 -->
+        <div class="goods-wrap">
+            <!-- 行首 -->
+            <header>
+                <section class="row title-row">
+                    <span class="td">序号</span>
+                    <span class="td">商品编号</span>
+                    <span class="td">商品名称</span>
+                    <span class="td">商品分类</span>
+                    <span class="td">商品库存</span>
+                    <span class="td">商品售价</span>
+                    <span class="td">商品描述</span>
+                    <span class="td">更新时间</span>
+                    <span class="td">操作</span>
+                </section>
+            </header>
+            <!-- 行内容 -->
+            <ul class="goods-list">
+                <!-- <li class="row">
+                    <span class="td">01</span>
+                    <span class="td">02</span>
+                    <span class="td">03</span>
+                    <span class="td">04</span>
+                    <span class="td">05</span>
+                    <span class="td">06</span>
+                    <span class="td">07</span>
+                    <span class="td">08</span>
+                    <span class="td">09</span>
+                </li> -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 添加商品 -->
+    <div class="mask">
+        <div class="info-box">
+            <input id="num" type="number" maxlength="4" placeholder="请输入商品编号">
+            <input id="name" type="text" placeholder="请输入商品名称">
+            <input id="kind" type="text" placeholder="请输入商品分类">
+            <input id="store" type="number" placeholder="请输入商品库存">
+            <input id="price" type="number" placeholder="请输入商品单价">
+            <input id="des" type="text" placeholder="请输入商品描述">
+            <button type="button" class="sure-btn">确认添加</button>
+            <span class="close-btn">x</span>
+        </div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="./plugins/LHYAlertView.js"></script>
+    <script src="./js/tools.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
+
+

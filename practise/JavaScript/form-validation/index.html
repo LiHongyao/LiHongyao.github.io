@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js - 表单验证</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">REGISTER</h1>
+    </header>
+    <form class="myForm" action="javascript:;">
+        <section class="form-item" data-msg="账号格式不匹配（只能包含字母、数字、下划线且字符个数不少于5个不多于10个）">
+            <input id="username" type="text" placeholder="请输入账号">
+        </section>
+        <section class="form-item" data-msg="密码格式不匹配（只能包含字母、数字、下划线，且不低于6个字符）">
+            <input id="firPassword" type="password" placeholder="请输入密码">
+        </section>
+        <section class="form-item" data-msg="两次密码输入不一致">
+            <input id="secPassword" type="password" placeholder="请再次输入密码">
+        </section>
+        <section class="form-item" data-msg="邮箱格式不正确">
+            <input id="email" type="email" placeholder="请输入邮箱">
+        </section>
+        <section class="form-item" data-msg="手机号码格式不匹配">
+            <input id="tel" type="tel" placeholder="请输入手机号码">
+        </section>
+        <section class="form-item verification-code-box" data-msg="验证码错误">
+            <span></span>
+            <input id="verificationCode" type="text" placeholder="请输入验证码">
+        </section>
+        <button type="button" class="btn">REGISTER</button>
+    </form>
+    <script src="./js/function.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+.page {
+    background: pink;
+    padding-top: 50px;
+}
+
+.btn {
+    width: 120px;
+    height: 35px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
