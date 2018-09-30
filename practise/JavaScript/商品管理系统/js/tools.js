@@ -67,6 +67,7 @@ function loadingGoodsList(keywords) {
         // 处理搜索数据
         if(keywords) {
             goodsList = goodsList.filter(function(goods) {
+                console.log(JSON.stringify(goods));
                 var reg = new RegExp(keywords, "i");
                 return reg.test(JSON.stringify(goods));
             }) 

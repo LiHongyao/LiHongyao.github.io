@@ -5,3 +5,4 @@
         location.href = "./pages/details.html";
     }
 })();
+

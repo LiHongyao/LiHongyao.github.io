@@ -34,13 +34,13 @@
                 url: path,
                 success: function(htmlStr) {
                     // 渲染页面
-                    content.innerHTML = htmlStr; 
+                    // content.innerHTML = htmlStr; 
+                    $(content).html(htmlStr);
                     // 引入脚本
                     // innerHTML 不会解析请求页面中的脚本
                     // 所以需要通过appendChild的形式添加元素
-                    var scriptNode = document.createElement('script');
-                    scriptNode.src = '../js/' + pathName + '.js';
-                    content.appendChild(scriptNode);
+                    appendScript(content, pathName);
+    
                 }
             })
         }
