@@ -1,0 +1,58 @@
+@charset 'utf-8';
+
+body { font-family: 'Droid Serif', serif;}
+.header, .footer { width: 100%; min-width: 1100px; }
+.content { 
+    width: 75%;
+    min-width: 1000px;
+    max-width: 1350px; 
+    margin: 101px auto 0; 
+}
+
+/* 菜单 */
+.header {
+    height: 100px;
+    transition: all .5s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header.hidden {
+    top: -101px;
+}
+.menu {
+    width: 100%;
+    background: cornflowerblue;
+    text-align: center;
+}
+.menu-item {
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 100px;
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+.ct-item {
+    margin: 40px auto;
+}
+.ct-item .title {
+    width: 120px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+.ct-item .ct-box {
+    height: 400px;
+    background: pink;
+    margin-top: 20px;
+}
+.ct-item:nth-child(2n - 1) .ct-box {
+    background: orange;
+}
+
+

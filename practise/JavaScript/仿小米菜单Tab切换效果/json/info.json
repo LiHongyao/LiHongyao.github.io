@@ -1,0 +1,264 @@
+[
+    {
+        "title":"小米手机",
+        "path":"./images/smallmi/",
+        "contentlist": [
+            {
+                "tag":"新品",
+                "img":"1.png",
+                "name":"小米8 青春版",
+                "price":"1399元起"
+            },
+            {
+                "tag":"新品",
+                "img":"2.png",
+                "name":"小米8 屏幕指纹版",
+                "price":"3199元起"
+            },
+            {
+                "img":"3.png",
+                "name":"小米8",
+                "price":"2699元起"
+            },
+            {
+                "img":"4.png",
+                "name":"小米8 SE",
+                "price":"1799元起"
+            },
+            {
+                "img":"5.png",
+                "name":"小米Max 3",
+                "price":"1699元起"
+            },
+            {
+                "img":"6.png",
+                "name":"小米MIX 2S",
+                "price":"3299元起"
+            }
+        ]
+    },
+    {
+        "title":"红米",
+        "path":"./images/redmi/",
+        "contentlist":[
+            {
+                "tag":"新品",
+                "img":"1.png",
+                "name":"红米6 Pro",
+                "price":"999元起"
+            },
+            {
+                "tag":"新品",
+                "img":"2.png",
+                "name":"红米6",
+                "price":"799元起"
+            },
+            {
+                "tag":"新品",
+                "img":"3.png",
+                "name":"红米6A",
+                "price":"599元"
+            },
+            {
+                "img":"4.png",
+                "name":"红米Note 5",
+                "price":"1099元起"
+            },
+            {
+                "img":"5.png",
+                "name":"红米S2",
+                "price":"999元起"
+            }
+        ]
+    },
+    {
+        "title":"电视",
+        "path":"./images/tv/",
+        "contentlist":[
+            {
+                "tag":"新品",
+                "img":"1.png",
+                "name":"小米电视4 75英寸",
+                "price":"8999元"
+            },
+            {
+                "tag":"热卖",
+                "img":"2.png",
+                "name":"小米电视4A 32英寸",
+                "price":"899元"
+            },
+            {
+                "tag":"新品",
+                "img":"3.png",
+                "name":"小米电视4A 43英寸青春版",
+                "price":"1499元"
+            },
+            {
+                "tag":"热卖",
+                "img":"4.png",
+                "name":"小米电视4A 50英寸",
+                "price":"8999元"
+            },
+            {
+                "tag":"热卖",
+                "img":"5.png",
+                "name":"小米电视4 75英寸",
+                "price":"1999元"
+            },
+            {
+                "img":"6.png",
+                "name":"小米电视4A 55英寸",
+                "price":"2299元"
+            }
+        ]
+    },
+    {
+        "title":"笔记本",
+        "path":"./images/notebook/",
+        "contentlist":[
+            {
+                "img":"1.png",
+                "name":"小米平板",
+                "price":"1099元起"
+            },
+            {
+                "tag":"新品",
+                "img":"2.png",
+                "name":"小米笔记本 15.6",
+                "price":"4199元起"
+            },
+            {
+                "tag":"新品",
+                "img":"4.png",
+                "name":"小米笔记本Pro 15.6 GTX版",
+                "price":"6299元起"
+            },
+            {
+                "img":"5.png",
+                "name":"小米笔记本 Pro",
+                "price":"5599元起"
+            },
+            {
+                "img":"6.jpg",
+                "name":"小米笔记本 Air 系列",
+                "price":"3599元起"
+            }
+        ]
+    },
+    {
+        "title":"空调",
+        "path":"./images/air-conditioning/",
+        "contentlist":[
+            {
+                "img":"1.jpg",
+                "name":"米家互联网空调",
+                "price":"1999元"
+            }
+        ]
+    },
+    {
+        "title":"新品",
+        "path":"./images/news/",
+        "contentlist":[
+            {
+                "tag":"新品",
+                "img":"1.png",
+                "name":"小米8 青春版",
+                "price":"1399元起"
+            },
+            {
+                "tag":"新品",
+                "img":"2.png",
+                "name":"小米8 屏幕指纹版",
+                "price":"3199元起"
+            },
+            {
+                "img":"3.png",
+                "name":"小米手环3",
+                "price":"169元"
+            },
+            {
+                "img":"4.png",
+                "name":"小米路由器4",
+                "price":"199元"
+            },
+            {
+                "img":"5.png",
+                "name":"米家投影仪",
+                "price":"3999元"
+            },
+            {
+                "img":"6.png",
+                "name":"小米VR 一体机",
+                "price":"1499元"
+            }
+        ]
+    },
+    {
+        "title":"路由器",
+        "path":"./images/router/",
+        "contentlist":[
+            {
+                "tag":"双频双核",
+                "img":"1.png",
+                "name":"小米路由器 4",
+                "price":"199元"
+            },
+            {
+                "img":"2.png",
+                "name":"小米路由器 4Q",
+                "price":"99元"
+            },
+            {
+                "img":"3.png",
+                "name":"小米路由器 3A",
+                "price":"139元"
+            },
+            {
+                "tag":"双千兆",
+                "img":"4.png",
+                "name":"小米路由器 3G",
+                "price":"249元"
+            },
+            {
+                "tag":"大容量",
+                "img":"5.png",
+                "name":"小米路由器 HD/Pro",
+                "price":"499元"
+            }
+        ]
+    },
+    {
+        "title":"智能硬件",
+        "path":"./images/smart-hardware/",
+        "contentlist":[
+            {
+                "tag":"航拍利器",
+                "img":"1.jpg",
+                "name":"小米无人机",
+                "price":"2999元"
+            },
+            {
+                "img":"2.jpg",
+                "name":"小米净水器",
+                "price":"1999元"
+            },
+            {
+                "img":"3.jpg",
+                "name":"米家扫地机器人",
+                "price":"1699元"
+            },
+            {
+                "img":"4.jpg",
+                "name":"米家压力IH电饭煲",
+                "price":"499元"
+            }
+        ]
+    },
+    {
+        "title":"服务"
+    },
+    {
+        "title":"社区"
+    }
+]
