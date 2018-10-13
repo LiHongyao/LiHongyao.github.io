@@ -10,6 +10,7 @@
         introduction: "", // 项目简介
         members: [] // 成员
     };
+    var times = 0;
     // 2. 获取元素
     var submitBtn    = document.getElementById("submit-btn");
     var membersWrap  = document.getElementById('members');
@@ -24,12 +25,20 @@
     var memberList   = document.getElementById('member-list');
     var typeBtns     = document.getElementsByClassName('type-btn');
     var wayBtns      = document.getElementsByClassName('way-btn');
-    var validations  = document.getElementsByClassName('validation');
+    var validations  = document.getElementsByClassName('validation'); 
 
 
     // 3. 事件添加
     // 3.1 提交
     addEvent(submitBtn, "click", function() {
+        // 判断是否重复提交
+        if(times == 1) {
+            new LHYAlertView({
+                type: "alert",
+                message: "您已提交报名信息，请勿重复提交！"
+            })
+            return;
+        }
         // 异常处理
         if(!name.value || !email.value || !tel.value || !introduction.value || !major.value) {
             new LHYAlertView({
@@ -71,6 +80,7 @@
                 infoObj.major = major.value;
                 infoObj.email = email.value;
                 infoObj.introduction = introduction.value;
+                times = 1;
                 alert(JSON.stringify(infoObj));
             },
             cancleCallBack: function() {
