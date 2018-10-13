@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>睿峰科技-设计大赛报名表</title>
+    <link rel="stylesheet" href="./plugin/LHYAlertView.css">
+    <link rel="stylesheet" href="./css/normalized.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <!-- logo -->
+        <a class="logo" href="http://www.rimionline.com/">
+            <img src="./images/logo.PNG" alt="图片加载失败..."  title="睿峰科技有限公司">
+        </a>
+        <h1 class="title">设计大赛报名表</h1>
+    </header>
+    <!-- 内容 -->
+    <main id="content">
+        <form  name="myForm" autocomplete="off" class="myForm" action="javascript:;">
+            <!-- 基本信息 -->
+            <div class="baisic-info clearFix">
+                <!-- 姓名 -->
+                <section class="info-item validation" data-tag="name" data-tips="* 名字必须为中文且长度不多于4个字符">
+                    <label for="name" class="tag">姓名</label>
+                    <input class="input-item  enter-item" type="text" id="name" maxlength="4" placeholder="请输入您的名字">
+                </section>
+                <!-- 电话 -->
+                <section class="info-item validation" data-tag="tel" data-tips="* 请输入11位有效数字的手机号码">
+                    <label for="tel" class="tag">电话</label>
+                    <input class="input-item  enter-item"  type="tel" maxlength="11" id="tel" placeholder="请输入您的电话">
+                </section>
+                <!-- 邮件 -->
+                <section class="info-item validation" data-tag="email" data-tips="* 邮箱不合法">
+                    <label for="email" class="tag">邮箱</label>
+                    <input class="input-item enter-item" type="email" id="email" placeholder="请输入您的邮箱">
+                </section>
+                <!-- 专业 -->
+                <section class="info-item validation" data-tag="major" data-tips="* 专业只能包含中文、字母和数字">
+                    <label for="major" class="tag">专业</label>
+                    <input class="input-item enter-item"  type="major" id="major" placeholder="请输入您的专业">
+                </section>
+            </div>
+            <!-- 参赛类型 -->
+            <div class="form-item type">
+                <span class="tag">参赛类型</span>
+                <div class="btns">
+                    <span class="posters select-btn type-btn selected">海报</span>
+                    <span class="webpage select-btn type-btn">网页</span>
+                </div>
+            </div>
+            <!-- 参赛方式 -->
+            <div class="form-item ">
+                <span class="tag">参赛方式</span>
+                <div class="btns">
+                    <span class="posters select-btn way-btn selected">个人</span>
+                    <span class="webpage select-btn way-btn">团队</span>
+                </div>
+            </div>
+            <!-- 作品简介 -->
+            <div class="form-item introduction">
+                <span class="tag">作品简介</span>
+                <textarea class="input-item enter-item r-box" name="introduction" id="introduction" placeholder="请输入您的作品介绍"></textarea>
+            </div>
+            <!-- 添加队员信息 -->
+            <div id="members" class="members">
+                <span class="tag">队员信息</span>
+                <section class="validation" data-tag="member-name" data-tips="* 名字必须为中文且长度不多于4个字符"><input id="member-name" class="member-name input-item"  type="text" maxlength="4" placeholder="请输入队员名字"></section>
+                <section class="validation" data-tag="member-tel" data-tips="* 请输入11位有效数字的手机号码"><input id="member-tel" class="member-tel input-item"  type="tel" maxlength="11" placeholder="请输入队员电话"></section>
+                <span id="add-btn" class="add-btn hover-btn">添加</span>
+                <!-- 组员信息展示 -->
+                <ul id="member-list" class="member-list r-box">
+                    <!-- <li class="member-item">
+                        <span class="name">张三</span>
+                        <span class="tel">15228885771</span>
+                        <section class="btn-box">
+                            <span class="modify-btn btn">修改</span>
+                            <span class="delete-btn btn">删除</span>
+                        </section>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- 提交报名表 -->
+            <button type="button" id="submit-btn" class="submit-btn hover-btn">提交报名表</button>
+        </form>
+    </main>
+
+    <!-- 尾部 -->
+    <footer id="footer">
+        <p>Copyright © 2011 RIMI 成都睿峰科技有限公司 保留所有版权 蜀ICP备12030008号-1</p>
+        <p>地址：四川省成都市高新区天府软件园B区5栋</p>
+    </footer>
+
+    <script src="./plugin/LHYAlertView.js"></script>
+    <script src="./js/tools.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
