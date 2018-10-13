@@ -130,6 +130,15 @@
             })
             return;
         }
+        if(memberName.parentNode.classList.contains('show') || memberTel.parentNode.classList.contains('show') ) {
+            new LHYAlertView({
+                type: "alert",
+                message: "请根据格式填写成员信息！"
+            })
+            return;
+        }
+
+
         if(infoObj.members.length === 2) {
             new LHYAlertView({
                 type: "alert",
