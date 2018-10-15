@@ -26,22 +26,22 @@
                 <!-- 姓名 -->
                 <section class="info-item validation" data-tag="name" data-tips="* 名字必须为中文且长度不多于4个字符">
                     <label for="name" class="tag">姓名</label>
-                    <input class="input-item  enter-item" type="text" id="name" maxlength="4" placeholder="请输入您的名字">
+                    <input class="input-item enter-item"  value="李鸿耀" type="text" id="name" maxlength="4" placeholder="请输入您的名字">
                 </section>
                 <!-- 电话 -->
                 <section class="info-item validation" data-tag="tel" data-tips="* 请输入11位有效数字的手机号码">
                     <label for="tel" class="tag">电话</label>
-                    <input class="input-item  enter-item"  type="tel" maxlength="11" id="tel" placeholder="请输入您的电话">
+                    <input class="input-item  enter-item" value="15228885771"  type="tel" maxlength="11" id="tel" placeholder="请输入您的电话">
                 </section>
                 <!-- 邮件 -->
                 <section class="info-item validation" data-tag="email" data-tips="* 邮箱不合法">
                     <label for="email" class="tag">邮箱</label>
-                    <input class="input-item enter-item" type="email" id="email" placeholder="请输入您的邮箱">
+                    <input class="input-item enter-item" type="email" value="lihy_online@163.com" id="email" placeholder="请输入您的邮箱">
                 </section>
                 <!-- 专业 -->
                 <section class="info-item validation" data-tag="major" data-tips="* 专业只能包含中文、字母和数字">
                     <label for="major" class="tag">专业</label>
-                    <input class="input-item enter-item"  type="major" id="major" placeholder="请输入您的专业">
+                    <input class="input-item enter-item"  type="major" value="软件技术" id="major" placeholder="请输入您的专业">
                 </section>
             </div>
             <!-- 参赛类型 -->
@@ -63,7 +63,7 @@
             <!-- 作品简介 -->
             <div class="form-item introduction">
                 <span class="tag">作品简介</span>
-                <textarea class="input-item enter-item r-box" name="introduction" id="introduction" placeholder="请输入您的作品介绍"></textarea>
+                <textarea class="input-item enter-item r-box"  name="introduction" id="introduction" placeholder="请输入您的作品介绍"></textarea>
             </div>
             <!-- 添加队员信息 -->
             <div id="members" class="members">
@@ -94,6 +94,7 @@
         <p>地址：四川省成都市高新区天府软件园B区5栋</p>
     </footer>
 
+    <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./plugin/LHYAlertView.js"></script>
     <script src="./js/tools.js"></script>
     <script src="./js/index.js"></script>

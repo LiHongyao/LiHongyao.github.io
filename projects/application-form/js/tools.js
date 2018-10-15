@@ -47,3 +47,13 @@ function loadingMembers(parentNode, infoObj, memberName, memberTel, addBtn) {
     }
 
 }
+
+function POST(url, params) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.timeout = 10;
+    xhr.send(params);
+    xhr.onload = function() {
+        console.log('1');
+    }
+}

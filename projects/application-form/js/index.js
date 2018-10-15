@@ -81,8 +81,12 @@
                 infoObj.email = email.value;
                 infoObj.introduction = introduction.value;
                 times = 1;
-                console.log(JSON.stringify(infoObj));
-                alert(JSON.stringify(infoObj));
+                // 发送服务器
+                debugger
+               $.post({
+                   url: "http://10.2.0.42:8080/infos",
+                   data: {infoObj: JSON.stringify(infoObj)}
+               })
             },
             cancleCallBack: function() {
                 console.log("取消提交！");
