@@ -8,7 +8,7 @@
         type: "海报", // 参赛类型
         way: "个人", // 参赛方式
         introduction: "", // 项目简介
-        members: [] // 成员
+        members: [] // 团队成员
     };
     var times = 0;
     // 2. 获取元素
@@ -81,6 +81,7 @@
                 infoObj.email = email.value;
                 infoObj.introduction = introduction.value;
                 times = 1;
+                console.log(JSON.stringify(infoObj));
                 alert(JSON.stringify(infoObj));
             },
             cancleCallBack: function() {
