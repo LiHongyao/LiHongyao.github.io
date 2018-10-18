@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+header, .content {
+    width: 970px;
+    box-sizing: border-box;
+}
+
+header {
+    border: 1px solid #d3d3d3;
+    margin: 50px auto 25px;
+    background: #ededed;
+    font-size: 14px;
+    color: #666;
+    line-height: 26px;
+}
+header .top {
+    padding-left: 8px;
+}
+header  a {
+    color: #666;
+}
+.keywords-list li {
+    border-top: 1px solid #d3d3d3;
+    background: #fff;
+}
+.keywords-list li span {
+    display: inline-block;
+}
+.keywords-list li span:not(.title) {
+    cursor: pointer;
+    width: 70px;
+    font-weight: lighter;
+}
+
+.keywords-list li .title {
+    width: 100px;
+    padding-left: 8px;
+    border-right: 1px solid #d3d3d3;
+    background: #ededed;
+    color: #919191;
+}
+.keywords-list li span:not(.title).selected {
+    color: blue;
+}
+
+/* 商品列表 */
+.content {
+    margin:  25px auto;
+}
+.goods-list {
+    font-size: 0;
+}
+.goods-list li {
+    width: 24.0625%;
+    display: inline-block;
+    margin-top: 25px;
+    border: 1px solid #d3d3d3;
+    box-sizing: border-box;
+    padding: 8px;
+    cursor: pointer;
+}
+.goods-list li:not(:nth-child(4n)) {
+    margin-right: 1.25%;
+}
+.goods-list li img {
+    width: 100%;
+}
+.goods-list li .price {
+    font: bold 14px arial;
+    color: #dd3333;
+    margin: 12px 0 8px;
+}
+.goods-list li .name {
+    font-size: 13px;
+    color: #494949;
+    margin-bottom: 15px;
+}
+
