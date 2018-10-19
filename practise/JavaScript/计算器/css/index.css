@@ -1,0 +1,104 @@
+@charset 'utf-8';
+
+body {
+    box-sizing: border-box;
+    padding: 8px;
+    background: #111;
+    color: #fff;
+}
+
+/* 结果 */
+.result-box {
+    height: 28%;
+    font-size: 5em;
+    text-align: right;
+    position: relative;
+}
+.result-box > .result {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+/* 按键 */
+.keys-box {
+    height: 72%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.keys-box > .keys {
+    width: 23.5%;
+    height: 0;
+    padding-bottom: 23.5%;
+    border-radius: 50%;
+    background: orange;
+    text-align: center;
+    font-size: 1.75em;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    transition: all .25s linear;
+    
+}
+.keys-box > .zero {
+    width: calc(23.5% * 2 + 2%);
+    position: relative;
+}
+.keys-box > .zero:before,
+.keys-box > .zero:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(51, 51, 51);
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.keys-box > .zero:before {
+    content: "0";
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    left: 0;
+}
+.keys-box > .zero:after {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    right: 0;
+}
+/* 调色 */
+.keys-box .operator {
+    background: rgb(253, 149, 3);
+}
+.keys-box .operator:active {
+    background: rgb(249, 206, 151);
+}
+.keys-box .operator.selected {
+    background: #fff;
+    color: rgb(253, 149, 3);
+}
+.keys-box .number {
+    background: rgb(51, 51, 51);
+}
+.keys-box .number:active {
+    background: rgb(126, 126, 126);
+}
+.keys-box .handler {
+    background: rgb(165, 165, 165);
+}
+.keys-box .handler:active {
+    background: rgb(222, 222, 222);
+}
+
+.keys-box > .zero:active:after,
+.keys-box > .zero:active:before {
+    background: rgb(126, 126, 126);
+}
+
+
