@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+.infos-box {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 8px;
+}
+.infos-box img {
+    width: 35%;
+}
+.infos-box > .infos {
+    width: 62%;
+    color: #333;
+    line-height: 28px;
+    font-size: 15px;
+}
+
+/* 立即购买/添加购物车 */
+.btns {
+    margin-top: 20px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns > .btn {
+    font-weight: lighter;
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+    background: green;
+    color: #fff;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+}
+.btns > .buy {
+    margin-right: 35px;
+    background:rgb(245, 111, 111);
+}
+.btns > .insert-shopping-cart {
+    background: rgb(5, 156, 5);
+}
+
+fieldset {
+    border-radius: 5px;
+    margin: 35px 0;
+    box-sizing: border-box;
+    padding: 8px;
+    color: #333;
+    border: 1px solid #d3d3d3;
+}
+fieldset legend {
+    padding: 0 20px;
+}
+fieldset p {
+    text-indent: 2em;
+    line-height: 28px;
+    text-align: 1px;
+}

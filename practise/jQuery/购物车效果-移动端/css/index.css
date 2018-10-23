@@ -1,0 +1,104 @@
+@charset 'utf-8';
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+/* 头部 */
+.head {
+    height: 64px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d3d3d3;
+}
+.search-item {
+    display: inline-block;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 300;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+.search-input {
+    width: 60%;
+    padding-left: 8px;
+    border: 1px solid #d3d3d3;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.search-btn {
+    width: 20%;
+    line-height: 35px;
+    letter-spacing: 2px;
+    text-align: center;
+    background: #d3d3d3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* 内容 */
+.ct-list {
+    height: calc(100% - 64px);
+    box-sizing: border-box;
+    padding: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.book {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.book:not(:first-child) {
+    margin-top: 16px;
+}
+.book > img {
+    width: 35%;
+}
+.book > .infos {
+    width: 62%;
+    letter-spacing: 2px;
+}
+
+.book .name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+}
+.book .author {
+    font-size: 13px;
+    margin: 12px 0;
+    font-weight: normal;
+}
+.book .price {
+    color: red;
+    font-size: 16px;
+
+}
+
+/* 购物车 */
+.shopping-cart {
+    width: 14%;
+    padding-top: 14%;
+    height: 0;
+    background: rgba(0, 0, 0, .5) url('../images/shopping-cart.png') no-repeat center center;
+    background-size: 60% auto;
+    border-radius: 50%;
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+}
+
+.shopping-cart .num {
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: -4px;
+    right: 5px;
+}
+
+
