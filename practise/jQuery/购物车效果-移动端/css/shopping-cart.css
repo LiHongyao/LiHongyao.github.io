@@ -9,6 +9,68 @@
     font-size: 20px;
     letter-spacing: 2px;
 }
+.ct-list li  {
+    height: 140px;
+    margin-bottom: 20px;
+}
+.ct-list .check-box {
+    height: 100%;
+    width: 30px;
+    position: relative;
+}
+.ct-list .check-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ct-list .info-box {
+    width: calc(100% - 35px);
+    height: 100%;
+    box-shadow: 0 0 4px #d3d3d3;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.ct-list img {
+    width: 26%;
+}
+.ct-list .infos {
+    width: 70%;
+}
+.ct-list .des {
+    margin: 12px 0 30px;
+    font-size: 12px;
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ct-list .price-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ct-list .price-box {
+    color: red;
+}
+.ct-list .price {
+    font-size: 20px;
+    font-weight: bold;
+}
+.ct-list .point {
+    font-size: 14px;
+}
+
+.ct-list .input {
+    width: 50px;
+    height: 26px;
+    background: #d2d2d2;
+    text-align: center;
+}
+.ct-list .btn {
+    font-size: 20px;
+}
 /* 底部样式 */
 .foot {
     height: 49px;
@@ -39,6 +101,17 @@
     height: 48px;
     text-align: center;
     line-height: 48px;
+}
+.foot > .delete-btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 30px;
+    margin-right: 12px;
 }
 .check-item {
     display: inline-block;

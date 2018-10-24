@@ -35,13 +35,13 @@ $(function() {
         // 创建订单
         let date = new Date();
         let order = {
-            "date": date.toLocaleString(),
             "name": data.name,
             "price": data.price,
-            "total": data.price,
+            "total": data.price.toFixed(2),
             "num": 1,
             "des": data.describe,
-            "img": data.cover
+            "img": data.cover,
+            "bookNum": data.bookNum
         };
         // 加入购物车
         ShoppingCart.insert(order, function() {

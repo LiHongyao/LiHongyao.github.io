@@ -10,8 +10,8 @@ input, button, textarea { outline: none; border: none;}
 .fr { float: right;}
 .clearFix { zoom: 1; }
 .clearFix:after { content: ''; display: block; height: 0; visibility: hidden; clear: both; }
-
 .flex-row-col-cen { display: flex; display: -webkit-flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+.hidden { display: none !important; }
 
 
 
