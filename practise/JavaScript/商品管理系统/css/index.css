@@ -4,7 +4,7 @@ body {font-size: 14px; font-weight: lighter;}
 .head {
     min-width: 1200px;
     height: 80px;
-    background: brown;
+    background: cornflowerblue;
     color: #fff;
 }
 .head > .title {
@@ -30,7 +30,7 @@ body {font-size: 14px; font-weight: lighter;}
 }
 .operation-wrap > .btn {
     padding: 0 12px;
-    background: brown;
+    background: cornflowerblue;
     color: #fff;
     text-align: center;
     line-height: 35px;
@@ -41,7 +41,7 @@ body {font-size: 14px; font-weight: lighter;}
 }
 .operation-wrap > .search-input {
     width: 200px;
-    border: 1px solid brown;
+    border: 1px solid cornflowerblue;
     padding-left: 8px;
     box-sizing: border-box;
     font-size: 15px;
@@ -102,7 +102,7 @@ body {font-size: 14px; font-weight: lighter;}
     text-align: left;
     font-size: 12px;
     border-radius: 5px;
-    background: brown;
+    background: cornflowerblue;
     border: 1px solid #ccc;;
     color: #fff;
     position: absolute;
@@ -117,7 +117,7 @@ body {font-size: 14px; font-weight: lighter;}
     padding: 0;
     border-width: 12px 16px 9px 4px;
     border-style: solid;
-    border-color: transparent transparent brown transparent;
+    border-color: transparent transparent cornflowerblue transparent;
     position: absolute;
     top: 14px;
     left: 54px;
@@ -199,15 +199,15 @@ body {font-size: 14px; font-weight: lighter;}
     transition: all .25s linear;
 }
 .mask > .info-box input:focus {
-    border-color: brown;
-    box-shadow: 0 0 2px inset brown;
+    border-color: cornflowerblue;
+    box-shadow: 0 0 2px inset cornflowerblue;
 }
 
 .mask > .info-box .sure-btn {
     display: block;
     height: 45px;
     width: 90%;
-    background: brown;
+    background: cornflowerblue;
     color: #fff;
     text-align: center;
     line-height: 45px;
@@ -236,5 +236,5 @@ body {font-size: 14px; font-weight: lighter;}
     top: -8px;
 }
 .mask .info-box .close-btn:hover {
-    border-color: brown;
+    border-color: cornflowerblue;
 }
