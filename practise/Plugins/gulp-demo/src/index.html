@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gulp-demo</title>
+    <link rel="stylesheet" href="./static/css/index.min.css">
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- 脚本引入 -->
+    <script type="text/javascript">
+        var el = document.querySelector('.box');
+        el.onclick = function() {
+            console.log('Hi');
+        }
+    </script>
+</body>
+</html>
