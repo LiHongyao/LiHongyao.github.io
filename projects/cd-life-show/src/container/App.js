@@ -9,6 +9,9 @@ import {
 } from 'react-router-config'
 import '../styles/common.css'
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
   render () {
     return (
       <Router>

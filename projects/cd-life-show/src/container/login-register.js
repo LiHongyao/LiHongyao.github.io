@@ -44,6 +44,7 @@ class LoginRegister extends Component {
       tools.register(user, () => {
         // 跳转至首页
         this.props.history.replace('/home');
+        console.log(this);
       });
     }
   }
