@@ -1,0 +1,120 @@
+.ct {
+    padding-bottom: 75px;
+}
+.ct .title {
+    color: #595959;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+.ct .title span {
+    color: rgb(169, 169, 169);
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 8px;
+}
+
+.ct .infos {
+    display: flex;
+    justify-content: space-between;
+}
+.ct .desc {
+    /* calc() 计算公式 */
+    width: calc(100% - 435px);
+}
+.ct .desc p {
+    font-size: 13px;
+    color: #999;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+.ct img {
+    height: 270px;
+}
+
+
+.introduce-list {
+    padding-top: 75px;
+    border-top: 2px solid #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.introduce-list li {
+    width: 31%;
+    height: 400px;
+    border: 1px solid gray;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    /* 设置主轴方向：列（垂直布局） */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    box-sizing: border-box;
+    padding: 0 25px;
+
+    border-radius: 12px;
+}
+.introduce-list .img {
+    width: 80px;
+    height: 80px;
+    /* 设置圆角 */
+    border-radius: 50%;
+    border: 1px solid rgb(244, 133, 101);
+    /* 让子元素垂直水平居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.introduce-list .tips {
+    color: #333;
+    font-size: 18px;
+}
+.introduce-list .tips span {
+    color: red;
+    margin-right: 12px;
+}
+
+.introduce-list .des {
+    font-size: 13px;
+    color: #999;
+    line-height: 30px;
+}
+
+.introduce-list .btn {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgb(241, 111, 103);
+    background: rgb(241, 111, 103);
+    color: #fff;
+    font-size: 13px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .35s linear;
+}
+.introduce-list .btn:hover {
+    background: #fff;
+    color: rgb(241, 111, 103);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

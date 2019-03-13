@@ -1,0 +1,126 @@
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+.l-tj {
+    width: calc(100% - 255px - 30px);
+    background: #fff;
+    border: 1px solid lightgray;
+
+    /* 设置内间距 */
+    box-sizing: border-box;
+    padding: 30px;
+}
+.r-yd {
+    width: 255px;
+}
+
+/* 左侧推荐 */
+.l-tj > .title,
+.r-yd > .title {
+    font-size: 20px;
+    /* 设置字体粗细 */
+    font-weight: normal;
+    border-left: 4px solid #e04f67;
+    padding-left: 15px;
+}
+.l-tj .title span,
+.r-yd .title span {
+    font-size: 14px;
+    color: #a9a9a9;
+}
+
+.tj-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tj-list li {
+    width: 47%;
+    margin-top: 6%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.tj-list .img {
+    width: 100%;
+    /* 溢出不显示 */
+    overflow: hidden;
+}
+
+.tj-list img {
+    width: 100%;
+    transition: all .5s linear;
+}
+
+.tj-list li:hover img {
+    transform: scale(1.2);
+}
+
+/* 右侧预定信息 */
+.r-yd input,
+.r-yd textarea,
+.r-yd select {
+    display: block;
+    width: 100%;
+    height: 35px;
+    /* 去轮廓 */
+    outline: none;
+    font-size: 14px;
+    color: gray;
+
+    box-sizing: border-box;
+    padding-left: 8px;
+}
+.r-yd form {
+    margin-top: 40px;
+}
+.r-yd .item {
+    margin-bottom: 18px;
+}
+.r-yd .tips {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.r-yd textarea {
+    height: 100px;
+    padding: 8px;
+    /* 设置调整文本域大小模式 */
+    resize: vertical;
+}
+
+
+.submit-btn {
+    width: 100%;
+    height: 38px;
+    background: #e04f67;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+    letter-spacing: 12px;
+    transition: all .25s linear;
+}
+.submit-btn:hover {
+   background: rgb(190, 36, 36)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

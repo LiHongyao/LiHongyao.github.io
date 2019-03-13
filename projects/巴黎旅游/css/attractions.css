@@ -1,0 +1,83 @@
+.title {
+    text-align: center;
+    font: normal 24px "微软雅黑";
+    color: rgb(89, 89, 89);
+    /* 字符间距 */
+    letter-spacing: 1px;
+}
+.sub-title {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(169, 169, 169);
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+.type-list {
+    text-align: center;
+}
+.type-list li {
+    display: inline-block;
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #d6d6d6;
+    margin: 0 3px;
+    font-size: 12px;
+    color: #808080;
+    cursor: pointer;
+}
+.type-list li.sel,
+.type-list li:hover {
+    border-color: #ec586a;
+    color: #333;
+}
+
+.attractions-list {
+    display: flex;
+    /* 允许换行 */
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.attractions-list li {
+    width: 31%;
+    background: #fff;
+    text-align: center;
+    transition: all .25s linear;
+    margin-top: 3.5%;
+}
+/* nth-child(n)：第n个子元素 */
+/* not()：排除 */
+.attractions-list li:not(:nth-child(3n)) {
+    margin-right: 3.5%; 
+}
+.attractions-list li:hover {
+    /* 向上位移5px */
+    transform: translateY(-5px);
+    /* 盒子阴影 */
+    box-shadow: 3px 3px 20px lightgray;
+}
+.attractions-list img {
+    width: 100%;
+}
+.attractions-list .name {
+    font-size: 16px;
+    margin: 20px 0;
+}
+.attractions-list .rating {
+    font-size: 13px;
+    color: #afafaf;
+    padding-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+

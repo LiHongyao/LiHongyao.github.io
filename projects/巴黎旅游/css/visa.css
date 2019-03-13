@@ -1,0 +1,143 @@
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+.l-ct {
+    width: calc(100% - 255px - 30px);
+    background: #fff;
+    border: 1px solid lightgray;
+    /* 设置内间距 */
+    box-sizing: border-box;
+    padding: 30px;
+}
+.r-more {
+    width: 255px;
+    background: #fff;
+    border: 1px solid lightgray;
+}
+/* 左侧签证相关样式 */
+.l-ct .ct-box {
+    display: flex; 
+    justify-content: space-between;
+}
+.l-ct .ct-box img {
+    width: 210px;
+    height: 140px;
+}
+.l-ct .ct-box .visa-infos {
+    width: calc(100% - 210px - 20px);
+}
+.l-ct .title {
+    font: normal 20px "微软雅黑";
+}
+.l-ct .price {
+    display: inline-block;
+    font-size: 25px;
+    color: #e04f67;
+    /* 设置字体粗细为粗体 */
+    font-weight: bold;
+    border-top: 4px solid #ddd;
+    padding-top: 8px;
+    margin-top: 15px;
+}
+
+.l-ct .code {
+    font-size: 13px;
+    color: #aaa;
+    padding: 3px 0;
+    /* dotted：点线 */
+    border-top: 1px dotted #ddd;
+}
+
+.l-ct .handle-box {
+    /* margin: 同时设置四个方向 */
+    /* margin: 垂直 水平*/
+    /* margin: 上 水平 下 */
+    /* margin: 上 右 下 左 */
+    margin: 6px 0 30px;
+    text-align: center;
+    line-height: 40px;
+    display: flex;
+}
+
+.l-ct .yd-btn {
+    margin-right: 20px;
+    display: inline-block;
+    width: 146px;
+    height: 40px;
+    cursor: pointer;
+    background: #e04f67;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.l-ct form {
+    display: flex;
+}
+.l-ct form span,
+.l-ct form input {
+    display: block;
+    outline: none;
+    height: 40px;
+    width: 30px;
+    box-sizing: border-box;
+    border: 1px solid #e04f67;
+    text-align: center;
+}
+.l-ct form span {
+    cursor: pointer;
+}
+
+
+.l-ct .tab {
+    margin-top: 35px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-menu-list li {
+    display: inline-block;
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+    padding: 10px;
+}
+.tab-menu-list li:hover,
+.tab-menu-list li.sel {
+    border-top: 3px solid #333;
+    color: #333;
+}
+.tab-ct-list li {
+    /* 隐藏元素 */
+    display: none;
+}
+.tab-ct-list li.show {
+    display: block;
+}
+.tab-ct-list li {
+    font-size: 13px;
+    line-height: 25px;
+    padding: 30px 0 50px;
+}
+
+/* 右侧更多套餐样式 */
+.r-more .tips {
+    background: #e04f67;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+.more-list {
+    box-sizing: border-box;
+    padding: 6px 16px 20px;
+}
+.more-list li {
+    text-align: center;
+    margin: 10px 0;
+    line-height: 50px;
+}
+.more-list img {
+    width: 100%;
+}
+
+

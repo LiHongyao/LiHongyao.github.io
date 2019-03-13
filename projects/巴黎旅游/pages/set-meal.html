@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>巴黎旅游 | 旅游套餐</title>
+    <link rel="stylesheet" href="../css/normalized.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/set-meal.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="head" style="height:400px;background: url('../images/set_meal_bg.jpg') no-repeat left top; background-size: cover;">
+        <div class="wrapper">
+            <div class="top-box">
+                <!-- logo -->
+                <img class="logo" src="../images/logo.png">
+                <!-- 菜单 -->
+                <ul class="menu-list">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="./attractions.html">热门景点</a></li>
+                    <li class="sel"><a href="./set-meal.html">旅游套餐</a></li>
+                    <li><a href="./about.html">关于我们</a></li>
+                    <li><a href="./feedback.html">客户反馈</a></li>
+                    <li><a href="./contact.html">联系我们</a></li>
+                    <li><a href="./visa.html">旅游签证</a></li>
+                </ul>
+                <!-- 登录注册 -->
+                <div class="login-register-box">
+                    <section class="item login">
+                        <img src="../images/login.png">
+                        登陆
+                    </section>
+                    <section class="item register">
+                        <img src="../images/register.png">
+                        注册
+                    </section>
+                </div>
+            </div>
+            <div class="infos" style="margin-top:75px;">
+                <h1 style="font: lighter normal 36px '微软雅黑';">- 旅游套餐 -</h1>
+                <p>CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
+            </div>
+        </div>
+    </header>
+    <!-- 内容 -->
+    <main id="content">
+        <!-- 左侧套餐推荐 -->
+        <div class="l-tj">
+            <!-- 标题 -->
+            <h1 class="title">
+                旅游套餐推荐
+                <span> / package</span>
+            </h1>
+            <!-- 套餐推荐列表 -->
+            <ul class="tj-list"></ul>
+        </div>
+        <!-- 右侧预定 -->
+        <div class="r-yd">
+            <!-- 标题 -->
+            <h1 class="title">
+                在线预订
+                <span> / order online</span>
+            </h1>
+            <!-- 预定表单 -->
+            <form action="javascript:;">
+                <section class="item">
+                    <p class="tips">您的姓名 *</p>
+                    <!-- 输入框 -->
+                    <input type="text" class="name">
+                </section>
+                <section class="item">
+                    <p class="tips">您的电话 *</p>
+                    <!-- 输入框 -->
+                    <input type="tel" class="name">
+                </section>
+                <section class="item">
+                    <p class="tips">目的地 *</p>
+                    <!-- 选择框 -->
+                    <select>
+                        <option value="卢浮宫">卢浮宫</option>
+                        <option value="蓬皮杜中心">蓬皮杜中心</option>
+                        <option value="塞纳河">塞纳河</option>
+                        <option value="巴黎圣母院">巴黎圣母院</option>
+                        <option value="凯旋门">凯旋门</option>
+                        <option value="圣心大教堂">圣心大教堂</option>
+                        <option value="凡尔赛宫">凡尔赛宫</option>
+                        <option value="埃菲尔铁塔">埃菲尔铁塔</option>
+                        <option value="奥赛博物馆">奥赛博物馆</option>
+                    </select>
+                </section>
+                <section class="item">
+                    <p class="tips">成人（18周岁以上）</p>
+                    <input type="number" value="1" min="1" max="10">
+                </section>
+                <section class="item">
+                    <p class="tips">儿童（18周岁以下）</p>
+                    <input type="number" value="1" min="1" max="10">
+                </section>
+                <section class="item">
+                    <p class="tips">备注</p>
+                    <!-- textarea：文本域 -->
+                    <textarea></textarea>
+                </section>
+                <div class="submit-btn">提交</div>
+            </form>
+        </div>
+    </main>
+    <!-- 尾部 -->
+    <footer id="foot">
+        <section class="item contact">
+            <h1>联系我们</h1>
+            <p>/contact</p>
+        </section>
+        <section class="item service">
+            <h3>巴黎旅游定制服务</h3>
+            <ul class="info-list">
+                <li>电话：400-888-8888</li>
+                <li>手机：152-2888-5771</li>
+                <li>邮编：610000</li>
+                <li>传真：000-66668888</li>
+                <li>邮箱：lihy_online@163.com</li>
+                <li>地址：四川省成都市高新区天府软件园B区5座1层</li>
+            </ul>
+        </section>
+        <section class="item focus">
+            <h3>关注我们</h3>
+            <img src="../images/qr_code.jpg">
+        </section>
+        <section class="item links">
+            <img src="../images/foot_icon_1.png">
+            <img src="../images/foot_icon_2.png">
+            <img src="../images/foot_icon_3.png">
+            <img src="../images/foot_icon_4.png">
+        </section>
+    </footer>
+    <!-- 侧栏 -->
+    <aside>
+        <ul class="list">
+            <li><img src="../images/side_icon_1.png"></li>
+            <li><img src="../images/side_icon_2.png"></li>
+            <li><img src="../images/side_icon_3.png"></li>
+            <li><img src="../images/side_icon_4.png"></li>
+            <li><img src="../images/side_icon_5.png"></li>
+        </ul>
+    </aside>
+    <!-- 引入脚本 -->
+    <script src="../json/data.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/set-meal.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+#content {
+    padding: 70px 0;
+}
+.introduce {
+    margin-top: 80px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.introduce img {
+    margin-right: 30px;
+}
+.introduce .title {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.introduce .title span {
+    color: #e04f67;
+}
+.introduce .des {
+    margin-top: 10px;
+    font-size: 13px;
+    color: gray;
+    line-height: 30px;
+}
+.introduce a {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgb(244, 127, 102);
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgb(244, 127, 102);
+    transition: all .35s linear;
+    font-size: 14px;
+}
+.introduce a:hover {
+    color: rgb(244, 127, 102);
+    background: #fff;
+}
+
+/* 横幅 */
+.banner {
+    margin-top: 150px;
+    width: 100%;
+    height: 400px;
+    /* 背景图片 */
+    background:url("../images/fixed_bg.jpg") no-repeat center center fixed;
+    color: #fff;
+}
+.banner .mask {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+}
+.banner .title {
+    margin-bottom: 15px;
+}
+.banner .sub-title {
+    font-size: 14px;
+}
+
+/* 流程 */
+.process {
+    padding: 100px 8%;
+}
+.process > header {
+    text-align: center;
+}
+.process > header > .title {
+    font: normal 24px "微软雅黑";
+    color: #494949;
+    margin-bottom: 20px;
+}
+.process > header > .sub-title {
+    font: normal 14px "微软雅黑";
+    color: #a9a9a9;
+}
+.process-list {
+    margin-top: 100px;
+    display: flex;
+}
+.process-list li {
+    width: 25%;
+}
+.process-list .steps {
+    font: bold 20px "微软雅黑";
+    color: #666;
+}
+.process-list .steps span {
+    font-size: 40px;
+    font-family: "georgia";
+}
+.process-list .steps img {
+    height: 23px;
+}
+.process-list .symbol {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+.process-list .circle {
+    width: 45px;
+    height: 45px;
+    background: #e04f67;
+    border-radius: 50%;
+}
+
+.process-list .line {
+    width: calc(100% - 45px);
+    height: 4px;
+    background: #e04f67;
+}
+.process-list .infos {
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+.process-list .infos .title {
+    font: normal 20px "微软雅黑";
+    color: #808080;
+}
+.process-list .infos .des {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #a9a9a9;
+    line-height: 20px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

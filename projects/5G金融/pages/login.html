@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>5G金融 | 登陆</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="head">
+        <div class="top-bar padding">
+            <div class="left">
+                <a href="../index.html" class="logo">5G金融</a>
+                <span class="city">成都</span>
+                <span class="search">搜索</span>
+            </div>
+            <div class="right">
+                <a href="#">移动客户端</a>
+                <a href="./login.html">登陆</a>
+                <a href="./register.html">注册</a>
+            </div>
+        </div>
+    </header>
+    <!-- 内容 -->
+    <main id="content">
+        <div class="mask">
+            <div class="box">
+                <!-- 选项卡菜单 -->
+                <ul class="tab-menu-list">
+                    <li class="sel">账号登陆</li>
+                    <li>扫码登陆</li>
+                </ul>
+                <!-- 选项卡内容 -->
+                <ul class="tab-ct-list">
+                    <!-- 账号登陆 -->
+                    <li class="login-account show">
+                        <form>
+                            <section class="form-item">
+                                <input class="account" type="text" placeholder="账号/手机号码/QQ邮箱">
+                            </section>
+                            <section class="form-item">
+                                <input class="password" type="password" placeholder="密码">
+                            </section>
+                            <section class="login-btn">登陆</section>
+                            <div class="func-box">
+                                <a href="#" class="register-tel">手机短信注册</a>
+                                <section>
+                                    <a href="./register.html">立即注册</a>
+                                    <!-- &nbsp; 空格符号 -->
+                                    &nbsp; | &nbsp;
+                                    <a href="#">忘记密码？</a>
+                                </section>
+                            </div>
+                        </form>
+                    </li>
+                    <!-- 扫码登陆 -->
+                    <li class="login-qrcode">
+                        <img src="../images/qr-code.png" alt="">
+                    </li>
+                </ul>
+                <!-- 其他登陆方式 -->
+                <div class="other-login">
+                    <section class="title">
+                        <span class="line"></span>
+                        <span>其他方式登陆</span>
+                        <span class="line"></span>
+                    </section>
+                    <section class="methods">
+                        <img src="../images/wechat.png" alt="">
+                        <img src="../images/qq.png" alt="">
+                        <img src="../images/sina.png" alt="">
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/login.js"></script>
+    
+</body>
+</html>

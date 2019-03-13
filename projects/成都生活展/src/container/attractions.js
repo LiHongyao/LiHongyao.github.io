@@ -6,6 +6,7 @@ import '../styles/attractions.css';
 
 class Attractions extends Component {
 
+  // 处理用户点击
   handleClick(datas, event) {
     const index = event.currentTarget.dataset.index;
     // 推送
@@ -26,6 +27,7 @@ class Attractions extends Component {
         <main className='content'>
           <ul className='ct-list'>
             {
+              // 列表渲染
               datas.map((item, index) => {
                 return (
                   <li key={index} data-index={index} onClick={this.handleClick.bind(this, datas)}>

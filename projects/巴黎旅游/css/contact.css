@@ -1,0 +1,43 @@
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#map {
+    width: calc(100% - 430px);
+    height: 480px;
+    background: pink;
+    border: 1px solid lightgray;
+}
+
+.ct-infos {
+    width: 380px;
+}
+
+.ct-infos .title {
+    font: normal 20px "微软雅黑";
+    color: #808080;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.ct-infos .title span {
+    font-size: 14px;
+    color: rgb(169, 169, 169);
+}
+
+.ct-infos p {
+    font-size: 13px;
+    color: rgb(169, 169, 169);
+    line-height: 25px;
+}
+
+/* :first-child 父元素中的首个子元素 */
+.ct-infos .item:first-child {
+    margin-bottom: 65px;
+}
+
+
+
+
+
