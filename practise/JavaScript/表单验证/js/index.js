@@ -6,7 +6,14 @@
         oSpan.textContent = getVerificationCode(7);
     }
     // 2. 表单验证
-    var valObj = {};
+    var valObj = {
+        "username":"",
+        "firPassword":"",
+        "secPassword":"",
+        "email":"",
+        "tel":"",
+        "verificationCode":""
+    };
     var inputs = Array.from($('.myForm input', true));
     inputs.forEach(function(input) {
         // 实时验证
@@ -40,8 +47,8 @@
                     }
                 } break;
                 case "tel": {
-                    // 这里只匹配152/199号码段
-                    if(/^(152|199)\d{8}$/.test(val)) {
+                    // 匹配1[3456789]号码段
+                    if(/^1[3-9]\d{9}$/.test(val)) {
                         flag = true;
                     }
                 } break;
@@ -60,4 +67,36 @@
             }
         }
     });
+    // 点击注册
+    $(".btn").onclick = function() {
+        // 1. 判断信息是否完善
+        var flag = true;
+        // 获取对象所有的key值
+        var keys = Object.keys(valObj);
+        for(var i = 0, len = keys.length; i < len; i++) {
+            if(!valObj[keys[i]]) {
+                flag = false;
+                break;
+            }
+        }
+        if(!flag)  {
+            alert("请完善信息！");
+            return ;
+        }
+        // 2. 判断是否合法
+        var isThrough = true;
+        for(var j = 0, len = inputs.length; j < len; j++) {
+            
+            if(inputs[j].parentElement.classList.contains("error")) {
+                isThrough = false;
+                break; 
+            }
+        }
+        if(!isThrough) {
+            alert("输入信息不合法，请检查格式！");
+            return ;
+        }
+        // 3. 执行注册逻辑
+        alert("注册中...");
+    }
 })();

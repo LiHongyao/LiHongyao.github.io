@@ -54,10 +54,15 @@ header  a {
     width: 24.0625%;
     display: inline-block;
     margin-top: 25px;
-    border: 1px solid #d3d3d3;
+    border: 1px solid #eeeeee;
     box-sizing: border-box;
     padding: 8px;
     cursor: pointer;
+    transition: all .35s linear;
+}
+.goods-list li:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 20px 1px lightgray;
 }
 .goods-list li:not(:nth-child(4n)) {
     margin-right: 1.25%;

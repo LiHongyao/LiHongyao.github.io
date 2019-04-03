@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript - 分页效果示例01</title>
+    <title>分页</title>
+    <link rel="stylesheet" href="./css/normalized.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    
-    <header>
-        <h1 class="title">NEWS</h1>
-    </header>
-    <main>
-        <ul class="news-list">
 
-        </ul>
-        <div class="btn-box">
-            <span class="btn up">上一页</span>
-            <div class="infos">
-                第<span class="curPage">1</span>页,
-                共<span class="totalPage">1</span>页
+    <div class="container">
+        <!-- 标题 -->
+        <h1 class="title">NEWS</h1>
+        <!-- 内容 -->
+        <div class="content">
+            <!-- 信息列表 -->
+            <ul class="info-list"></ul>
+            <!-- 分页 -->
+            <div class="page">
+                <!-- 上一页 -->
+                <section id="prev" class="btn prev">上一页</section>
+                <!-- 分页信息 -->
+                <p class="des">
+                    第<span class="cur-page">1</span>页,
+                    共<span class="total-page">1</span>页
+                </p>
+                <!-- 下一页 -->
+                <section id="next" class="btn next">下一页</section>
             </div>
-            <span class="btn down">下一页</span>
         </div>
-    </main>
-    
-    <script src="./js/data.js"></script>
-    <script src="./js/tools.js"></script>
+    </div>
+
+    <script src="./js/LHYLibs.js"></script>
+    <script src="./js/util.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

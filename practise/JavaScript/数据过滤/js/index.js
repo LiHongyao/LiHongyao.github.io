@@ -4,15 +4,15 @@
     var colors    = Array.from(document.querySelectorAll('.colors .keywords'));
     var kinds     = Array.from(document.querySelectorAll('.kinds .keywords'));
     var origin    = Array.from(document.querySelectorAll('.origin .keywords'));
+    // 记录过滤的关键词
     var keywords  = { color: "", origin: "", kind: ""};
     // 获取数据
     GET("../json/goods.json", function(response) {
-        console.log("数据加载成功！");
+        // 异步加载
         loadingGoodsList(goodsList, response, keywords);
         // 事件添加
         colors.forEach(function(colorItem, index) {
             colorItem.onclick = function() {
-                console.log(response);
                 // 清除样式
                 removeClass(colors, "selected");
                 // 添加样式

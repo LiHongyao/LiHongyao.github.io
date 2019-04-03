@@ -1,92 +1,69 @@
 @charset "utf-8";
 
-* {margin: 0; padding: 0;}
 body {
-    background: linear-gradient(to top right, #000, #555);
-    color: rgb(247, 241, 241);
+    background: linear-gradient(to bottom, #555555, black);
+    color: #ffffff;
     font-family: 'Times New Roman', Times, serif;
 }
-header {
-    width: 700px;
+
+.container {
+    width: 800px;
     margin: 0 auto;
 }
 .title {
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
-main {
-    width: 700px;
-    margin: 10px auto;
-    border: 1px solid #eee;
-    border-radius: 12px;
+.content {
+    margin-top: 25px;
+    border: 1px solid #ffffff;
+    padding: 12px 35px 50px;
+    border-radius: 8px;
 }
-.news-list {
+
+
+.info-list {
     height: 600px;
+    margin-bottom: 35px;
 }
-.news-list li {
-    width: 90%;
-    margin: 0 auto;
-    padding-left: 70px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #eee;
-    line-height: 60px;
-    font-size: 18px;
-    letter-spacing: 2px;
+.info-list li {
+    height: 55px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    font-size: 18px;
+    border-bottom: 1px solid #ffffff;
+}
+.info-list .infos {
+    display: flex;
+}
+.info-list .tag {
+    padding: 3px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 13px;
+    margin-right: 20px;
 }
 
-.news-list li::before {
-    content: "NEWS";
-    display: block;
-    font-size: 12px;
-    height: 30px;
-    width: 60px;
-    text-align: center;
-    letter-spacing: 2px;
-    font-weight: bold;
-    line-height: 30px;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-.news-list li .title {
-    width: 80%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.news-list li .time {
-    width: 15%;
-    color: grey;
-}
 
-.btn-box {
-    text-align: center;
+
+.page {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
 }
-.btn {
-    display: inline-block;
-    padding: 8px 26px;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    margin: 50px 20px;
+.page .btn {
+    width: 120px;
+    line-height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 19px;
+    text-align: center;
     cursor: pointer;
-    color: gray;
+    transition: all .15s linear;
 }
-.btn:hover {
+.page .btn:hover {
     background: cornsilk;
+    color: #808080;
 }
-
-.infos {
-    display: inline-block;
-    margin: 0 80px;
-    letter-spacing: 2px;
-}
-
-.infos span {
-    margin: 0 15px;
+.page span {
+    margin: 0 12px;
 }

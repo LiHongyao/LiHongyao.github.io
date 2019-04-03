@@ -32,9 +32,9 @@ class LHYPage {
     getEl(Sel, isAll) {
         if(isAll) {
             return document.querySelectorAll(Sel);
-        }else {
-            return document.querySelector(Sel);
         }
+        return document.querySelector(Sel);
+        
     };
     /**
      * 加载分页元素
