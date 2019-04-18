@@ -53,3 +53,6 @@ let loadingHtml = (data) => {
     });
     $(".friends").html(groupHtmlStr);
 }
+
+
+
