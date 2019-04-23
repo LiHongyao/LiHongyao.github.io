@@ -1,23 +1,55 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>echarts-demo</title>
+    <title>echarts-dmeo</title>
     <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body>
 
     <!-- 基础示例 -->
-    <div class="container" id="demo-01"></div>
+    <div class="wrapper">
+        <p class="title">基础示例</p>
+        <div class="item" id="basic"></div>
+    </div>
 
-    
-    <!-- 引入jQuery -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 综合示例 -->
+    <div class="wrapper">
+        <p class="title">综合示例</p>
+        <div class="item" id="composite"></div>
+    </div>
+
+    <!-- 异步加载 -->
+    <div class="wrapper">
+        <p class="title">异步加载</p>
+        <div class="item" id="async"></div>
+    </div>
+
+    <!-- 饼图 -->
+    <div class="wrapper">
+        <p class="title">饼图</p>
+        <div class="item" id="bar"></div>
+    </div>
+
+    <!-- 雷达图 -->
+    <div class="wrapper">
+        <p class="title">雷达图</p>
+        <div class="item" id="radar"></div>
+    </div>
+
+
+
     <!-- 引入echarts -->
-    <script src="../node_modules/echarts/dist/echarts.js"></script>
-    <script src="./static/js/functions.js"></script>
+    <script src="../node_modules/echarts/dist/echarts.min.js"></script>
+    <!-- 导入主题 -->
+    <script src="../node_modules/echarts/theme/dark.js"></script>
+    <script src="./static/js/util.js"></script>
     <script src="./static/js/index.js"></script>
 </body>
 </html>
+
+
+
+

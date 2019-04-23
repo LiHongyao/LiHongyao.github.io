@@ -1,20 +1,17 @@
 {
   "name": "echarts-demo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel ./src/js/ -d ./dist/static/js/ -w"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "build": "./node_modules/.bin/babel ./src/js -d ./dist/static/js -w"
   },
   "dependencies": {
-    "echarts": "^4.2.0-rc.2",
-    "jquery": "^3.3.1"
+    "echarts": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
   }
 }

@@ -1,5 +1,23 @@
-.container {
-    width: 600px;
-    height: 300px;
-    margin: 50px auto;
+@charset "utf-8";
+
+.wrapper {
+    .title {
+        font-size: 18px;
+        letter-spacing: 2px;
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 15px;
+            width: 4px;
+            background: red;
+            margin-right: 12px;
+        }
+    }
+    .item {
+        width: 500px;
+        height: 300px;
+        border: 1px solid #eeeeee;
+    }
 }
+
+
