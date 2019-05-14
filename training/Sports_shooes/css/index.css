@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/******************************** [内容样式] ********************************/
+#content {
+    min-width: 1200px;   
+}
+
+/* 轮播图 */
+
+.swiper-container img {
+    width: 100%;
+}
+
+/* 明星产品 */
+.star-product {
+    width: 75%;
+    min-width: 1100px;
+    /* 块级元素水平居中 */
+    margin: 0 auto;
+}
+
+.star-product .title {
+    font-size: 24px;
+    /* 字体粗细 */
+    font-weight: normal;
+    /* 字符间距 */
+    letter-spacing: 5px;
+    padding: 12px 0;
+}
+.product-list {
+    display: flex;
+    /* 允许换行 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product-list li {
+    width: 24%;
+    margin: 1.33% 0;
+    transition: all .65s linear;
+    box-sizing: border-box;
+    padding: 8px;
+}
+.product-list img {
+    width: 100%;
+    /* 过渡效果 */
+    transition: all .65s linear;
+}
+.product-list .name {
+    margin-top: 12px;
+    color: #333333;
+    font-size: 18px;
+    line-height: 24px;
+    /* 字体名称 */
+    font-family: "Open Sans",Helvetica,Arial,Verdana,sans-serif;
+    transition: all .3s linear;
+}
+
+.product-list .line {
+    width: 0;
+    height: 1px;
+    margin: 4px 0;
+    background: #2ac37d;
+    transition: all .7s linear;
+}
+.product-list .price {
+    font-size: 20px;
+    font-family: Oswald;
+    color: #444444;
+}
+
+/* 动效设计 */
+.product-list .img {
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.product-list li:hover img {
+    /* 缩放 */
+    transform: scale(1.2, 1.2);
+}
+.product-list li:hover .name {
+    color: #2ac37d;
+}
+.product-list li:hover .line {
+    width: 90%;
+}
+
+.product-list li:hover {
+    /* 向上位移5px， 正数向下，负数向上 */
+    transform: translateY(-8px);
+    /* 容器阴影 */
+    /* box-shadow: 水平偏移 垂直偏移 模糊程度 扩散范围 阴影颜色 内/外阴影; */
+    box-shadow: 1px 1px 30px 1px gray;
+}
+
+.split-img {
+    width: 100%;
+    min-width: 1200px;
+    margin: 30px 0;
+}
+
+
+/* tab 选项卡样式 */
+.tab {
+    width: 75%;
+    min-width: 1100px;
+    /* 块级元素水平居中 */
+    margin: 0 auto;
+}
+
+.tab-menu-list {
+    /* 文本对齐方式 */
+    text-align: right;
+    margin-bottom: 35px;
+}
+.tab-menu-list li {
+    display: inline-block;
+    margin-left: 18px;
+    cursor: pointer;
+}
+
+.tab-menu-list li:hover {
+    color: #2ac37d;
+}
+
+.tab-ct-list li {
+    margin: 30px auto;
+    /* 隐藏元素 */
+    display: none;
+    justify-content: space-between;
+}
+.tab-ct-list img {
+    width: 24%;
+    border: 1px solid #eeeeee;
+}
+
+/* 交互设计 */
+.tab-ct-list li.show {
+    display: flex;
+}
+.tab-menu-list li.sel {
+    color: #2ac37d;
+}
+
+/* 设置侧栏图标大小 */
+/* i -> 行内元素 */
+.icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #eeeeee;
+    font-size: 28px;
+    text-align: center;
+    /* 当行高等于容器高度时，文本在容器中垂直居中
+       前提是只有一行文本 */
+    line-height: 50px;
+    cursor: pointer;
+    transition: all .45s linear;
+}
+.icon:last-child {
+    background: #2ac37d;
+}
+.icon:hover {
+    background: #2ac37d;
+}
+
+aside {
+    /* 固定定位 */
+    position: fixed;
+    top: 50%;
+    right: 0;
+}
+
+
+video {
+    display: block;
+    width: 75%;
+    min-width: 1100px;
+    margin: 35px auto;
+}
+
+

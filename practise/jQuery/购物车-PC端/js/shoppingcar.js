@@ -1,44 +1,40 @@
 $(function() {
 
-    if(sessionStorage.order)  {
-        add(JSON.parse(sessionStorage.order));
-        sessionStorage.removeItem("order");
-    }
-    get((datas) => {
-        let htmlStr = ``;
-        datas.forEach((data) => {
-            htmlStr += `
-            <li>
-                <input type="checkbox" class="checkbox">
-                <img src="${data.imgName}">
-                <h3 class="title">${data.title}</h3>
-                <p class="des">${data.des}</p>
-                <p class="price">${data.price}</p>
-                <p class="nums contenteditable="true"">${data.nums}</p>
-                <p class="color">${data.color}</p>
-                <p class="size" >${data.size}</p>
-                <p class="city">${data.city}</p>
-                <button type="button" class="delete">删除订单</button>
-            </li>
-            `;
-        });
-        $(".shoppingcar-list").html(htmlStr);
-    }, () => {
-        $(".shoppingcar-list").html(`
-            <li class="nogoods">购物是空的</li>
-        `);
+    $(".goHome").click(function() {
+        location.href = "../index.html";
     })
 
-    // 删除
-    $(".delete").on("click", (e) => {
-        let $target = $(e.target);
-        let index   = $target.parent().index();
-        // 页面中移除
-        $(".shoppingcar-list li")[index].remove();
-        // 在本地移除
-        remove(index);
-    });
-    $(".goHome").on("click", () => {
-        location.href = "../index.html";
-    });
+    loading();
+   
+
 });
+
+
+function loading(callback) {
+     // 查询购物车数据并加载
+     Car.query((res) => {
+        // 加载购物车
+        let htmlStr = "";
+        $.each(res, (index, order) => {
+            htmlStr += `<li>
+                <img src="../images/${order.imgName}" />
+                <button type="button" data-index="${index}" class="del-btn">删除订单</button>
+                <h3>${order.title}</h3>
+                <p>${order.des}</p>
+                <p>数量：${order.nums}</p>
+                <p>价格：${order.nums * order.price}</p>
+                <p>${order.size} - ${order.color} - ${order.city}</p>
+            </li>`;
+        })
+        $(".shoppingcar-list").html(htmlStr);
+        $(".del-btn").click(function() {
+            // 获取要删除的下标
+            let index = $(this).attr("data-index");
+            // 页面删除
+            $(this).parent().remove();
+            // 本地删除
+            Car.remove(index);
+            loading();
+        }) 
+    });
+}

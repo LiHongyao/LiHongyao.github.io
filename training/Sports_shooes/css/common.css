@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+
+/******************************** [头部样式] ********************************/
+
+/* 兼容性处理 */
+#head {
+    /* 设置最小宽度 */
+    min-width: 1200px;
+}
+
+/* # -> id */
+/* 空格 -> 后代 */
+#head .top {
+    /* 弹性布局 */
+    display: flex;
+    /* 主轴对齐方式（水平轴） */
+    /* space-between：空格在元素中间（居两端对齐） */
+    justify-content: space-between;
+    /* 字体颜色 */
+    color: #666666;
+    /* 字体大小 */
+    font-size: 12px;
+    /* 设置行高撑起容器高度 */
+    line-height: 35px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 2%;
+    
+}
+#head .info-list li {
+    /* 修改元素显示方式 */
+    display: inline-block;
+    /* 外边距：标签与标签之间的间距 */
+    margin-right: 20px;
+}
+#head .info-list .fa {
+    margin-right: 3px;
+}
+#head .set-list li {
+    display: inline-block;
+    /* padding：设置内间距（边框到内容之间的距离） */
+    /* padding: 10px 同时设置4个方向的间距为10px
+       padding: 垂直 水平
+       padding: 上 水平 下
+       padding: 上 右 下 左*/
+    padding: 0 23px;
+}
+/* :not() 排除指定选择器 */
+/* :last-child 最后一个子元素 */
+#head .set-list li:not(:last-child) {
+    /* 设置边框（右） */
+    border-right: 1px solid #eeeeee;
+}
+
+#head .banner {
+    min-width: 1200px;
+    padding: 0 2%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    /* 交叉轴对其方式 （垂直轴）*/
+    align-items: center;
+}
+#head .menu-list li {
+    display: inline-block;
+    /* margin
+       注意：垂直方向 -> 取较大者；水平方向 -> 间距相加 */
+    margin: 0 6px;
+    padding: 5px 14px;
+    /* 设置圆角 */
+    border-radius: 30px;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+/* :hover -> 鼠标悬浮 */
+/* , -> 群组选择器 */
+#head .menu-list li:hover,
+#head .menu-list li.sel {
+    background: #2ac37d;
+}
+#head .menu-list li:hover a,
+#head .menu-list li.sel a {
+    color: #ffffff;
+}
+#head .menu-list a {
+    color: #000000;
+}
+
+#head .wrapper {
+    display: flex;
+}
+
+#head .logo {
+    height: 50px;
+}
+#head .search-box {
+    width: 220px;
+    height: 40px;
+    background: lightgoldenrodyellow;
+    border-radius: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#head input {
+    /* 去除轮廓 */
+    outline: none;
+    border: none;
+    /* transparent -> 透明色 */
+    background: transparent;
+}
+#head .fa-search {
+    color: #2ac37d;
+    font-size: 22px;
+    cursor: pointer;
+}
+#head .fa-shopping-cart {
+    line-height: 40px;
+    font-size: 28px;
+    color: gray;
+    margin-left: 20px;
+    /* 修改鼠标指针样式 */
+    cursor: pointer;
+}
+
+
+#foot {
+    background: #333333;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+}

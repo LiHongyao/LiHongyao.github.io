@@ -4,7 +4,6 @@ $(function() {
     // 1. 获取数据
     $.ajax({
         url: "../json/data.json",
-        type: "GET",
         dataType: "json",
         success: (response) => {
             // 2. 加载数据
