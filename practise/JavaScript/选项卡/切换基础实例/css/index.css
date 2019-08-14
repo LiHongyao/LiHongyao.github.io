@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+* {
+    /* 去除默认间距*/
+    margin: 0;
+    padding: 0;
+}
+
+.tab {
+    /* 设置宽度 */
+    width: 800px;
+    /* 容器水平居中 */
+    margin: 50px auto;
+    /* 网格布局1行2列（左右布局） */
+    display: grid;
+    grid-template-columns: 20% 79%;
+    grid-template-rows: 225px;
+    grid-gap: 1%;
+}
+
+/* 左侧菜单 */
+.menus {
+    /* 设置圆角 */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.menus .item {
+    /* 设置左侧内间距 */
+    box-sizing: border-box;
+    padding-left: 8px;
+    /* 设置行高，撑起每一项菜单栏的高度 */
+    line-height: 45px;
+    /* 设置字体颜色 */
+    color: #ffffff;
+    /* 设置字符间距 */
+    letter-spacing: 2px;
+    /* 设置菜单栏背景颜色 */
+    background: #999999;
+    /* 设置下边框 */
+    border-bottom: 1px solid lightgray;
+    /* 设置鼠标指针样式为手指头 */
+    cursor: pointer;
+    /* 设置过渡效果 */
+    transition: all .25s linear;
+}
+
+/* 选中效果 */
+.menus .item.sel {
+    background: #808080;
+}
+
+/* 鼠标悬浮至菜单栏上时修改背景色 */
+.menus .item:hover {
+    background: #848484;
+}
+
+/* 右侧内容 */
+.contents {
+    /* 设置内间距 */
+    box-sizing: border-box;
+    padding: 8px;
+    /* 设置边框 */
+    border: 1px solid #eeeeee;
+    /* 设置圆角 */
+    border-radius: 6px;
+    /* 设置文本 */
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    text-indent: 1em;
+    color: #333333;
+    /* 设置定位（子元素绝对定位的参照） */
+    position: relative;
+    
+}
+.contents .item {
+    height: 100%;
+    /* 默认隐藏元素 */
+    display: none;
+    /* 绝对定位，让内容重叠在一起 */
+    position: absolute;
+}
+.contents .item.show {
+    /* 显示内容 */
+    display: block;
+}
+

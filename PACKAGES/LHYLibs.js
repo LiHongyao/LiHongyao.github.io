@@ -1,8 +1,8 @@
 /*DOM相关 */
 /**
- * 
- * @param Sel   CSS选择器
- * @param isAll 是否匹配多个元素
+ * DOM查询
+ * @param {String} Sel   选择器
+ * @param {String} isAll 是否匹配多个元素 
  */
 function getEl(Sel, isAll) {
     if(isAll) {
@@ -11,10 +11,10 @@ function getEl(Sel, isAll) {
     return document.querySelector(Sel);
 }
 /**
- * 事件添加（兼容IE浏览器）
- * @param el        事件对象
- * @param type      事件类型
- * @param callBack  事件回调（监听函数）
+ * 添加事件监听（兼容IE）
+ * @param {DOM} el 
+ * @param {String} type 
+ * @param {Function} callBack 
  */
 function addEvent(el, type, callBack) {
     if (el.attachEvent) {
@@ -480,3 +480,76 @@ function localQuery(options) {
     }
 }
 
+
+/**
+ * 注册
+ * @param {Object} options 
+ * - usr：{
+ *    username: ""
+ *    password: ""
+ * }
+ * - key：存在本地的键名（可选），默认值USERS
+ * - success：注册成功的回调函数
+ * - fail：注册失败的回调函数
+ */
+function register(options) {
+    // 1. 解构参数
+    var {usr, key, success, fail} = options;
+    key = key || "USERS";
+    // 2. 异常处理
+    if(!usr.username || !usr.password) {
+        throw "用户对象必须使用‘username’和‘password’字段作为用户的账号和密码";
+    }
+    // 3. 创建空对象
+    var usrs = {};
+    // 3. 判断本地是否存在【用户数据集合】
+    if(localStorage[key]) {
+        usrs = JSON.parse(localStorage[key]);
+    }
+    // 4. 判断【用户】是否存在
+   if(usr.username in usrs) {
+       fail && fail("用户已存在!");
+   }else {
+       // 注册用户
+       usrs[usr.username] = usr;
+       // 更新本地数据
+       localStorage[key] = JSON.stringify(usrs);
+       success && success();
+   }
+}
+
+
+
+/**
+ * @description 登陆
+ * @param {Object} options 
+ * - username {String} 用户名
+ * - password {String} 密码
+ * - key      {String} 存在本地的键名（可选），默认值USERS
+ * - success  {Function} 登陆成功的回调函数
+ * - fail     {Function} 登陆失败的回调函数
+ */
+function login(options) {
+    // 1. 解构参数
+    var {username, password, key, success, fail} = options;
+    key = key || "USERS";
+    // 2. 判断本地用户数据集合是否存在
+    if(!localStorage[key]) {
+        fail && fail("用户不存在!");
+    }else {
+        // 读取用户集合
+        var usrs = JSON.parse(localStorage[key]);
+        var usr  = usrs[username]; 
+        // 判断用户是否存在
+        if(!usr) {
+            fail && fail("用户不存在!");
+        }else {
+            // 判断是否登陆成功 
+            if(username === usr.username && password === usr.password) {
+                success && success(usr);
+            }else {
+                fail && fail("账号或密码错误!");
+            }
+        }
+    }
+}

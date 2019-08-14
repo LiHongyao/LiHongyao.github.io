@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+body {background: #323232;}
+
+.tab-wrapper {
+    width: 520px;
+    margin: 100px auto;
+}
+/* 菜单 */
+.tab-menu li {
+    display: inline-block;
+    background: #767676;
+    color: #fff;
+    padding: 6px 20px;
+    font-family: 'Droid Serif', serif;
+    letter-spacing: 2px;
+    border-radius: 5px 5px 0 0;
+    transition: all .15s linear;
+    cursor: pointer;
+}
+.tab-menu li.selected {
+    color: #767676;
+    background: #fff;
+}
+/* 内容 */
+.tab-content {
+    position: relative;
+}
+.tab-content img {
+    position: absolute;
+    border: 10px solid #fff;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.tab-content img.show {
+    opacity: 1;
+}

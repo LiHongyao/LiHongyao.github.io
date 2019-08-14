@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+* {
+    margin: 0; padding: 0;
+} 
+li { list-style: none; }
+a { text-decoration: none; }
+
+
+.wrap {
+    width: 100%;
+    min-width: 1200px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*头部*/
+.wrap .nav-box {
+    width:  1100px;
+    height: 140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrap .nav-box a.nav-item {
+    display: inline-block;
+    width: 130px;
+    height: inherit;
+    border-bottom: 1px solid #d6d6d6;
+    color: #333;
+    transition: all .25s linear;
+}
+
+.wrap .nav-box a.active {
+    border-bottom: 1px solid #333;
+}
+
+.wrap .nav-box .nav-item figure {
+    display: inline-block;
+    width: inherit;
+    height: 100px;
+    background-size: contain !important;
+}
+
+/*内容*/
+.wrap .contents-box {
+    width: 1100px;
+    height: 560px;
+    margin: 0 auto;
+    position: relative;
+}
+.wrap .contents-box .contents-item {
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+}
+.wrap .contents-box .contents-item.show {
+    opacity: 1;
+    z-index: 100;
+}
+.wrap .contents-box .contents-item .fl {
+    width: 55%;
+    height: inherit;
+    float: left;
+    background-size: contain !important;
+}
+
+.wrap .contents-box .contents-item .fr {
+    width: 45%;
+    height: inherit;
+    float: right;
+    box-sizing: border-box;
+    padding: 110px 0px 0px 60px;
+}
+.wrap .contents-box .contents-item .fr img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -25px;
+}
+
+.wrap .contents-box .contents-item .fr h3 {
+    font-size: 30px;
+}
+
+.wrap .contents-box .contents-item .fr p {
+    color: #333;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.wrap .contents-box .contents-item .fr a {
+    color: rgb(53, 166, 224);
+    font-size: 14px;
+}
+
+.wrap .contents-box .contents-item .fr a:hover {
+    text-decoration: underline;
+}
+
+.wrap .contents-box .contents-item .fr a:after {
+    content: url("../images/arrow.png");
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
