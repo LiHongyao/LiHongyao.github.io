@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript - 轮播图</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <!-- 淡入淡出 -->
+    <div class="fade">
+        <h1 class="title">1. 淡入淡出</h1>
+        <div class="flash">
+            <!-- 图片 -->
+            <div class="wrapper">
+                <img src="./images/01.jpg" alt="loadding err" class="slide show">
+                <img src="./images/02.jpg" alt="loadding err" class="slide">
+                <img src="./images/03.jpg" alt="loadding err" class="slide">
+                <img src="./images/04.jpg" alt="loadding err" class="slide">
+                <img src="./images/05.jpg" alt="loadding err" class="slide">
+                <img src="./images/06.jpg" alt="loadding err" class="slide">
+            </div>
+            <!-- 按钮 -->
+            <div class="button prev"></div>
+            <div class="button next"></div>
+            <!-- 分页 -->
+            <div class="pagination">
+                <section class="pagination-item sel"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+            </div>
+        </div>
+    </div>
+    <!-- 滚动效果 -->
+    <div class="scroll">
+        <h1 class="title">2. 滚动效果</h1>
+        <div class="flash">
+            <!-- 图片 -->
+            <div class="wrapper">
+                <img src="./images/06.jpg" alt="loadding err" class="slide">
+
+                <img src="./images/01.jpg" alt="loadding err" class="slide">
+                <img src="./images/02.jpg" alt="loadding err" class="slide">
+                <img src="./images/03.jpg" alt="loadding err" class="slide">
+                <img src="./images/04.jpg" alt="loadding err" class="slide">
+                <img src="./images/05.jpg" alt="loadding err" class="slide">
+                <img src="./images/06.jpg" alt="loadding err" class="slide">
+
+                <img src="./images/01.jpg" alt="loadding err" class="slide">
+            </div>
+            <!-- 按钮 -->
+            <div class="button prev"></div>
+            <div class="button next"></div>
+            <!-- 分页 -->
+            <div class="pagination">
+                <section class="pagination-item sel"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+                <section class="pagination-item"></section>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/fn.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

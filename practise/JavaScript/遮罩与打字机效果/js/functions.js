@@ -8,9 +8,9 @@ function effectOfTyping(element, str, interval) {
     // 设置默认的时间间隔
     interval = interval || 100;
     // 定义下标，用于记录当前打印字符的位置
-    var curIdx = 0;
+    let curIdx = 0;
     // 设置定时器，逐帧打印字符
-    var t = setInterval(function () {
+    let t = setInterval(() => {
         // 判断：如果当前打印字符位置等于字符串长度，则表示打印完毕，清除定时器
         if(curIdx === str.length) {
             clearInterval(t);

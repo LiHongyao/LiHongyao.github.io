@@ -1,11 +1,12 @@
-/*DOM相关 */
+
+/*********************************************** DOM相关操作 ***********************************************/
 /**
  * DOM查询
  * @param {String} Sel   选择器
  * @param {String} isAll 是否匹配多个元素 
  */
 function getEl(Sel, isAll) {
-    if(isAll) {
+    if (isAll) {
         return document.querySelectorAll(Sel);
     }
     return document.querySelector(Sel);
@@ -53,59 +54,95 @@ function getStyle(el, attr) {
     }
 }
 
+
+/*********************************************** 效果封装 ***********************************************/
+/**
+ * 打字机效果
+ * @param {*} element 
+ * @param {*} str 
+ * @param {*} interval 
+ */
+function effectOfTyping(element, str, interval) {
+    // 异常处理
+    if (!element || !str) {
+        throw 'Error: Lack the necessary parameters of function \'effectOfTyping\'.';
+    }
+    // 清空元素文本内容
+    element.textContent = '';
+    // 设置默认的时间间隔
+    interval = interval || 100;
+    // 定义下标，用于记录当前打印字符的位置
+    let curIdx = 0;
+    // 设置定时器，逐帧打印字符
+    let t = setInterval(() => {
+        // 判断：如果当前打印字符位置等于字符串长度，则表示打印完毕，清除定时器
+        if (curIdx === str.length) {
+            clearInterval(t);
+        } else {
+            // 逐帧打印
+            element.textContent += str.charAt(curIdx++);
+        }
+    }, interval);
+}
+
+
+
 /**
  * 回到顶部
- * @param options 配置参数
- * options -> {
- *   el： 触发元素节点
- *   duration: 持续时间
- *   pageScroll：页面滚动回调
- *   complete：回到顶部结束回调
- * }
+ * @param {Object} options 配置参数
+ * - el 触发元素
+ * - duration 持续时间
+ * - pageScroll 页面滚动回调
+ * - complete 回到顶部完成回调
  */
 function scrollToTop(options) {
-    // 设置默认参数
-    let configs = {
-        el: "",
-        duration: 1000,
-        pageScroll: "",
-        complete: ""
-    };
-    // 合并用户设置和默认设置
-    Object.assign(configs, options);
-    // 定义变量
-    let offset = null,  // 记录偏移
+    // 1. 解构配置参数
+    let { el, duration, pageScroll, complete } = options;
+    // 2. 默认值
+    duration = duration || 1000;
+    // 3. 定义变量
+    let isAnimating = false; // 记录当前是否正在执行回到顶部的动画
+    let offset   = 0,  // 记录偏移
         interval = 15,  // 每一帧持续的时间
-        duration = configs.duration, // 持续总时间
         speed = null, // 每一帧位移的距离
         timer = null; // 定时器
-    // 监听窗口滚动
-    window.onscroll = function() {
+    // 4. 监听窗口滚动
+    window.onscroll = function () {
         // 更新页面滚动的距离
         offset = document.body.scrollTop || document.documentElement.scrollTop;
         // 触发回调函数
-        configs.pageScroll && configs.pageScroll(offset);
+        pageScroll && pageScroll(offset);
     }
-    // 监听按钮点击
-    configs.el.onclick = function() {
+    // 5.监听按钮点击
+    el.onclick = function () {
+        // 异常处理
+        // 如果当前正在执行动画，则不响应事件
+        if(isAnimating) {
+            return;
+        }
         // 计算每一帧位移的距离
         speed = Math.ceil(offset / (duration / interval));
         // 定时器执行滚动动画
-        timer = setInterval(function() {
+        isAnimating = true;
+        timer = setInterval(function () {
             if (offset > 0) {
                 document.body.scrollTop = document.documentElement.scrollTop = offset - speed;
             } else {
                 // 清除定时器
                 clearInterval(timer);
                 timer = null;
+                isAnimating = false;
                 // 矫正误差
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
                 // 触发回调
-                configs.complete && configs.complete();
+                complete && complete();
             }
         }, interval);
     }
 }
+
+
+/*********************************************** BOM ***********************************************/
 
 /**
  * 将location.search转换为对象类型
@@ -116,7 +153,7 @@ function convertSearch(searchStr) {
     // 异常处理
     if (!searchStr) {
         return null;
-    }else {
+    } else {
         let str = searchStr.slice(1);
         let strArr = str.split('&');
         let obj = {};
@@ -130,6 +167,10 @@ function convertSearch(searchStr) {
     }
 }
 
+
+
+/*********************************************** 异常处理 ***********************************************/
+
 /**
  * 异常处理（断言）
  * @param  {boolean} expression [判断条件]
@@ -137,11 +178,16 @@ function convertSearch(searchStr) {
  * @return {object}             [描述错误的对象]
  */
 function assert(expression, message) {
-	if (!expression){
-		throw {name: 'Assertion Exception', message: message};
-	}
+    if (!expression) {
+        throw { name: 'Assertion Exception', message: message };
+    }
 }
 
+
+
+
+
+/*********************************************** 随机数相关 ***********************************************/
 /**
  * 获取任意数之间的随机数
  * @param  {number} min [最小值]
@@ -151,7 +197,7 @@ function assert(expression, message) {
 function randomDecimals(min, max) {
     if (min == undefined || max == undefined || isNaN(min) || isNaN(max)) {
         return -1;
-    }else {
+    } else {
         return Math.random() * (max - min) + min;
     }
 }
@@ -165,16 +211,16 @@ function randomDecimals(min, max) {
 function randomInteger(min, max) {
     if (min == undefined || max == undefined || isNaN(min) || isNaN(max)) {
         return -1;
-    }else {
+    } else {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
- }
+}
 
- /**
- * 获取随机字符
- * @param  {number} length [字符长度]
- * @return {string}        [随机结果]
- */
+/**
+* 获取随机字符
+* @param  {number} length [字符长度]
+* @return {string}        [随机结果]
+*/
 function randomCharacters(length) {
     var bStr = '';
     bStr += 'QWERTYUIOPASDFGHJKLZXCVBNM';
@@ -182,12 +228,17 @@ function randomCharacters(length) {
     bStr += '0123456789';
     var rStr = '';
     for (var i = 0; i < length; ++i) {
-      var idx = Math.floor(Math.random() * bStr.length);
-      rStr += bStr.substring(idx, idx + 1);
+        var idx = Math.floor(Math.random() * bStr.length);
+        rStr += bStr.substring(idx, idx + 1);
     }
     return rStr;
-  }
+}
 
+
+
+
+
+/*********************************************** ajax ***********************************************/
 /**
  * ajax
  * options{
@@ -210,26 +261,26 @@ function ajax(options) {
         data: {}
     }
     // 合并配置
-	Object.assign(config, options);
-	// 创建请求对象
-	var xhr = new XMLHttpRequest();
-	// 配置请求
+    Object.assign(config, options);
+    // 创建请求对象
+    var xhr = new XMLHttpRequest();
+    // 配置请求
     xhr.responseType = "json";
     xhr.timeout = config.timeout;
-	xhr.open(config.methods, config.url, true);
+    xhr.open(config.methods, config.url, true);
     // 头部参数
-    if(config.headers) {
-        for(var key in config.headers) {
+    if (config.headers) {
+        for (var key in config.headers) {
             xhr.setRequestHeader(key, config.headers[key]);
         }
     }
-	// 发送请求
-	xhr.send(config.data);
-	// 监听请求
-	xhr.onload = function() {
-        if(xhr.status == 200) {
+    // 发送请求
+    xhr.send(config.data);
+    // 监听请求
+    xhr.onload = function () {
+        if (xhr.status == 200) {
             config.success && config.success(xhr.response);
-        }else {
+        } else {
             config.fail && config.fail();
         }
     }
@@ -245,32 +296,32 @@ function ajax(options) {
  */
 function fade(element, target, duration, completed) {
     // Exception handling
-    if(!element || target == undefined) {
+    if (!element || target == undefined) {
         throw 'Error：Parameter is not complete in function \'changeOpacity\'.';
     }
     // Set the default value
-    duration  = duration  ? duration  : 1000;
+    duration = duration ? duration : 1000;
     // Gets the current opacity
     var curOpa = getCurrentOpacity();
     // Calculating offset
-    var offset   = target - curOpa;
+    var offset = target - curOpa;
     // Set the interval
     var interval = 30;
     // Calculating speed
-    var speed    = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
+    var speed = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
     // Execute transition animations
     var t = setInterval(function () {
         // Update the current opacity
         curOpa = getCurrentOpacity();
         // Determine whether to reach the target
-        if((offset > 0 && curOpa < target) || (offset < 0 && curOpa > target)) {
+        if ((offset > 0 && curOpa < target) || (offset < 0 && curOpa > target)) {
             // Frame by frame change
             element.style.opacity = (curOpa + speed) / 100
-        }else { // Has completed the transition animation
+        } else { // Has completed the transition animation
             element.style.opacity = target / 100;
             clearInterval(t);
             // Invoke the callback function
-            if(completed) {
+            if (completed) {
                 completed();
             }
         }
@@ -279,9 +330,9 @@ function fade(element, target, duration, completed) {
     function getCurrentOpacity() {
         var curOpa = 0;
         // Compatible with IE browser
-        if(element.currentStyle) {
+        if (element.currentStyle) {
             curOpa = element.currentStyle['opacity'] * 100;
-        }else {
+        } else {
             curOpa = getComputedStyle(element, null)['opacity'] * 100;
         }
         return curOpa;
@@ -294,29 +345,29 @@ function fade(element, target, duration, completed) {
  * @return {anyObject}     [返回数据对应数据类型]
  */
 function typefor(val) {
-	// 获取参数返回类型（肯定是对象）和构造函数类型
-	var call = Object.prototype.toString.call(val);
-	// 下标开始位置
-	var startIdx = call.indexOf(" ") + 1;
-	// 下标结束为止
-	var endIdx = call.lastIndexOf("\]");
-	// 将截取出来的字符串转成小写字母并返回
-	return call.slice(startIdx, endIdx).toLowerCase();
+    // 获取参数返回类型（肯定是对象）和构造函数类型
+    var call = Object.prototype.toString.call(val);
+    // 下标开始位置
+    var startIdx = call.indexOf(" ") + 1;
+    // 下标结束为止
+    var endIdx = call.lastIndexOf("\]");
+    // 将截取出来的字符串转成小写字母并返回
+    return call.slice(startIdx, endIdx).toLowerCase();
 }
 
 /**
  * 类型判断
  */
 {
-	(function(){
-		var types = ["Null", "Undefined", "Number", "String", "Object", "Function", "RegExp", "Math", "Date", "Array", "boolean"];
-		types.map(function(type) {
-			Object.prototype["is" + type] = function(val) {
-				val = val == undefined ? this : val;
-				return getType(val) == type.toLowerCase();
-			}
-		});
-	}());
+    (function () {
+        var types = ["Null", "Undefined", "Number", "String", "Object", "Function", "RegExp", "Math", "Date", "Array", "boolean"];
+        types.map(function (type) {
+            Object.prototype["is" + type] = function (val) {
+                val = val == undefined ? this : val;
+                return getType(val) == type.toLowerCase();
+            }
+        });
+    }());
 }
 
 
@@ -325,23 +376,24 @@ function typefor(val) {
  * 
  */
 {
-	Object.prototype.toUnicodeString = function(val) {
-		var s = val || this.valueOf() ;
-		var numCode = "";
-		var resStr = "";
-		for (var i = 0; i < s.length; i++) {
-			numCode = s.charCodeAt(i);
-			numCode = numCode.toString(16);
-			numCode = '\\u' + numCode;
-			resStr += numCode;
-		}
-		return resStr;
-		
-	}
+    Object.prototype.toUnicodeString = function (val) {
+        var s = val || this.valueOf();
+        var numCode = "";
+        var resStr = "";
+        for (var i = 0; i < s.length; i++) {
+            numCode = s.charCodeAt(i);
+            numCode = numCode.toString(16);
+            numCode = '\\u' + numCode;
+            resStr += numCode;
+        }
+        return resStr;
+
+    }
 }
 
 
-/**************** 本地存储相关操作 *****************/
+
+/*********************************************** 数据存储 ***********************************************/
 /**
  *  存储数据
  * @param {Object} options 
@@ -356,7 +408,7 @@ function localSave(options) {
     var root = [];
     // 判断本地是否存在对应key的数据
     // 如果存在，则先取到本地数据
-    if(localStorage[options.key]) {
+    if (localStorage[options.key]) {
         root = JSON.parse(localStorage[options.key]);
     }
     // 将要添加的数据存入根数组
@@ -378,8 +430,8 @@ function localSave(options) {
  */
 function localRemove(options) {
     // 条件删除
-    if(options.condition) {
-        if(localStorage[options.key]) {
+    if (options.condition) {
+        if (localStorage[options.key]) {
             // 获取所有数据
             var datas = JSON.parse(localStorage[options.key]);
             // 获取条件键
@@ -387,9 +439,9 @@ function localRemove(options) {
             // 获取条件值
             var _val = options.condition[_key];
             // 遍历查找
-            for(var i = 0, len = datas.length; i < len; i++) {
+            for (var i = 0, len = datas.length; i < len; i++) {
                 // 如果找到了匹配数据
-                if(datas[i][_key] == _val) {
+                if (datas[i][_key] == _val) {
                     // 删除数据
                     datas.splice(i, 1);
                     // 更新本地数据
@@ -399,10 +451,10 @@ function localRemove(options) {
                 }
             }
         }
-    }else {
+    } else {
         localStorage.removeItem(options.key);
     }
-    
+
 }
 
 /**
@@ -417,7 +469,7 @@ function localRemove(options) {
  */
 function localModify(options) {
     // 判断数据是否存在
-    if(localStorage[options.key]) {
+    if (localStorage[options.key]) {
         // 获取本地数据
         var datas = JSON.parse(localStorage[options.key]);
         // 获取条件键
@@ -425,8 +477,8 @@ function localModify(options) {
         // 获取条件值
         var _val = options.condition[_key];
         // 查找要修改的数据
-        for(var i = 0, len = datas.length; i< len; i++) {
-            if(datas[i][_key] == _val) {
+        for (var i = 0, len = datas.length; i < len; i++) {
+            if (datas[i][_key] == _val) {
                 // 修改数据
                 Object.assign(datas[i], options.data);
                 // 更新本地
@@ -435,7 +487,7 @@ function localModify(options) {
                 return;
             }
         }
-       
+
     }
 }
 /**
@@ -449,33 +501,33 @@ function localModify(options) {
  */
 function localQuery(options) {
     // 判断本地是否存在对应的key
-    if(localStorage[options.key]) {
+    if (localStorage[options.key]) {
         // 获取本地存储的所有数据
         var datas = JSON.parse(localStorage[options.key]);
         // 判断是否是条件查询
-        if(options.condition) {  
+        if (options.condition) {
             // 获取条件键
             var _key = Object.keys(options.condition)[0];
             // 获取条件值
             var _val = options.condition[_key];
             var index = -1;
             // 遍历查找
-            for(var i = 0, len = datas.length; i < len; i++) {
-                if(datas[i][_key] == _val) {
+            for (var i = 0, len = datas.length; i < len; i++) {
+                if (datas[i][_key] == _val) {
                     index = i;
                     break;
                 }
             }
             // 根据下标判断是否找到对应的数据
-            if(index == -1) { // 没有找到
+            if (index == -1) { // 没有找到
                 options.complete && options.complete(null);
-            }else { //找到了
+            } else { //找到了
                 options.complete && options.complete(datas[index]);
             }
-        }else {
+        } else {
             options.complete && options.complete(datas);
         }
-    }else {
+    } else {
         options.complete && options.complete(null);
     }
 }
@@ -494,28 +546,28 @@ function localQuery(options) {
  */
 function register(options) {
     // 1. 解构参数
-    var {usr, key, success, fail} = options;
+    var { usr, key, success, fail } = options;
     key = key || "USERS";
     // 2. 异常处理
-    if(!usr.username || !usr.password) {
+    if (!usr.username || !usr.password) {
         throw "用户对象必须使用‘username’和‘password’字段作为用户的账号和密码";
     }
     // 3. 创建空对象
     var usrs = {};
     // 3. 判断本地是否存在【用户数据集合】
-    if(localStorage[key]) {
+    if (localStorage[key]) {
         usrs = JSON.parse(localStorage[key]);
     }
     // 4. 判断【用户】是否存在
-   if(usr.username in usrs) {
-       fail && fail("用户已存在!");
-   }else {
-       // 注册用户
-       usrs[usr.username] = usr;
-       // 更新本地数据
-       localStorage[key] = JSON.stringify(usrs);
-       success && success();
-   }
+    if (usr.username in usrs) {
+        fail && fail("用户已存在!");
+    } else {
+        // 注册用户
+        usrs[usr.username] = usr;
+        // 更新本地数据
+        localStorage[key] = JSON.stringify(usrs);
+        success && success();
+    }
 }
 
 
@@ -531,25 +583,26 @@ function register(options) {
  */
 function login(options) {
     // 1. 解构参数
-    var {username, password, key, success, fail} = options;
+    var { username, password, key, success, fail } = options;
     key = key || "USERS";
     // 2. 判断本地用户数据集合是否存在
-    if(!localStorage[key]) {
+    if (!localStorage[key]) {
         fail && fail("用户不存在!");
-    }else {
+    } else {
         // 读取用户集合
         var usrs = JSON.parse(localStorage[key]);
-        var usr  = usrs[username]; 
+        var usr = usrs[username];
         // 判断用户是否存在
-        if(!usr) {
+        if (!usr) {
             fail && fail("用户不存在!");
-        }else {
+        } else {
             // 判断是否登陆成功 
-            if(username === usr.username && password === usr.password) {
+            if (username === usr.username && password === usr.password) {
                 success && success(usr);
-            }else {
+            } else {
                 fail && fail("账号或密码错误!");
             }
         }
     }
 }
+

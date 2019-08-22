@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+*    {margin: 0; padding: 0;}
+img  {vertical-align: middle;}
+body {padding: 100px 0; }
+
+.title {
+    width: 200px;
+    margin:100px auto 35px;
+    text-align: center;
+    font: 26px/50px "微软雅黑";
+    letter-spacing: 5px;
+    color: #444444;
+    border-bottom: 2px solid darkred;
+}
+
+/* 淡入淡出 */
+.fade .flash {
+    min-width: 1000px;
+    position: relative;
+}
+.fade .slide {
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+.fade .slide.show {
+    opacity: 1;
+}
+.fade .slide:not(:first-child) { 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fade .button {
+    width: 45px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fade .prev {
+    left: 20px;
+    background: url("../images/arr_left.png") no-repeat center center;
+}
+.fade .next {
+    right: 20px;
+    background: url("../images/arr_right.png") no-repeat center center;
+}
+
+.fade .pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+.fade .pagination-item {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: purple;
+    margin: 0 8px;
+    cursor: pointer;
+}
+.fade .pagination-item.sel,
+.fade .pagination-item:hover {
+    background: orange;
+}
+
+
+/* 滚动效果 */
+.scroll .flash {
+    min-width: 1000px;
+    position: relative;
+    overflow: hidden;
+
+}
+.scroll .wrapper {
+    width: calc(8 * 100%);
+    font-size: 0; 
+}
+.scroll .slide {
+    width: calc(100% / 8);
+}
+
+
+.scroll .button {
+    width: 45px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.scroll .prev {
+    left: 20px;
+    background: url("../images/arr_left.png") no-repeat center center;
+}
+.scroll .next {
+    right: 20px;
+    background: url("../images/arr_right.png") no-repeat center center;
+}
+
+
+.scroll .pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+.scroll .pagination-item {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: purple;
+    margin: 0 8px;
+    cursor: pointer;
+}
+.scroll .pagination-item.sel,
+.scroll .pagination-item:hover {
+    background: orange;
+}
+
+
+
+
+
+
