@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.button {
+    width: 140px;
+    height: 45px;
+    margin: 100px 0;
+    border: 1px solid #444444;
+
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+    
+    position: relative;
+    transition: all .35s linear;
+}
+.button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .35s linear;
+}
+.button:hover {
+    color: #ffffff;
+}
+.button:hover::after {
+    width: 100%;
+}
+
+
+
+-
+
