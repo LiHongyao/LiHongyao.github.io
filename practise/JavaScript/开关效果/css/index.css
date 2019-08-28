@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+body {
+    background: #ffffff;
+    text-align: center;
+}
+
+.btn {
+    margin: 100px auto 25px;
+    width: 160px;
+    line-height: 35px;
+    background: darkgray;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all .25s linear;
+    border-radius: 20px;
+}
+.btn:hover {
+    background: gray;
+}
