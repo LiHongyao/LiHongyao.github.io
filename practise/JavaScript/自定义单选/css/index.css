@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.colors {
+    margin-bottom: 20px;
+}
+.colors section,
+.size section {
+    display: inline-block;
+}
+.colors .item,
+.size .item {
+    width: 100px;
+    background: #eeeeee;
+    color: #666666;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+
+.colors .item.sel,
+.size .item.sel {
+    background: orange;
+    color: #ffffff;
+}
+
+
+button {
+    width: 120px;
+    height: 35px;
+    margin-top: 35px;
+}
