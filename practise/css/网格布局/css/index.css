@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/* 表单 */
+.t {
+    display: grid;
+    grid-template-columns: 120px 200px;
+    grid-template-rows: repeat(3, 40px);
+}
+.t .title {
+    text-align: right;
+}
+
+
+/* 示例1 */
+.container {
+    margin: 50px 0;
+}
+
+.item {
+    background: orange;
+    font: bold 32px "微软雅黑";
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.t1 {
+    display: grid;
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: 200px 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* 示例2 */
+.t2, .t3 {
+    display: grid;
+    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: 60% 1fr;
+    grid-gap: 20px;
+}
+.t2 .item:first-child {
+    grid-row: 1/3;
+}
+
+
+.t3 .item:first-child {
+    grid-row: 1/3;
+    grid-column: 2/3;
+}
+
+
+
+.t4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-gap: 20px;
+}
+.t4 .item:first-child {
+    grid-column: 1/3;
+}
+.t4 .item:nth-child(5) {
+    grid-row: 2/4;
+    grid-column: 2/3;
+}
+.t4 .item:nth-child(6),
+.t4 .item:nth-child(8) {
+    grid-column: 3/5;
+}
