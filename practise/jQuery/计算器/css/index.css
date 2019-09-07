@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+body { background: #000000;  overflow: hidden;}
+
+#app {height: 100%;}
+#res {
+    height: 25%;
+    color: #ffffff;
+    font: bold 46px "微软雅黑";
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: 8px;
+}
+
+#keybox {
+    height: 75%;
+    display: grid;
+    grid-template:repeat(5, 90px) / repeat(4, 90px);
+    justify-content: space-around;
+    align-content: space-around;
+}
+#keybox .item {
+    background: rgb(253, 149, 3);;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: bold 20px "微软雅黑";
+    color: #ffffff;
+
+    transition: all .25s linear;
+}
+
+#keybox .zero {
+    grid-column: 1/3;
+    border-radius: 55px;
+}
+
+#keybox .num,
+#keybox .point {
+    background: rgb(51, 51, 51);
+}
+#keybox .handler {
+    background:rgb(165, 165, 165);
+}
+@media screen and (width: 320px) {
+    #keybox {
+        grid-template:repeat(5, 70px) / repeat(4, 70px);
+    }
+}
+@media screen and (width: 360px) {
+    #keybox {
+        grid-template:repeat(5, 80px) / repeat(4, 80px);
+    }
+}
+
+/* 调色 */
+#keybox .equal:active ,
+#keybox .operator:active {
+    background: rgb(249, 206, 151);
+}
+
+#keybox .point:active,
+#keybox .num:active {
+    background: rgb(126, 126, 126);
+}
+#keybox .handler:active {
+    background: rgb(222, 222, 222);
+}
+
+#keybox .operator.selected {
+    background: #fff;
+    color: rgb(253, 149, 3);
+}
