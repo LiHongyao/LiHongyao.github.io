@@ -46,16 +46,17 @@ body { background: #000000;  overflow: hidden;}
 #keybox .handler {
     background:rgb(165, 165, 165);
 }
-@media screen and (width: 320px) {
-    #keybox {
-        grid-template:repeat(5, 70px) / repeat(4, 70px);
-    }
-}
-@media screen and (width: 360px) {
+@media screen and (max-width: 360px) {
     #keybox {
         grid-template:repeat(5, 80px) / repeat(4, 80px);
     }
 }
+@media screen and (max-width: 320px) {
+    #keybox {
+        grid-template:repeat(5, 70px) / repeat(4, 70px);
+    }
+}
+
 
 /* 调色 */
 #keybox .equal:active ,

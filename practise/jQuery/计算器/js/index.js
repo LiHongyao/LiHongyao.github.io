@@ -64,6 +64,7 @@ $(function () {
     });
     // 4. 点击等号
     $(".equal").click(function () {
+        if (!secNum) { return; }
         // 执行运算
         calc({
             firNum, secNum, operator,
@@ -92,9 +93,14 @@ $(function () {
                 firNum = val;
             } break;
             case "%": {
-                let val = parseFloat($res.text()) / 100;
-                $res.text(val);
-                firNum = val;
+                // let val = parseFloat($res.text());
+                // if(firNum && secNum) {
+                //     val = firNum * secNum;
+                // }
+
+                $res.text(parseFloat($res.text()) / 100);
+                firNum = $res.text();
+                // secNum = 0;
             } break;
         }
     });
