@@ -34,6 +34,7 @@ router.post("/login", (req, res) => {
     let db = getConnection();
     db.connect();
     db.query(sql, sqlParams, (err, sqlRes) => {
+       
         if(sqlRes.length == 0) {
             res.send({
                 status: "202",
