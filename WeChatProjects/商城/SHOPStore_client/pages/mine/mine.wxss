@@ -1,0 +1,22 @@
+.infos {
+    height: 390rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+}
+
+.avatar {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nikename {
+    margin-top: 20rpx;
+    font-weight: bold;
+    letter-spacing: 4rpx;
+    color: #444;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "lhy-selector":"../../components/Selector/Selector",
+      "lhy-counter":"../../components/Counter/Counter"
+  },
+  "navigationBarTitleText": "详情"
+}

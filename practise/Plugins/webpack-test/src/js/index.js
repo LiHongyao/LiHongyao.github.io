@@ -1,15 +1,23 @@
-// 导入模块
-import {Util} from "./util";
-require("index-style");
+import "../less/index.less"
 
-let util = new Util();
-let t = $("#title");
-
-util.setTitle(t, "Hello, webpack!");
+$("button").on("click", function() {
+    alert("Hello, 3q!");
+})
 
 
+$.ajax({
+    url: "http://127.0.0.1:8081/user/login",
+    type: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    data: JSON.stringify({
+        username: "admin",
+        password: "123"
+    }),
+    success(res){
+        console.log(res)
+    }
+})
 
-
-
-
-
+console.log("This is home page.");

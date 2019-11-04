@@ -1,0 +1,59 @@
+.search-res {
+    box-sizing: border-box;
+    padding: 16rpx;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40rpx;
+    padding-bottom: 16rpx;
+    border-bottom: 2rpx solid #eee;
+}
+
+.infos {
+    width: calc(100% - 40rpx);
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.img {
+    width: 40%;
+    height: 260rpx;
+}
+
+.wrap {
+    width: 58%;
+    letter-spacing: 2rpx;
+}
+
+.name {
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.des {
+    font-size: 0.9rem;
+    color: gray;
+    margin: 16rpx 0 30rpx;
+}
+
+.price {
+    font-weight: bolder;
+    color: orange;
+}
+
+.no-data {
+    text-align: center;
+    margin-top: 300rpx;
+    font-size: 2rem;
+    color: #090;
+}

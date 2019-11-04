@@ -1,0 +1,82 @@
+.container {
+    box-sizing: border-box;
+    padding: 16rpx;
+}
+
+.infos {
+    display: grid;
+    grid-template: repeat(3, 60rpx) 170rpx / 45% 55%;
+    grid-gap: 16rpx;
+    border-bottom: 2rpx solid #eee;
+    letter-spacing: 3rpx;
+}
+
+.infos image {
+    width: 100%;
+    grid-row: 1 / 5;
+    height: 360rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.name {
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.des {
+    color: gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: .65rem;
+}
+
+.price text {
+    color: #090;
+    font-weight: bolder;
+}
+
+.options {
+    margin: 60rpx 0;
+    font-size: .7rem;
+}
+
+.options .item {
+    display: flex;
+    align-items: center;
+}
+
+.btns {
+    width: 80%;
+    height: 74rpx;
+    display: flex;
+    overflow: hidden;
+    border-radius: 32rpx;
+    font-size: .65rem;
+    position: fixed;
+    bottom: 100rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn {
+    width: 50%;
+    line-height: 74rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.insert {
+    background: linear-gradient(to right, #fecf21, #fe8520);
+}
+
+.buy {
+    background: linear-gradient(to right, #fb5533, #ed0025);
+}
+
+.lhy-counter {
+    margin: 20rpx 0;
+}

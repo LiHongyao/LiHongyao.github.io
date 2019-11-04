@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="infos">
+        <!-- 头像 -->
+        <open-data type="userAvatarUrl" class="avatar"></open-data>
+        <!-- 昵称 -->
+        <open-data type="userNickName" class="nikename"></open-data>
+    </view>
+</view>

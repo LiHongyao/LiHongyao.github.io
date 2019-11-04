@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="infos">
+        <image src="{{content.imgUrl}}"></image>
+        <view class="name">{{content.title}}</view>
+        <view class="des">{{content.des}}</view>
+        <view class="price">单价：
+            <text>¥ {{content.price}}</text>
+        </view>
+        <view class="stock">库存：{{content.stock}}</view>
+    </view>
+
+    <view class="options">
+        <view class="item">
+            <text class="color">颜色：</text>
+            <lhy-selector id="color" source="{{colors}}" bind:change="handleSelectorChange" />
+        </view>
+        <view class="item">
+            <text class="color">尺码：</text>
+            <lhy-selector id="size" source="{{sizes}}" bind:change="handleSelectorChange" />
+        </view>
+        <view class="item">
+            <text class="num">数量：</text>
+            <lhy-counter bind:change="handleNumChange" />
+        </view>
+    </view>
+
+    <view class="btns">
+        <view class="btn insert" bindtap="handleInsert">加入购物车</view>
+        <view class="btn buy">立刻购买</view>
+    </view>
+
+</view>

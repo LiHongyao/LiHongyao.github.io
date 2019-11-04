@@ -1,0 +1,8 @@
+<view class="lhy-counter">  
+    <!-- 减号 -->  
+    <text class="{{minusStatus}}" id="minus" bindtap="handleTap">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual" value="{{num}}" />  
+    <!-- 加号 -->  
+    <text class="{{plusStatus}}" id="plus" bindtap="handleTap">+</text>  
+</view>  

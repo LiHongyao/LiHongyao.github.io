@@ -1,0 +1,29 @@
+<view class="container">
+    <!-- 轮播图 -->
+    <swiper indicator-dots indicator-color="#444" indicator-active-color="#009900" autoplay interval="3000" circular>
+        <swiper-item wx:for="{{banner}}" wx:key="{{index}}">
+            <image src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 广播 -->
+    <view class="news">
+        <image src="{{url}}/images/news.png"></image>
+        <text>双十一大促销，全场2折！</text>
+    </view>
+    <!-- 商品展示数据 -->
+    <block wx:for="{{commodities}}" wx:for-index="i" wx:key="{{i}}">
+        <view class="shopping">
+            <text class="title">{{item.title}}</text>
+            <view class="list">
+                <block wx:for="{{item.contents}}" wx:for-item="obj" wx:for-index="j" wx:key="{{j}}">
+                    <view class="item" data-i="{{i}}" data-j="{{j}}" bindtap="handleItemTap">
+                        <image src="{{obj.imgUrl}}" ></image>
+                        <text class="name">{{obj.title}}</text>
+                        <text class="des">{{obj.des}}</text>
+                        <text class="price">¥ {{obj.price}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

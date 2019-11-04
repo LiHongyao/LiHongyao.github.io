@@ -1,38 +1,38 @@
 {
   "name": "webpack-test",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
+  "browserslist": [
+    "last 2 version"
+  ],
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server  --config ./build/webpack.dev.config.js -w",
-    "build": "./node_modules/.bin/webpack --config ./build/webpack.dev.config.js"
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./build/webpack.dev.config.js",
+    "build": "./node_modules/.bin/webpack --config ./build/webpack.dev.config.js --progress"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "autoprefixer": "^9.5.1",
-    "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^2.0.1",
-    "copy-webpack-plugin": "^5.0.2",
-    "css-loader": "^2.1.1",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^3.0.1",
+    "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "postcss-loader": "^3.0.0",
-    "purify-css": "^1.2.5",
-    "purifycss-webpack": "^0.7.0",
-    "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.3.1"
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "jquery": "^3.4.0"
+    "jquery": "^3.4.1"
   }
 }

@@ -1,0 +1,32 @@
+<view class="container">
+    <!-- 购物车数据列表 -->
+    <scroll-view class="list" scroll-y>
+        <block wx:for="{{shoppingCart}}" wx:key="{{index}}">
+            <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-index="{{index}}">
+                <view class="item">
+                    <radio data-index="{{index}}" checked="{{item.checked}}" bindtap="handleItemRadioTap"></radio>
+                    <image src="{{item.imgUrl}}"></image>
+                    <view class="infos">
+                        <view class="name">{{item.title}}</view>
+                        <view class="des">{{item.des}}</view>
+                        <view class="color-size">{{item.color}} - {{item.size}} - {{item.price}}</view>
+                        <lhy-counter num="{{item.num}}" bind:change="handleCounterChange" data-index="{{index}}"></lhy-counter>
+                        <view class="total">¥ {{item.total}}</view>
+                    </view>
+                </view>
+            </mp-slideview>
+        </block>
+    </scroll-view>
+    <!-- 操作 -->
+    <view class="handle">
+        <view class="all">
+            <radio bindtap="handleAllSelRadioTap" checked="{{isAllSel}}"></radio>
+            <text class="all-sel-text">全选</text>
+            <text class="deleter" bindtap="handleAllDelete">删除选中</text>
+        </view>
+        <view class="total">
+             总价：<text>{{total}}元</text>
+        </view>
+        <view class="settlement">结算</view>
+    </view>
+</view>

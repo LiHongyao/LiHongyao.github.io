@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "lhy-counter": "../../components/Counter/Counter",
+      "mp-slideview": "../../miniprogram_npm/weui-miniprogram/slideview/slideview"
+  },
+  "navigationBarTitleText": "购物车"
+}

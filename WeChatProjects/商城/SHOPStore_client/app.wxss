@@ -1,0 +1,6 @@
+@import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+page, .container {
+    height: 100%;
+    font-family: "Comic Sans MS";
+}

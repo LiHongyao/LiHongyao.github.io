@@ -1,0 +1,52 @@
+.container {
+    overflow: hidden;
+}
+
+.search-box {
+    width: 80%;
+    height: 90rpx;
+    margin: 50rpx auto 0;
+    border: 2rpx solid #eee;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16rpx;
+}
+
+.search-box image {
+    width: 50rpx;
+    height: 50rpx;
+    opacity: 0.6;
+}
+
+.search-box input {
+    width: calc(100% - 50rpx);
+    height: inherit;
+    /* 设置光标颜色 */
+    caret-color: #090;
+    font-size: .85rem;
+}
+
+/* 热词区域 */
+
+.hots {
+    width: 80%;
+    margin: 30rpx auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.keywords {
+    width: 32%;
+    margin-bottom: 3%;
+    line-height: 30px;
+    background: #e1e1e1;
+    color: #fff;
+    border-radius: 34rpx;
+    text-align: center;
+    font-size: .75rem;
+    letter-spacing: 4rpx;
+}
+.keywords:not(:nth-child(3n)) {
+    margin-right: 2%;
+}

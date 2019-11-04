@@ -1,0 +1,24 @@
+<view class="container">
+    <!-- 导航栏 -->
+    <Nav backIcon="{{url}}/images/arrow_left.png" bind:change="handleKeywordsChange" bind:size="handleNavSize" />
+    <!-- 搜索结果 -->
+    <scroll-view wx:if="{{arr.length > 0}}" class="search-res" scroll-y style="height:calc(100% - {{navH}}px)">
+        <block wx:for="{{arr}}" wx:key="{{index}}">
+            <view class="item" data-index="{{index}}" bindtap="handleItemTap">
+                <view class="infos">
+                    <image class="img" src="{{item.imgUrl}}"></image>
+                    <view class="wrap">
+                        <view class="name">{{item.title}}</view>
+                        <view class="des">{{item.des}}</view>
+                        <view class="price">¥ {{item.price}}</view>
+                    </view>
+                </view>
+                <image class="arrow" src="{{url}}/images/arrow_right.png"></image>
+            </view>
+        </block>
+    </scroll-view>
+    <!-- 数据为空 -->
+    <view class="no-data" wx:else>
+        (¬‿¬) 没有您要的数据哦~
+    </view>
+</view>
