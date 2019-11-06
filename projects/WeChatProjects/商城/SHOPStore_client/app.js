@@ -26,7 +26,7 @@ App({
                         title: '加载中...',
                         mask: true
                     })
-                    wx.login({
+                    wx.login({ 
                         success: function(res) {
                             if (res.code) {
                                 // 获取临时登录凭证

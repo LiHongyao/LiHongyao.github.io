@@ -1,0 +1,16 @@
+{
+  "name": "uptest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0"
+  }
+}

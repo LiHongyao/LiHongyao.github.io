@@ -11,7 +11,6 @@ router.post("/login", (req, res) => {
     let url = `https://api.weixin.qq.com/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${config.code}&grant_type=authorization_code`;
     // 引入node https模块
     let https = require("https");
-    // 发送get请求获取 session_key 和 openid
     https.get(url, function (data) {
         let str = "";
         data.on("data", function (chunk) {
