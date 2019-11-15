@@ -1,0 +1,62 @@
+@charset 'utf-8';
+
+.mine {
+    background: rgb(240, 240, 240);
+}
+.mine .info-box {
+    width: 100%;
+    height: 180px;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mine .head-portrait {
+    width: 25%;
+    padding-top: 25%;
+    border-radius: 50%;
+    background-size: cover !important;
+}
+.mine .nikename,
+.mine .signature {
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.mine .nikename {
+    margin-top: 8px;  
+} 
+
+.mine .tool-list {
+    box-sizing: border-box;
+    padding: 8px;
+}
+.mine .tool-list{
+    margin: 20px 0;
+    background: #fff;
+}
+.mine .tool-list li {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+
+.mine .cancellation {
+    width: 80%;
+    height: 45px;
+    margin: 35px auto 100px;
+    background: rgb(199, 27, 10);
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
