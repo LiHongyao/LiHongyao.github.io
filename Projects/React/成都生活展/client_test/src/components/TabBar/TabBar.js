@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import FontAwesome from "react-fontawesome";
-import "font-awesome/css/font-awesome.min.css";
+
 import "./TabBar.css";
 // => http://fontawesome.dashgame.com/
 export default class TabBar extends React.Component {
     render() {
+        if (!this.props.show) {
+            return null;
+        }
         return <footer className="tab-bar">
             <Link to="/" exact>
                 <FontAwesome name='home' />

@@ -30,7 +30,7 @@ class Recommend extends React.Component {
         });
     }
     handleItemClick(item) {
-        console.log(item);
+        this.props.history.push("/details");
     }
     componentDidMount() {
         this.request();
