@@ -1,0 +1,13 @@
+.recommend {
+    box-sizing: border-box;
+    padding: 8px;
+}
+.recommend img {
+    width: 30%;
+    margin-bottom: 12px;
+}
+.recommend img:not(:nth-child(3n)) {
+    margin-right: 3.33%;
+
+}
+

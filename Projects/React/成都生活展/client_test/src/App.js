@@ -3,16 +3,22 @@ import './App.css';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
-import {renderRoutes} from "react-router-config";
+import { renderRoutes } from "react-router-config";
 import routes from "./routes";
 import TabBar from "./components/TabBar/TabBar";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-function App() {
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+  title: state.title
+})
+
+function App(props) {
   return (
     <Router>
       <div className="App">
         {/* 头部 */}
-        <NavigationBar />
+        <NavigationBar title={props.title}/>
         {/* 内容 */}
         {renderRoutes(routes)}
         {/* 尾部 */}
@@ -22,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(mapStateToProps, null)(App);

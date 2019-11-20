@@ -3,4 +3,8 @@
 .navigation-bar {
     height: 64px;
     background: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
 }

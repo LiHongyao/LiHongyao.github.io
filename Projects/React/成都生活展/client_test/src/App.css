@@ -17,5 +17,6 @@ html, body, #root, .App {
 }
 .page {
     height: calc(100% - 64px - 49px);
+    overflow-y: scroll;
 }
 
