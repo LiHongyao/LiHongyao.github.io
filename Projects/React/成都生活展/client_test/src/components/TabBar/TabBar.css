@@ -1,0 +1,20 @@
+
+.tab-bar {
+    height: 49px;
+    background: #eeeeee;
+    display: flex;
+}
+.tab-bar a {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    font-size: 12px;
+}
+
+.active {
+    color: darkred;
+}
