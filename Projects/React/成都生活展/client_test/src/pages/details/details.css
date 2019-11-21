@@ -1,0 +1,18 @@
+.details {
+    height: calc(100% - 64px);
+}
+
+.details img {
+    display: block;
+}
+
+.details .des {
+    height: calc(100% - 150px);
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    white-space: pre-line;
+}

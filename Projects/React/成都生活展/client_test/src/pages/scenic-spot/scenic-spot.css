@@ -1,0 +1,33 @@
+.senic-spot {
+   box-sizing: border-box; 
+   padding: 8px;
+   overflow-y: scroll;
+}
+.senic-spot .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+.senic-spot img {
+    width: 30%;
+    border-radius: 2px;
+}
+.senic-spot .infos {
+    width: 68%;
+}
+.senic-spot .title {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+.senic-spot .tel {
+    font-size: 12px;
+    color: #444;
+    line-height: 35px;
+}
+.senic-spot .address {
+    color: #333;
+    font-size: 12px;
+}

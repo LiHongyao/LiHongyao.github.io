@@ -3,10 +3,13 @@ import { BASE_URL } from "../../util";
 import "./recommend.css";
 
 import { connect } from 'react-redux';
-import { UPDATE_TITLE } from "../../store/actions";
+import { UPDATE_TITLE, INFOS } from "../../store/actions";
 const mapDispatchToProps = dispatch => ({
   UPDATE_TITLE: title => {
     dispatch(UPDATE_TITLE(title));
+  },
+  INFOS: infos => {
+    dispatch(INFOS(infos));
   }
 })
 
@@ -23,13 +26,13 @@ class Recommend extends React.Component {
         fetch(`${BASE_URL}/recommend`).then(response => {
             return response.json();
         }).then(data => {
-            console.log(data);
             this.setState({
                 data
             })
         });
     }
     handleItemClick(item) {
+        this.props.INFOS(item);
         this.props.history.push("/details");
     }
     componentDidMount() {

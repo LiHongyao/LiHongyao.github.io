@@ -9,17 +9,12 @@ import TabBar from "./components/TabBar/TabBar";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import { connect } from 'react-redux';
 import "font-awesome/css/font-awesome.min.css";
-import { store } from "./store/index";
 const mapStateToProps = state => ({
   title: state.title,
   isShowTabBar: state.isShowTabBar
 })
 
 function App(props) {
-  store.subscribe(() => {
-    console.log('state状态改变了，新状态如下')
-    console.log(store.getState())
-  })
   return (
     <Router>
       <div className="App">
