@@ -660,3 +660,14 @@ function splitArray(arr, key) {
     }
     return resArr;
 }
+
+
+
+/**
+ * 隐藏手机中间四位数字
+ * @param {*} tel 手机号
+ */
+function hideTel(tel) {
+    return tel.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+}
+
