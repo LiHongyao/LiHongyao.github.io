@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>瀑布流：flexbox</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        .list {
+            list-style: none;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container .list {
+            width: 19.5%;
+        }
+        .container img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="column-1 list"></ul>
+        <ul class="column-2 list"></ul>
+        <ul class="column-3 list"></ul>
+        <ul class="column-4 list"></ul>
+        <ul class="column-5 list"></ul>
+    </div>
+
+    <script>
+        let images = [];
+        for (let i = 1; i <= 60; i++) {
+            images.push(`../images/${i}.jpeg`);
+        }
+        let groups = group(images, 5);
+        let lists = [...document.querySelectorAll(".list")];
+ 
+        lists.forEach((list, index) => {
+            let htmlStr = "";
+            groups[index].forEach(src => {
+                htmlStr += `<li><img src=${src} alt=""}/></li>`
+            })
+            list.innerHTML = htmlStr;
+        })
+
+        /**
+         * 将数组元素平均分成n等分
+         */
+        function group(arr, count) {
+            let len = Math.ceil(arr.length / count);
+            let newArr = [];
+            for(let i = 0; i < count; i++) {
+                if(i == count - 1) {
+                    newArr.push(arr.slice(len * i));
+                    continue;
+                }
+                newArr.push(arr.slice(len * i, len * i + len));
+            }
+            return newArr;
+        }
+
+    </script>
+</body>
+
+</html>

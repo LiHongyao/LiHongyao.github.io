@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.container {
+    width: 95%;
+    margin: 10px auto;
+}
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.item {
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+}
