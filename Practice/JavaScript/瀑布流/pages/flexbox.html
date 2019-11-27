@@ -8,18 +8,23 @@
     <title>瀑布流：flexbox</title>
     <style>
         * {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
         }
+
         .list {
             list-style: none;
         }
+
         .container {
             display: flex;
             justify-content: space-between;
         }
+
         .container .list {
             width: 19.5%;
         }
+
         .container img {
             width: 100%;
         }
@@ -37,12 +42,20 @@
 
     <script>
         let images = [];
-        for (let i = 1; i <= 60; i++) {
+        for (let i = 1; i <= 17; i++) {
             images.push(`../images/${i}.jpeg`);
         }
-        let groups = group(images, 5);
+        let groups = [[], [], [], [], []];
+        let index = 0;
+        while (index < images.length) {
+            groups.forEach(_ => {
+                if (index < images.length) {
+                    _.push(images[index]);
+                    index++;
+                }
+            })
+        }
         let lists = [...document.querySelectorAll(".list")];
- 
         lists.forEach((list, index) => {
             let htmlStr = "";
             groups[index].forEach(src => {
@@ -57,8 +70,8 @@
         function group(arr, count) {
             let len = Math.ceil(arr.length / count);
             let newArr = [];
-            for(let i = 0; i < count; i++) {
-                if(i == count - 1) {
+            for (let i = 0; i < count; i++) {
+                if (i == count - 1) {
                     newArr.push(arr.slice(len * i));
                     continue;
                 }

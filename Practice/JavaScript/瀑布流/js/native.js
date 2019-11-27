@@ -31,13 +31,18 @@ function loaddingImgs(el) {
 }
 
 /**
- * 瀑布流
+ * 瀑布流效果
+ * @param {parentSelector} 容器选择器
+ * @param {itemSelector} 元素选择器
+ * @param {columns} 显示列数，默认值为2
+ * @param {gap} 列间距，默认为10
  */
 function waterfall({parentSelector,itemSelector, columns = 2, gap = 10}) {
     // 1. 获取元素
     let items = document.querySelectorAll(itemSelector);
     // 2. 计算并更新元素的宽度
     const containerWidth = document.querySelector(parentSelector).offsetWidth;
+    // 元素宽度 = (容器 - （列数 - 1） * 间距) / 列数
     const itemWidth = (containerWidth - (columns - 1) * gap) / columns;
     items.forEach(element => {
         element.style.width = `${itemWidth}px`;
