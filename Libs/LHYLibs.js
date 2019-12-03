@@ -107,12 +107,12 @@ function scrollToTop(options) {
         speed = null, // 每一帧位移的距离
         timer = null; // 定时器
     // 4. 监听窗口滚动
-    window.onscroll = function () {
+    window.addEventListener("scroll", function () {
         // 更新页面滚动的距离
         offset = document.body.scrollTop || document.documentElement.scrollTop;
         // 触发回调函数
         pageScroll && pageScroll(offset);
-    }
+    });
     // 5.监听按钮点击
     el.onclick = function () {
         // 异常处理
@@ -610,7 +610,7 @@ function login(options) {
 /**
  * 判断两个对象是否相等
  */
-isObjectValueEqual(a, b) {
+function isObjectValueEqual(a, b) {
     //取对象a和b的属性名
     var aProps = Object.getOwnPropertyNames(a);
     var bProps = Object.getOwnPropertyNames(b);
