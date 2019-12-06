@@ -1,21 +1,23 @@
 
-/*********************************************** DOM相关操作 ***********************************************/
+/////////////////////////////
+/// DOM APIs
+/////////////////////////////
 /**
- * DOM查询
- * @param {String} Sel   选择器
- * @param {String} isAll 是否匹配多个元素 
+ * 查询节点元素
+ * @param sel 「string」选择器
+ * @param all 「boolean」是否匹配多个元素 
  */
 function getEl(Sel, isAll) {
     if (isAll) {
-        return document.querySelectorAll(Sel);
+        return document.querySelectorAll(sel);
     }
-    return document.querySelector(Sel);
+    return document.querySelector(sel);
 }
 /**
  * 添加事件监听（兼容IE）
- * @param {DOM} el 
- * @param {String} type 
- * @param {Function} callBack 
+ * @param el「object」 事件对象
+ * @param type 「string」事件类型
+ * @param callBack 「function」事件处理函数
  */
 function addEvent(el, type, callBack) {
     if (el.attachEvent) {
@@ -27,9 +29,9 @@ function addEvent(el, type, callBack) {
 
 /**
  * 移除事件监听（兼容IE浏览器）
- * @param el        事件对象
- * @param type      事件类型
- * @param callBack  事件回调（监听函数）
+ * @param el 「object」 事件对象
+ * @param type「string」事件类型
+ * @param callBack「function」事件处理函数
  */
 function removeEvent(el, type, callBack) {
     if (el.detachEvent) {
@@ -55,7 +57,9 @@ function getStyle(el, attr) {
 }
 
 
-/*********************************************** 效果封装 ***********************************************/
+/////////////////////////////
+/// EFFECT APIs
+/////////////////////////////
 /**
  * 打字机效果
  * @param {*} element 
@@ -141,8 +145,9 @@ function scrollToTop(options) {
     }
 }
 
-
-/*********************************************** BOM ***********************************************/
+/////////////////////////////
+/// BOM APIs
+/////////////////////////////
 
 /**
  * 将location.search转换为对象类型
@@ -169,7 +174,9 @@ function convertSearch(searchStr) {
 
 
 
-/*********************************************** 异常处理 ***********************************************/
+/////////////////////////////
+/// ERROR APIs
+/////////////////////////////
 
 /**
  * 异常处理（断言）
@@ -187,7 +194,9 @@ function assert(expression, message) {
 
 
 
-/*********************************************** 随机数相关 ***********************************************/
+/////////////////////////////
+/// RANDOM APIs
+/////////////////////////////
 /**
  * 获取任意数之间的随机数
  * @param  {number} min [最小值]
@@ -222,13 +231,13 @@ function randomInteger(min, max) {
 * @return {string}        [随机结果]
 */
 function randomCharacters(length) {
-    var bStr = '';
+    let bStr = '';
     bStr += 'QWERTYUIOPASDFGHJKLZXCVBNM';
     bStr += 'qwertyuiopasdfghjklzxcvbnm';
     bStr += '0123456789';
-    var rStr = '';
-    for (var i = 0; i < length; ++i) {
-        var idx = Math.floor(Math.random() * bStr.length);
+    let rStr = '';
+    for (let i = 0; i < length; ++i) {
+        let idx = Math.floor(Math.random() * bStr.length);
         rStr += bStr.substring(idx, idx + 1);
     }
     return rStr;
@@ -237,8 +246,9 @@ function randomCharacters(length) {
 
 
 
-
-/*********************************************** ajax ***********************************************/
+/////////////////////////////
+/// AJAX APIs
+/////////////////////////////
 /**
  * ajax
  * options{
@@ -255,7 +265,7 @@ function ajax(options) {
     // 异常处理
     assert(options.url, "LHY_ERROR: no request url.");
     // 默认参数处理
-    var config = {
+    let config = {
         methods: "GET",
         timeout: 1000,
         data: {}
@@ -263,14 +273,14 @@ function ajax(options) {
     // 合并配置
     Object.assign(config, options);
     // 创建请求对象
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     // 配置请求
     xhr.responseType = "json";
     xhr.timeout = config.timeout;
     xhr.open(config.methods, config.url, true);
     // 头部参数
     if (config.headers) {
-        for (var key in config.headers) {
+        for (let key in config.headers) {
             xhr.setRequestHeader(key, config.headers[key]);
         }
     }
@@ -302,15 +312,15 @@ function fade(element, target, duration, completed) {
     // Set the default value
     duration = duration ? duration : 1000;
     // Gets the current opacity
-    var curOpa = getCurrentOpacity();
+    let curOpa = getCurrentOpacity();
     // Calculating offset
-    var offset = target - curOpa;
+    let offset = target - curOpa;
     // Set the interval
-    var interval = 30;
+    let interval = 30;
     // Calculating speed
-    var speed = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
+    let speed = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
     // Execute transition animations
-    var t = setInterval(function () {
+    let t = setInterval(function () {
         // Update the current opacity
         curOpa = getCurrentOpacity();
         // Determine whether to reach the target
@@ -328,7 +338,7 @@ function fade(element, target, duration, completed) {
     }, interval);
 
     function getCurrentOpacity() {
-        var curOpa = 0;
+        let curOpa = 0;
         // Compatible with IE browser
         if (element.currentStyle) {
             curOpa = element.currentStyle['opacity'] * 100;
@@ -346,11 +356,11 @@ function fade(element, target, duration, completed) {
  */
 function typefor(val) {
     // 获取参数返回类型（肯定是对象）和构造函数类型
-    var call = Object.prototype.toString.call(val);
+    let call = Object.prototype.toString.call(val);
     // 下标开始位置
-    var startIdx = call.indexOf(" ") + 1;
+    let startIdx = call.indexOf(" ") + 1;
     // 下标结束为止
-    var endIdx = call.lastIndexOf("\]");
+    let endIdx = call.lastIndexOf("\]");
     // 将截取出来的字符串转成小写字母并返回
     return call.slice(startIdx, endIdx).toLowerCase();
 }
@@ -360,7 +370,7 @@ function typefor(val) {
  */
 {
     (function () {
-        var types = ["Null", "Undefined", "Number", "String", "Object", "Function", "RegExp", "Math", "Date", "Array", "boolean"];
+        let types = ["Null", "Undefined", "Number", "String", "Object", "Function", "RegExp", "Math", "Date", "Array", "boolean"];
         types.map(function (type) {
             Object.prototype["is" + type] = function (val) {
                 val = val == undefined ? this : val;
@@ -377,10 +387,10 @@ function typefor(val) {
  */
 {
     Object.prototype.toUnicodeString = function (val) {
-        var s = val || this.valueOf();
-        var numCode = "";
-        var resStr = "";
-        for (var i = 0; i < s.length; i++) {
+        let s = val || this.valueOf();
+        let numCode = "";
+        let resStr = "";
+        for (let i = 0; i < s.length; i++) {
             numCode = s.charCodeAt(i);
             numCode = numCode.toString(16);
             numCode = '\\u' + numCode;
@@ -393,7 +403,9 @@ function typefor(val) {
 
 
 
-/*********************************************** 数据存储 ***********************************************/
+/////////////////////////////
+/// STORAGE APIs
+/////////////////////////////
 /**
  *  存储数据
  * @param {Object} options 
@@ -405,7 +417,7 @@ function typefor(val) {
  */
 function localSave(options) {
     // 创建根数组
-    var root = [];
+    let root = [];
     // 判断本地是否存在对应key的数据
     // 如果存在，则先取到本地数据
     if (localStorage[options.key]) {
@@ -433,13 +445,13 @@ function localRemove(options) {
     if (options.condition) {
         if (localStorage[options.key]) {
             // 获取所有数据
-            var datas = JSON.parse(localStorage[options.key]);
+            let datas = JSON.parse(localStorage[options.key]);
             // 获取条件键
-            var _key = Object.keys(options.condition)[0];
+            let _key = Object.keys(options.condition)[0];
             // 获取条件值
-            var _val = options.condition[_key];
+            let _val = options.condition[_key];
             // 遍历查找
-            for (var i = 0, len = datas.length; i < len; i++) {
+            for (let i = 0, len = datas.length; i < len; i++) {
                 // 如果找到了匹配数据
                 if (datas[i][_key] == _val) {
                     // 删除数据
@@ -471,13 +483,13 @@ function localModify(options) {
     // 判断数据是否存在
     if (localStorage[options.key]) {
         // 获取本地数据
-        var datas = JSON.parse(localStorage[options.key]);
+        let datas = JSON.parse(localStorage[options.key]);
         // 获取条件键
-        var _key = Object.keys(options.condition)[0];
+        let _key = Object.keys(options.condition)[0];
         // 获取条件值
-        var _val = options.condition[_key];
+        let _val = options.condition[_key];
         // 查找要修改的数据
-        for (var i = 0, len = datas.length; i < len; i++) {
+        for (let i = 0, len = datas.length; i < len; i++) {
             if (datas[i][_key] == _val) {
                 // 修改数据
                 Object.assign(datas[i], options.data);
@@ -503,16 +515,16 @@ function localQuery(options) {
     // 判断本地是否存在对应的key
     if (localStorage[options.key]) {
         // 获取本地存储的所有数据
-        var datas = JSON.parse(localStorage[options.key]);
+        let datas = JSON.parse(localStorage[options.key]);
         // 判断是否是条件查询
         if (options.condition) {
             // 获取条件键
-            var _key = Object.keys(options.condition)[0];
+            let _key = Object.keys(options.condition)[0];
             // 获取条件值
-            var _val = options.condition[_key];
-            var index = -1;
+            let _val = options.condition[_key];
+            let index = -1;
             // 遍历查找
-            for (var i = 0, len = datas.length; i < len; i++) {
+            for (let i = 0, len = datas.length; i < len; i++) {
                 if (datas[i][_key] == _val) {
                     index = i;
                     break;
@@ -546,14 +558,14 @@ function localQuery(options) {
  */
 function register(options) {
     // 1. 解构参数
-    var { usr, key, success, fail } = options;
+    let { usr, key, success, fail } = options;
     key = key || "USERS";
     // 2. 异常处理
     if (!usr.username || !usr.password) {
         throw "用户对象必须使用‘username’和‘password’字段作为用户的账号和密码";
     }
     // 3. 创建空对象
-    var usrs = {};
+    let usrs = {};
     // 3. 判断本地是否存在【用户数据集合】
     if (localStorage[key]) {
         usrs = JSON.parse(localStorage[key]);
@@ -583,15 +595,15 @@ function register(options) {
  */
 function login(options) {
     // 1. 解构参数
-    var { username, password, key, success, fail } = options;
+    let { username, password, key, success, fail } = options;
     key = key || "USERS";
     // 2. 判断本地用户数据集合是否存在
     if (!localStorage[key]) {
         fail && fail("用户不存在!");
     } else {
         // 读取用户集合
-        var usrs = JSON.parse(localStorage[key]);
-        var usr = usrs[username];
+        let usrs = JSON.parse(localStorage[key]);
+        let usr = usrs[username];
         // 判断用户是否存在
         if (!usr) {
             fail && fail("用户不存在!");
@@ -606,21 +618,23 @@ function login(options) {
     }
 }
 
-/********************其他 */
+/////////////////////////////
+/// OTHERS APIs
+/////////////////////////////
 /**
  * 判断两个对象是否相等
  */
 function isObjectValueEqual(a, b) {
     //取对象a和b的属性名
-    var aProps = Object.getOwnPropertyNames(a);
-    var bProps = Object.getOwnPropertyNames(b);
+    let aProps = Object.getOwnPropertyNames(a);
+    let bProps = Object.getOwnPropertyNames(b);
     //判断属性名的length是否一致
     if (aProps.length != bProps.length) {
         return false;
     }
     //循环取出属性名，再判断属性值是否一致
-    for (var i = 0; i < aProps.length; i++) {
-        var propName = aProps[i];
+    for (let i = 0; i < aProps.length; i++) {
+        let propName = aProps[i];
         if (a[propName] !== b[propName]) {
             return false;
         }
@@ -713,8 +727,6 @@ function waterfall({parentSelector,itemSelector, columns = 2, gap = 10}) {
         }
     }
 }
-
-
 
 function group(arr, count) {
     let len = Math.ceil(arr.length / count);
