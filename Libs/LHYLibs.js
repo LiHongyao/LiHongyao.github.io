@@ -7,7 +7,7 @@
  * @param sel 「string」选择器
  * @param all 「boolean」是否匹配多个元素 
  */
-function getEl(Sel, isAll) {
+function getEl(sel, isAll) {
     if (isAll) {
         return document.querySelectorAll(sel);
     }
@@ -15,7 +15,7 @@ function getEl(Sel, isAll) {
 }
 /**
  * 添加事件监听（兼容IE）
- * @param el「object」 事件对象
+ * @param el「element-node」 事件对象
  * @param type 「string」事件类型
  * @param callBack 「function」事件处理函数
  */
@@ -43,9 +43,9 @@ function removeEvent(el, type, callBack) {
 
 /**
  * 获取非行内样式
- * @param el     目标元素节点
- * @param attr   对应属性键（key）
- * @returns {*}  对应属性值（value）
+ * @param el「element-node」目标元素节点    
+ * @param attr 「string」样式属性
+ * @returns「any」属性值
  */
 function getStyle(el, attr) {
     // 兼容IE
@@ -57,24 +57,66 @@ function getStyle(el, attr) {
 }
 
 
+
 /////////////////////////////
-/// EFFECT APIs
+/// Effect APIs
 /////////////////////////////
+
+/**
+ * 瀑布流效果
+ * @param {parentSelector} 容器选择器
+ * @param {itemSelector} 元素选择器
+ * @param {columns} 显示列数，默认值为2
+ * @param {gap} 列间距，默认为10
+ */
+function waterfall({ parentSelector, itemSelector, columns = 2, gap = 10 }) {
+    // 1. 获取元素
+    let items = document.querySelectorAll(itemSelector);
+    // 2. 计算并更新元素的宽度
+    const containerWidth = document.querySelector(parentSelector).offsetWidth;
+    // 元素宽度 = (容器 - （列数 - 1） * 间距) / 列数
+    const itemWidth = (containerWidth - (columns - 1) * gap) / columns;
+    items.forEach(element => {
+        element.style.width = `${itemWidth}px`;
+    });
+    // 3.排版
+    let arr = []; // 用于判断最小高度的数组
+    for (let i = 0, len = items.length; i < len; i++) {
+        if (i < columns) {
+            // 对第一行图片进行布局
+            items[i].style.top = 0;
+            items[i].style.left = (itemWidth + gap) * i + 'px';
+            arr.push(items[i].offsetHeight);
+        } else {
+            // 对接下来的图片进行定位
+            // 首先要找到数组中最小高度和它的索引
+            let index = arr.indexOf(Math.min(...arr));
+            // 设置下一行的第一个盒子位置
+            // top值就是最小列的高度 + gap
+            items[i].style.top = arr[index] + gap + 'px';
+            // left值就是最小列距离左边的距离
+            items[i].style.left = items[index].offsetLeft + 'px';
+            // 修改最小列的高度 
+            // 最小列的高度 = 当前自己的高度 + 拼接过来的高度 + 间隙的高度
+            arr[index] = arr[index] + items[i].offsetHeight + gap;
+        }
+    }
+}
+
+
 /**
  * 打字机效果
- * @param {*} element 
- * @param {*} str 
- * @param {*} interval 
+ * @param {object} el 显示文字的元素
+ * @param {string} str 显示文字
+ * @param {number} interval 时间间隔，单位毫秒ms
  */
-function effectOfTyping(element, str, interval) {
+function effectOfTyping(el, str, interval = 100) {
     // 异常处理
-    if (!element || !str) {
-        throw 'Error: Lack the necessary parameters of function \'effectOfTyping\'.';
+    if (!el || !str) {
+        throw new Error("Lack the necessary parameters of function \'effectOfTyping\'.");
     }
     // 清空元素文本内容
-    element.textContent = '';
-    // 设置默认的时间间隔
-    interval = interval || 100;
+    el.textContent = '';
     // 定义下标，用于记录当前打印字符的位置
     let curIdx = 0;
     // 设置定时器，逐帧打印字符
@@ -84,7 +126,7 @@ function effectOfTyping(element, str, interval) {
             clearInterval(t);
         } else {
             // 逐帧打印
-            element.textContent += str.charAt(curIdx++);
+            el.textContent += str.charAt(curIdx++);
         }
     }, interval);
 }
@@ -100,13 +142,19 @@ function effectOfTyping(element, str, interval) {
  * - complete 回到顶部完成回调
  */
 function scrollToTop(options) {
-    // 1. 解构配置参数
-    let { el, duration, pageScroll, complete } = options;
-    // 2. 默认值
-    duration = duration || 1000;
+    // 1. 默认参数
+    let defaultOptions = {
+        el: "",
+        duration: 1000,
+        pageScroll: function () { },
+        complete: function () { }
+    };
+    Object.assign(defaultOptions, options);
+    // 2. 解构配置参数
+    let { el, duration, pageScroll, complete } = defaultOptions;
     // 3. 定义变量
     let isAnimating = false; // 记录当前是否正在执行回到顶部的动画
-    let offset   = 0,  // 记录偏移
+    let offset = 0,  // 记录偏移
         interval = 15,  // 每一帧持续的时间
         speed = null, // 每一帧位移的距离
         timer = null; // 定时器
@@ -121,7 +169,7 @@ function scrollToTop(options) {
     el.onclick = function () {
         // 异常处理
         // 如果当前正在执行动画，则不响应事件
-        if(isAnimating) {
+        if (isAnimating) {
             return;
         }
         // 计算每一帧位移的距离
@@ -145,14 +193,67 @@ function scrollToTop(options) {
     }
 }
 
+/**
+ * 淡入淡出效果-封装
+ * @param element   执行元素
+ * @param target    目标值
+ * @param duration  持续时间
+ * @param completed 回调函数
+ */
+function fade(element, target, duration, completed) {
+    // Exception handling
+    if (!element || target == undefined) {
+        throw 'Error：Parameter is not complete in function \'changeOpacity\'.';
+    }
+    // Set the default value
+    duration = duration ? duration : 1000;
+    // Gets the current opacity
+    let curOpa = getCurrentOpacity();
+    // Calculating offset
+    let offset = target - curOpa;
+    // Set the interval
+    let interval = 30;
+    // Calculating speed
+    let speed = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
+    // Execute transition animations
+    let t = setInterval(function () {
+        // Update the current opacity
+        curOpa = getCurrentOpacity();
+        // Determine whether to reach the target
+        if ((offset > 0 && curOpa < target) || (offset < 0 && curOpa > target)) {
+            // Frame by frame change
+            element.style.opacity = (curOpa + speed) / 100
+        } else { // Has completed the transition animation
+            element.style.opacity = target / 100;
+            clearInterval(t);
+            // Invoke the callback function
+            if (completed) {
+                completed();
+            }
+        }
+    }, interval);
+
+    function getCurrentOpacity() {
+        let curOpa = 0;
+        // Compatible with IE browser
+        if (element.currentStyle) {
+            curOpa = element.currentStyle['opacity'] * 100;
+        } else {
+            curOpa = getComputedStyle(element, null)['opacity'] * 100;
+        }
+        return curOpa;
+    }
+}
+
+
 /////////////////////////////
 /// BOM APIs
 /////////////////////////////
 
 /**
  * 将location.search转换为对象类型
- * @param searchStr location.search 值
- * @returns {*}     对象
+ * @param {string} searchStr location.search 值
+ * @returns {object} 参数对象
  */
 function convertSearch(searchStr) {
     // 异常处理
@@ -173,7 +274,6 @@ function convertSearch(searchStr) {
 }
 
 
-
 /////////////////////////////
 /// ERROR APIs
 /////////////////////////////
@@ -186,12 +286,9 @@ function convertSearch(searchStr) {
  */
 function assert(expression, message) {
     if (!expression) {
-        throw { name: 'Assertion Exception', message: message };
+        throw new Error(message);
     }
 }
-
-
-
 
 
 /////////////////////////////
@@ -297,57 +394,11 @@ function ajax(options) {
 
 }
 
-/**
- * 淡入淡出效果-封装
- * @param element   执行元素
- * @param target    目标值
- * @param duration  持续时间
- * @param completed 回调函数
- */
-function fade(element, target, duration, completed) {
-    // Exception handling
-    if (!element || target == undefined) {
-        throw 'Error：Parameter is not complete in function \'changeOpacity\'.';
-    }
-    // Set the default value
-    duration = duration ? duration : 1000;
-    // Gets the current opacity
-    let curOpa = getCurrentOpacity();
-    // Calculating offset
-    let offset = target - curOpa;
-    // Set the interval
-    let interval = 30;
-    // Calculating speed
-    let speed = offset > 0 ? Math.ceil(offset / (duration / interval)) : Math.floor(offset / (duration / interval));
-    // Execute transition animations
-    let t = setInterval(function () {
-        // Update the current opacity
-        curOpa = getCurrentOpacity();
-        // Determine whether to reach the target
-        if ((offset > 0 && curOpa < target) || (offset < 0 && curOpa > target)) {
-            // Frame by frame change
-            element.style.opacity = (curOpa + speed) / 100
-        } else { // Has completed the transition animation
-            element.style.opacity = target / 100;
-            clearInterval(t);
-            // Invoke the callback function
-            if (completed) {
-                completed();
-            }
-        }
-    }, interval);
 
-    function getCurrentOpacity() {
-        let curOpa = 0;
-        // Compatible with IE browser
-        if (element.currentStyle) {
-            curOpa = element.currentStyle['opacity'] * 100;
-        } else {
-            curOpa = getComputedStyle(element, null)['opacity'] * 100;
-        }
-        return curOpa;
-    }
-}
+/////////////////////////////
+/// Type APIs
+/////////////////////////////
+
 
 /**
  * 获取对象数据类型
@@ -378,27 +429,6 @@ function typefor(val) {
             }
         });
     }());
-}
-
-
-/**
- * 将字符串转为Unicode编码
- * 
- */
-{
-    Object.prototype.toUnicodeString = function (val) {
-        let s = val || this.valueOf();
-        let numCode = "";
-        let resStr = "";
-        for (let i = 0; i < s.length; i++) {
-            numCode = s.charCodeAt(i);
-            numCode = numCode.toString(16);
-            numCode = '\\u' + numCode;
-            resStr += numCode;
-        }
-        return resStr;
-
-    }
 }
 
 
@@ -618,8 +648,41 @@ function login(options) {
     }
 }
 
+
+
 /////////////////////////////
-/// OTHERS APIs
+/// String APIs
+/////////////////////////////
+/**
+ * 将字符串转为Unicode编码
+ * 
+ */
+{
+    Object.prototype.toUnicodeString = function (val) {
+        let s = val || this.valueOf();
+        let numCode = "";
+        let resStr = "";
+        for (let i = 0; i < s.length; i++) {
+            numCode = s.charCodeAt(i);
+            numCode = numCode.toString(16);
+            numCode = '\\u' + numCode;
+            resStr += numCode;
+        }
+        return resStr;
+
+    }
+}
+
+/**
+ * 隐藏手机中间四位数字
+ * @param {*} tel 手机号
+ */
+function hideTel(tel) {
+    return tel.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+}
+
+/////////////////////////////
+/// Object APIs
 /////////////////////////////
 /**
  * 判断两个对象是否相等
@@ -643,7 +706,9 @@ function isObjectValueEqual(a, b) {
 }
 
 
-
+/////////////////////////////
+/// Array APIs
+/////////////////////////////
 
 /**
  * 将数组根据某个参照依据拆分成多个类
@@ -654,19 +719,19 @@ function isObjectValueEqual(a, b) {
 function splitArray(arr, key) {
     // 1. 获取分类
     let kinds = [];
-    for(let i = 0, len = arr.length; i < len; i++) {
+    for (let i = 0, len = arr.length; i < len; i++) {
         kinds.push(arr[i][key]);
     }
     kinds = [...new Set(kinds)]; // 去重
     // 2. 根据分类重新组合数据
     let resArr = [];
-    for(let i = 0, len1 = kinds.length; i < len1 ; i++) {
+    for (let i = 0, len1 = kinds.length; i < len1; i++) {
         let obj = {
             [key]: kinds[i],
             list: []
         }
-        for(let j = 0, len2 = arr.length; j < len2; j++) {
-            if(arr[j][key] == kinds[i]) {
+        for (let j = 0, len2 = arr.length; j < len2; j++) {
+            if (arr[j][key] == kinds[i]) {
                 obj.list.push(arr[j]);
             }
         }
@@ -675,58 +740,6 @@ function splitArray(arr, key) {
     return resArr;
 }
 
-
-
-/**
- * 隐藏手机中间四位数字
- * @param {*} tel 手机号
- */
-function hideTel(tel) {
-    return tel.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
-}
-
-
-
-/**
- * 瀑布流效果
- * @param {parentSelector} 容器选择器
- * @param {itemSelector} 元素选择器
- * @param {columns} 显示列数，默认值为2
- * @param {gap} 列间距，默认为10
- */
-function waterfall({parentSelector,itemSelector, columns = 2, gap = 10}) {
-    // 1. 获取元素
-    let items = document.querySelectorAll(itemSelector);
-    // 2. 计算并更新元素的宽度
-    const containerWidth = document.querySelector(parentSelector).offsetWidth;
-    // 元素宽度 = (容器 - （列数 - 1） * 间距) / 列数
-    const itemWidth = (containerWidth - (columns - 1) * gap) / columns;
-    items.forEach(element => {
-        element.style.width = `${itemWidth}px`;
-    });
-    // 3.排版
-    let arr = []; // 用于判断最小高度的数组
-    for (let i = 0, len = items.length; i < len; i++) {
-        if (i < columns) {
-            // 对第一行图片进行布局
-            items[i].style.top = 0;
-            items[i].style.left = (itemWidth + gap) * i + 'px';
-            arr.push(items[i].offsetHeight);
-        } else {
-            // 对接下来的图片进行定位
-            // 首先要找到数组中最小高度和它的索引
-            let index = arr.indexOf(Math.min(...arr));
-            // 设置下一行的第一个盒子位置
-            // top值就是最小列的高度 + gap
-            items[i].style.top = arr[index] + gap + 'px';
-            // left值就是最小列距离左边的距离
-            items[i].style.left = items[index].offsetLeft + 'px';
-            // 修改最小列的高度 
-            // 最小列的高度 = 当前自己的高度 + 拼接过来的高度 + 间隙的高度
-            arr[index] = arr[index] + items[i].offsetHeight + gap;
-        }
-    }
-}
 
 function group(arr, count) {
     let len = Math.ceil(arr.length / count);
