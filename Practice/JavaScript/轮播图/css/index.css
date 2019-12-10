@@ -128,6 +128,38 @@ body {padding: 100px 0; }
 
 
 
+/* trans */
+.trans .flash {
+    min-width: 1000px;
+    position: relative;
+    /* overflow: hidden; */
+}
+.trans .wrapper {
+    font-size: 0;
+    width: calc(8 * 100%); 
+    transition: all .25s linear;
+}
 
+.trans .wrapper img {
+    width: calc(100% / 8);
+}
+
+.trans .button {
+    width: 45px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.trans .prev {
+    left: 20px;
+    background: url("../images/arr_left.png") no-repeat center center;
+}
+.trans .next {
+    right: 20px;
+    background: url("../images/arr_right.png") no-repeat center center;
+}
 
 
