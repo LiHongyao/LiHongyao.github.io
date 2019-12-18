@@ -17,6 +17,3 @@ let { username, password } = {
     password: "123"
 };
 console.log(username, password);
-
-
-$(".title").text("Hello, jquery！");

@@ -19,14 +19,17 @@ module.exports = {
     mode: 'development',
     // 入口 string | array | object
     entry: {
-        main: './src/js/index.js'
+        main: './src/js/index.js',
+        jquery: './src/js/jquery.js'
     },
     // 出口
     output: {
         // 输出目录/绝对路径
         path: path.resolve(__dirname, './dist/'),
         // 输出文件名
-        filename: 'static/js/[name]-bundle.js'
+        filename: 'static/js/[name]-bundle.js',
+        // 处理静态资源的路径
+        publicPath: 'http://127.0.0.1:8090/'
     },
     // 加载器
     module: {
@@ -64,17 +67,42 @@ module.exports = {
                         }
                     },
                     "less-loader"]
-            }
+            },
+            // 处理HTML
+            {
+                test: /\.html$/,
+                use: "html-loader"
+            },
+            // 处理图片
+            {
+                test: /\.(jpg|jpeg|png|svg|gif)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        // <= 2kb，则转换成base64
+                        limit: 10000,
+                        // 图片名字
+                        name: "[name]-[hash:5].[ext]",
+                        // 输出路径
+                        outputPath: "static/images/",
+                        // 启用commonJS规范  
+                        esModule: false
+                    }
+                }
+            },
         ]
     },
     // 插件
     plugins: [
+        // -> 版权声明
+        new webpack.BannerPlugin("版权耀哥所有，翻版必究！"),
         // -> 热替换
         new webpack.HotModuleReplacementPlugin(),
         // -> 引入三方库
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jQuery'
+            $: "jquery", // npm
+            jQuery: "jQuery"
         }),
         // -> 抽离CSS文件
         new MiniCssExtractPlugin({ filename: "static/css/[name].css" }),
@@ -97,6 +125,7 @@ module.exports = {
             },
             canPrint: true  // 是否打印编译过程中的日志
         }),
+
         // —> 处理html
         new HtmlWebpackPlugin({
             // 模板文件
@@ -107,6 +136,23 @@ module.exports = {
             inject: "body",
             // 指定输出文件所依赖的入口文件（*.js）的[name]
             chunks: ["main"],
+            // 控制压缩
+            minify: {
+                collapseWhitespace: false,
+                removeComments: true,
+                removeAttributeQuotes: true,
+                removeEmptyAttributes: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            // 模板文件
+            template: "./src/pages/jquery.html",
+            // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+            filename: "static/pages/jquery.html",
+            // 静态资源位置
+            inject: "body",
+            // 指定输出文件所依赖的入口文件（*.js）的[name]
+            chunks: ["jquery"],
             // 控制压缩
             minify: {
                 collapseWhitespace: false,
