@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hello-webpack</title>
 </head>
+
 <body>
-    <h1 class="title">Hello, webpack!</h1>
 
-    
-    <div class="wrap"></div>
 
-    <img src="./images/1.jpeg" width="300" alt="">
+    <!-- 头部 -->
+    <header>
+        <ul class="list">
+            <li><a href="javascript:;">HOME</a></li>
+            <li><a href="javascript:;">NEWS</a></li>
+            <li><a href="javascript:;">ABOUT</a></li>
+            <li><a href="javascript:;">CONTACT</a></li>
+            <li><a href="javascript:;">MINE</a></li>
+        </ul>
+    </header>
+    <!-- 内容 -->
+    <main>
+        <!-- 轮播图 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/01.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/02.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/03.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/04.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/05.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/06.jpg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
 
-    <br>
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <!-- echarts -->
+        <div class="echarts-box"></div>
+    </main>
+    <!-- 尾部 -->
+    <footer></footer>
 
-    <img src="./images/balloons.png" alt="">
-
-    <ul class="list">
-        <!-- 超链接地址为编译之后的路径 -->
-        <li><a href="./static/pages/jquery.html">跳转至jQuery</a></li>
-        <li><a href="javascript:;">MENU-2</a></li>
-        <li><a href="javascript:;">MENU-3</a></li>
-        <li><a href="javascript:;">MENU-4</a></li>
-        <li><a href="javascript:;">MENU-5</a></li>
-    </ul>
-    
 </body>
+
 </html>

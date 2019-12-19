@@ -20,7 +20,7 @@ module.exports = {
     // 入口 string | array | object
     entry: {
         main: './src/js/index.js',
-        jquery: './src/js/jquery.js'
+        loginRegister: './src/js/login-register.js'
     },
     // 出口
     output: {
@@ -29,7 +29,7 @@ module.exports = {
         // 输出文件名
         filename: 'static/js/[name]-bundle.js',
         // 处理静态资源的路径
-        publicPath: 'http://127.0.0.1:8090/'
+        publicPath: 'http://127.0.0.1:8081/'
     },
     // 加载器
     module: {
@@ -68,6 +68,28 @@ module.exports = {
                     },
                     "less-loader"]
             },
+            {
+                test: /\.css$/,
+                // exclude: /node_modules/,
+                use: [
+                    // "style-loader",
+                    // => 使用插件中的loader代替style方式
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            reloadAll: true
+                        }
+                    },
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            ident: "postcss",
+                            plugins: [require("autoprefixer")]
+                        }
+                    }
+                ]
+            },
             // 处理HTML
             {
                 test: /\.html$/,
@@ -91,6 +113,18 @@ module.exports = {
                     }
                 }
             },
+            // 处理字体
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        name: '[name]-[hash:5].[ext]',
+                        limit: 5000,
+                        outputPath: 'static/fonts/'
+                    }
+                }]
+            }
         ]
     },
     // 插件
@@ -112,6 +146,7 @@ module.exports = {
             paths: glob.sync(path.join(__dirname, "./src/**/*.html")),
         }),
         // -> 压缩css
+        /*
         new OptimizeCSSAssetsPlugin({
             // 默认是全部的CSS都压缩，该字段可以指定某些要处理的文件
             assetNameRegExp: /\.(sa|sc|c|le)ss$/g,
@@ -124,7 +159,7 @@ module.exports = {
                 }]
             },
             canPrint: true  // 是否打印编译过程中的日志
-        }),
+        }),*/
 
         // —> 处理html
         new HtmlWebpackPlugin({
@@ -146,13 +181,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             // 模板文件
-            template: "./src/pages/jquery.html",
+            template: "./src/pages/login-register.html",
             // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-            filename: "static/pages/jquery.html",
+            filename: "static/pages/login-register.html",
             // 静态资源位置
             inject: "body",
             // 指定输出文件所依赖的入口文件（*.js）的[name]
-            chunks: ["jquery"],
+            chunks: ["loginRegister"],
             // 控制压缩
             minify: {
                 collapseWhitespace: false,
@@ -166,7 +201,7 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, "./dist/"),
         host: "127.0.0.1",
-        port: 8090,
+        port: 8081,
         open: true,
         inline: true,
         hot: true // 热替换

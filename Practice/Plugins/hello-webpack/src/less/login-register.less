@@ -1,0 +1,80 @@
+
+* {
+    margin: 0; padding: 0;
+}
+
+ul { list-style: none; }
+
+button, input {
+    outline: none;
+    border: none;
+}
+
+@import '../../node_modules/swiper/css/swiper.min.css';
+
+@w: 320px;
+.head {
+    margin-top: 100px;
+    min-width: 1100px;
+    font-family: 'Times New Roman', Times, serif;
+    .title {
+        text-align: center;
+        color: darkred;
+        letter-spacing: 12px;
+    }
+}
+
+form {
+    min-width: 1100px;
+    text-align: center;
+    .input-box {
+        width: @w;
+        height: 40px;
+        border: 1px solid darkred;
+        margin: 25px auto;
+        input {
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 0 8px;
+        }  
+    } 
+    .input-box::after  {
+        content: attr(data-tips);
+        opacity: 0;
+        text-align: left;
+        font-size: 12px;
+        color: red;
+        line-height: 25px;
+    } 
+    .err::after {
+        opacity: ~'1 !important';
+    }
+
+    .infos {
+        width: @w;
+        margin: 0 auto;
+        text-align: left;
+        .go-btn {
+            color: cornflowerblue;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 40px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .btn {
+        width: @w;
+        margin: 25px auto;
+        background: darkred;
+        color: #ffffff;
+        line-height: 45px;
+        font-size: 16px;
+    }
+    .register {
+        display: none;
+    }
+}

@@ -1,47 +1,22 @@
-// 定义变量
-@color: red;
 
-.title {
-    display: flex;
-    color: @color;
-    text-decoration: underline;
 
-}
-
-// 菜单样式
-.list {
-    list-style: none;
-    padding: 0;
-    li {
-        display: inline-block;
-        width: 150px;
-        line-height: 35px;
-        text-align: center;
-        background-color: orange;
-        a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        &:hover {
-            background-color: purple;
-        }
+.swiper-container {
+    img {
+        width: 100%;
     }
 }
 
-.box {
-    width: 300px;
-    height: 200px;
-    background: red;
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: purple;
 }
 
 
-.wrap {
-    // 盒子模型
-    width: 300px;
-    height: 300px;
-    background: pink url('../images/2.jpeg') no-repeat center center;
-    background-size: cover;
-    // 定位
-    // CSS3
-    // 文本字体设置
+// echarts
+.echarts-box {
+    width: 800px;
+    height: 500px;
+    margin: 50px auto;
 }

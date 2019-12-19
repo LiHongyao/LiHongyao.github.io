@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/webpack --progress --display-modules --display-reasons --display-error-details --watch"
+    "build": "./node_modules/.bin/webpack --progress --display-modules --display-reasons --display-error-details"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,8 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "echarts": "^4.5.0",
+    "jquery": "^3.4.1",
+    "swiper": "^5.2.1"
   }
 }

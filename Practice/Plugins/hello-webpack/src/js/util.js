@@ -1,11 +1,2 @@
-/*
-const text = '曾经沧海难为水，除却巫山不是云。';
-// 导出模块
-module.exports = {
-    text
-}*/
-
-const text = 'Hello, world！！！！';
-export {
-    text
-}
+// 资源地址
+export const BASE_URL = "http://127.0.0.1:8081";

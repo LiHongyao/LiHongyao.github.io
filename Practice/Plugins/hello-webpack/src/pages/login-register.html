@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROJ - 登录</title>
+</head>
+
+<body>
+
+    <header class="head">
+        <h1 class="title">LOGIN</h1>
+    </header>
+    <form action="javascript:;" autocomplete="off">
+        <!-- 账号 -->
+        <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
+            <input type="text" id="username" data-reg="^\w{4,8}$" placeholder="请输入账号">
+        </section>
+        <!-- 密码 -->
+        <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
+            <input type="password" id="password" data-reg="^\w{4,8}$" placeholder="请输入密码">
+        </section>
+        <!-- 确认密码 -->
+        <section class="input-box register" data-tips="两次密码不一致">
+            <input type="password" id="confirmPsw" placeholder="请确认账号">
+        </section>
+        <!-- 邮箱 -->
+        <section class="input-box register" data-tips="邮箱格式不正确">
+            <input type="email" id="email" data-reg="@" placeholder="请输入邮箱">
+        </section>
+        <!-- 手机号 -->
+        <section class="input-box register" data-tips="手机号格式不正确">
+            <input type="tel" id="tel" data-reg="^1[3-9]\d{9}$" placeholder="请输入手机号">
+        </section>
+        <div class="infos">
+            <span class="go-register go-btn">没有账号？点击注册</span>
+            <span class="go-login  go-btn register">返回登录</span>
+        </div>
+        <!-- 登录 & 注册 -->
+        <div class="btn">登录</div>
+    </form>
+
+</body>
+
+</html>
