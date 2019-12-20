@@ -1,6 +1,5 @@
 import '../less/login-register.less';
 
-
 // 记录状态
 let _isLogin = true;
 

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/webpack --progress --display-modules --display-reasons --display-error-details"
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./build/webpack.config.js",
+    "build": "./node_modules/.bin/webpack  --config ./build/webpack.config.js --progress --display-modules --display-reasons --display-error-details"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "@babel/preset-env": "^7.7.6",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.3.2",
     "file-loader": "^5.0.2",
     "html-loader": "^0.5.5",

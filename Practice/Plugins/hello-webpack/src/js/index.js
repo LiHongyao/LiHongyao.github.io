@@ -1,8 +1,21 @@
 import '../less/index.less';
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
-
 import echarts from 'echarts';
+
+// jquery events
+$('.list li').hover(function () {
+    $(this).find('a').css({ color: 'orange' })
+}, function () {
+    $(this).find('a').css({ color: 'blue' })
+}).click(function () {
+    $(this).css({ letterSpacing: '6px', fontWeight: 'bold' }).siblings().css({ letterSpacing: '0', fontWeight: 'normal' })
+}).first().trigger('click');
+
+
+$('.showBtn').on('click', function() {
+    $('.swiper-container').slideToggle();
+});
 
 // echarts
 let myChart = echarts.init($('.echarts-box')[0]);
