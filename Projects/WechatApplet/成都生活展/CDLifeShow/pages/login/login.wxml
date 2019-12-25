@@ -1,0 +1,15 @@
+<view class="container">
+    <!-- logo -->
+    <image class="logo" mode="widthFix" src="{{URL}}/images/logo.png"></image>
+    <!-- 表单元素 -->
+    <form>
+        <view class="form-item">
+            <input placeholder="请输入账号"></input>
+        </view>
+        <view class="form-item">
+            <input placeholder="请输入密码"></input>
+        </view>
+        <view class="go-register" bindtap="handlegGoRegisterBtnTap">没有账号？点击注册</view>
+        <view class="login-btn">登陆</view>
+    </form>
+</view>

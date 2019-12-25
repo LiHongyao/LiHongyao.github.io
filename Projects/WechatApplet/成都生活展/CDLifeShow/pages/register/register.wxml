@@ -1,0 +1,14 @@
+<view class="container">
+    <form>
+        <!-- logo -->
+        <image class="logo" mode="widthFix" src="{{URL}}/images/logo.png"></image>
+        <view class="form-item">
+            <input placeholder="请输入账号"></input>
+        </view>
+        <view class="form-item">
+            <input placeholder="请输入密码"></input>
+        </view>
+        <view class="go-login" bindtap="handlegGoLoginBtnTap">已有账号？返回登陆</view>
+        <view class="register-btn">注册</view>
+    </form>
+</view>

@@ -1,0 +1,44 @@
+/*主容器*/
+
+.lhy-counter {
+    width: 300rpx;
+    height: 60rpx;
+    /*给主容器设一个边框*/
+    border: 2rpx solid #ccc;
+    border-radius: 12rpx;
+    display: flex;
+    font-size: 0.85rem;
+}
+
+/*加号和减号*/
+
+.lhy-counter text {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*数值*/
+
+.lhy-counter input {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    /*给中间的input设置左右边框即可*/
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+/*普通样式*/
+
+.lhy-counter .normal {
+    color: black;
+}
+
+/*禁用样式*/
+
+.lhy-counter .disabled {
+    color: #ccc;
+}

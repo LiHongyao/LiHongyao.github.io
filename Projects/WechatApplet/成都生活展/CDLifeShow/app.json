@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/recommend/recommend",
+        "pages/scenic-spot/scenic-spot",
+        "pages/mine/mine",
+        "pages/login/login",
+        "pages/register/register",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e6e6e6",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#8a8a8a",
+        "selectedColor": "#C51E19",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "乐行于蜀",
+                "iconPath": "assets/home.png",
+                "selectedIconPath": "assets/home-sel.png"
+            },
+            {
+                "pagePath": "pages/recommend/recommend",
+                "text": "推荐",
+                "iconPath": "assets/recommend.png",
+                "selectedIconPath": "assets/recommend-sel.png"
+            },
+            {
+                "pagePath": "pages/scenic-spot/scenic-spot",
+                "text": "景点",
+                "iconPath": "assets/scenic-spot.png",
+                "selectedIconPath": "assets/scenic-spot-sel.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "assets/user.png",
+                "selectedIconPath": "assets/user-sel.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

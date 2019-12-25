@@ -1,0 +1,5 @@
+<view class="lhy-selector">
+    <block wx:for="{{source}}" wx:key="index">
+        <view class="lhy-selector-item {{selIndex === index ? 'lhy-selector-item-sel' : ''}}"  data-text="{{item}}" data-index="{{index}}" bindtap="handleItemClick">{{item}}</view>
+    </block>
+</view>

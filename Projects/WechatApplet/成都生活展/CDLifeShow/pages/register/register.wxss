@@ -1,0 +1,44 @@
+.container {
+    box-sizing: border-box;
+    padding: 0 calc((100% - 85%) / 2);
+}
+.logo {
+    display: flex;
+    margin: 0 auto;
+}
+.form-item {
+    height: 80rpx;
+    border-bottom: 2rpx solid #C51E19;
+    margin: 0 auto;
+}
+
+.form-item > input {
+    width: 100%;
+    height: 100%;
+}
+
+.go-login {
+    color: blue;
+    font-size: 24rpx;
+    line-height: 60rpx;
+}
+
+.register-btn {
+    height: 90rpx;
+    background: #C51E19;
+    margin: 80rpx auto 0;
+    border-radius: 6rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    letter-spacing: 4rpx;
+    transition: all .3s linear;
+    opacity: .5;
+}
+
+.login-btn.through {
+    opacity: 1;
+}
+
