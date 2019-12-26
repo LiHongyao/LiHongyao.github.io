@@ -1,4 +1,4 @@
-let btn = document.querySelector("button");
+let btn = document.querySelector(".button");
 let res = document.querySelector(".res");
 let _isRunning = false;
 let _timer = null;
