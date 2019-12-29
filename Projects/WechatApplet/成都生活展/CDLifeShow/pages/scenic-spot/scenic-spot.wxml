@@ -1,2 +1,12 @@
-<!--pages/scenic-spot/scenic-spot.wxml-->
-<text>pages/scenic-spot/scenic-spot.wxml</text>
+<view class="container">
+    <block wx:for="{{data}}" wx:key="index">
+        <view class="item" bindtap="handleItemTap" data-imgs="{{item.imgs}}" data-des="{{item.des}}">
+            <image src="{{URL}}/images/{{item.logo}}" mode="widthFix"></image>
+            <view class="infos">
+                <view class="title">{{item.title}}</view>
+                <view class="tel">{{item.tel}}</view>
+                <view class="address">{{item.address}}</view>
+            </view>
+        </view>
+    </block>
+</view>

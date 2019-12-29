@@ -1,0 +1,10 @@
+<view class="container">
+    <!-- 轮播图 -->
+    <swiper indicator-dots autoplay circular>
+        <swiper-item wx:for="{{imgs}}" wx:key="{{index}}">
+            <image src="{{URL}}/images/{{item}}" mode="aspectFit"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 文字 -->
+    <scroll-view scroll-y>{{des}}</scroll-view>
+</view>

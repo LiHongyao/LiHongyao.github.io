@@ -4,7 +4,7 @@
 }
 .logo {
     display: flex;
-    margin: 0 auto;
+    margin: 100rpx auto 0;
 }
 
 .form-item {
@@ -39,6 +39,6 @@
     opacity: .5;
 }
 
-.login-btn.through {
+.login-btn.ok {
     opacity: 1;
 }

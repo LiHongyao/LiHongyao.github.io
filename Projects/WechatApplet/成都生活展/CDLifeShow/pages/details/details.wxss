@@ -1,0 +1,23 @@
+/* 轮播图 */
+
+swiper {
+    width: 100%;
+}
+
+swiper image {
+    width: 100%;
+}
+
+swiper-item {
+    background: #000000;
+}
+
+scroll-view {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16rpx;
+    font-size: 32rpx;
+    letter-spacing: 4rpx;
+    color: #808080;
+    line-height: 60rpx;
+}

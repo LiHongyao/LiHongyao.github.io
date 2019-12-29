@@ -1,0 +1,18 @@
+.container {
+    box-sizing: border-box;
+    padding: 16rpx;
+}
+
+textarea {
+    border: 2rpx solid #ccc;
+    width: 100%;
+    border-radius: 8rpx;
+    padding: 16rpx;
+    box-sizing: border-box;
+    letter-spacing: 2rpx;
+}
+
+button {
+    margin-top: 100rpx;
+    letter-spacing: 4rpx;
+}

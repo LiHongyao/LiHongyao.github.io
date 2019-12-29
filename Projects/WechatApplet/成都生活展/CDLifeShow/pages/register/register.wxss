@@ -4,7 +4,7 @@
 }
 .logo {
     display: flex;
-    margin: 0 auto;
+    margin: 100rpx auto 0;
 }
 .form-item {
     height: 80rpx;
@@ -38,7 +38,7 @@
     opacity: .5;
 }
 
-.login-btn.through {
+.register-btn.ok {
     opacity: 1;
 }
 

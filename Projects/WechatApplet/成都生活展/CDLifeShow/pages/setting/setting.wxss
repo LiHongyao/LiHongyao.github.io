@@ -1,0 +1,40 @@
+.func-list {
+    box-sizing: border-box;
+    padding: 16rpx;
+}
+
+.func-list .item {
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.func-list .left {
+    display: flex;
+}
+
+.func-list  image {
+    width: 50rpx;
+}
+
+.func-list .text {
+    margin-left: 32rpx;
+    color: #515151;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+}
+
+.exit {
+    width: 80%;
+    margin: 50rpx auto;
+    background: #c51e19;
+    color: #f5f5f5;
+    text-align: center;
+    border-radius: 8rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    letter-spacing: 4rpx;
+}

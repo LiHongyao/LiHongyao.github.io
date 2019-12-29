@@ -1,0 +1,5 @@
+<view class="container">
+    <textarea placeholder="请输入您的反馈信息" auto-focus></textarea>
+    <button bindtap="handleBtnTap">提交反馈</button>
+</view>
+

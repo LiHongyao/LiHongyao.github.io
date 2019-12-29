@@ -1,2 +1,21 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+    <!-- 用户信息 -->
+    <view class="infos" style="background:url('{{URL}}/images/bg.jpeg') no-repeat center center">
+        <!-- 用户头像 -->
+        <open-data class="avatar" type="userAvatarUrl"></open-data>
+        <!-- 用户昵称 -->
+        <open-data class="nike-name" type="userNickName"></open-data>
+        <!-- 用户签名 -->
+        <view class="autograph">曾经沧海难为水，除却巫山不是云。</view>
+    </view>
+    <!-- 功能列表 -->
+    <view class="func-list">
+        <view class="item" wx:for="{{funcs}}" wx:key="{{index}}" bindtap="handleItemTap" data-title="{{item.text}}">
+            <view class="left">
+                <image mode="widthFix" src="{{item.icon}}"></image>
+                <view class="text">{{item.text}}</view>
+            </view>
+            <image mode="widthFix" src="../../assets/arrow-right.png"></image>
+        </view>
+    </view>
+</view>

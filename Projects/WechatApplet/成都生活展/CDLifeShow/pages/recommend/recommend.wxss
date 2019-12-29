@@ -1,1 +1,20 @@
-/* pages/recommend/recommend.wxss */
+.container {
+    box-sizing: border-box;
+    padding: 16rpx;
+    /* flex布局 */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container image {
+    width: 32%;
+}
+.container image:not(:nth-child(3n)) {
+    margin-right: calc((100% - 32% * 3) / 2);
+    margin-bottom: 20rpx;
+}
+
+.container image:active {
+    transition: all .5s linear;
+    transform: rotateZ(360deg);
+}

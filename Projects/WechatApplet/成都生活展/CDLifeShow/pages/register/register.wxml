@@ -2,13 +2,16 @@
     <form>
         <!-- logo -->
         <image class="logo" mode="widthFix" src="{{URL}}/images/logo.png"></image>
+        <!-- 表单 -->
         <view class="form-item">
-            <input placeholder="请输入账号"></input>
+            <input id="username" placeholder="请输入账号" bindinput="handleInput"></input>
         </view>
         <view class="form-item">
-            <input placeholder="请输入密码"></input>
+            <input id="password" placeholder="请输入密码" bindinput="handleInput" type="password"></input>
         </view>
+        <!-- 返回登陆 -->
         <view class="go-login" bindtap="handlegGoLoginBtnTap">已有账号？返回登陆</view>
-        <view class="register-btn">注册</view>
+        <!-- 注册按钮 -->
+        <view class="register-btn {{className}}" bindtap="handleRegisterBtnTap">注册</view>
     </form>
 </view>

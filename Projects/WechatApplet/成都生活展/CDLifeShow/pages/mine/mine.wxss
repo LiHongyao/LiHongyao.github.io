@@ -1,1 +1,53 @@
-/* pages/mine/mine.wxss */
+.infos {
+    height: 380rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+}
+
+.avatar {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nike-name {
+    line-height: 80rpx;
+    font-weight: bold;
+}
+.func-list {
+    box-sizing: border-box;
+    padding: 16rpx;
+}
+
+.func-list .item {
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.func-list .left {
+    display: flex;
+}
+
+.func-list  image {
+    width: 50rpx;
+}
+
+.func-list .text {
+    margin-left: 32rpx;
+    color: #515151;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+}
+
+
+
+
+

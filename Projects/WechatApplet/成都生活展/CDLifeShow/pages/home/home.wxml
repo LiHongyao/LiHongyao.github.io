@@ -1,3 +1,15 @@
 <view class="container">
-
+    <!-- 轮播图 -->
+    <swiper indicator-dots autoplay circular>
+        <swiper-item wx:for="{{data.images}}" wx:key="{{index}}">
+            <image src="{{URL}}/images/{{item}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 图文混排 -->
+    <view class="mixed">
+        <block wx:for="{{data.texts}}" wx:key="{{index}}">
+            <view class="text">{{item}}</view>
+            <image src="{{URL}}/images/{{data.images[index]}}"></image>
+        </block>
+    </view>
 </view>

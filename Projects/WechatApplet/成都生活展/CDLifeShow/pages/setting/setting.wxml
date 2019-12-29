@@ -1,0 +1,15 @@
+<view class="container">
+    <!-- 功能列表 -->
+    <view class="func-list">
+        <view class="item" wx:for="{{funcs}}" wx:key="{{index}}" bindtap="handleItemTap" data-title="{{item.text}}">
+            <view class="left">
+                <image mode="widthFix" src="{{item.icon}}"></image>
+                <view class="text">{{item.text}}</view>
+            </view>
+            <image mode="widthFix" src="../../assets/arrow-right.png"></image>
+        </view>
+    </view>
+
+    <!-- 注销登陆 -->
+    <view class="exit" bindtap="handleExitTap">注销登陆</view>
+</view>

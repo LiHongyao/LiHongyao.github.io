@@ -27,9 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // application/json 解析
 app.use(bodyParser.json());
 // 6. 处理路由
-app.get('/', (req, res) => {
-    res.end("12312");
-})
+const router = require("./router/index");
+app.use("/", router);
 
 // 7. 监听 
 app.listen(port, "0.0.0.0");

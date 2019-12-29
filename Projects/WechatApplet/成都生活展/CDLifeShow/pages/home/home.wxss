@@ -1,1 +1,33 @@
-/* pages/home/home.wxss */
+/* 轮播图 */
+swiper {
+    width: 100%;
+}
+
+swiper image {
+   
+    width: 100%;
+}
+
+/* 图文混排 */
+.mixed {
+    /* 设置IE盒子模型 */
+    box-sizing: border-box;
+    /* 设置内间距 */
+    padding: 16rpx;
+}
+
+.mixed image {
+    width: 100%;
+    /* 设置圆角 */
+    border-radius: 8rpx;
+    /* 设置外边距=> 上下12px 左右为0 */
+    margin: 12rpx 0;
+}
+.mixed .text {
+    /* 设置行高 */
+    line-height: 60rpx;
+    /* 设置字符间距 */
+    letter-spacing: 2rpx;
+    /* 设置字体颜色 */
+    color: #808080;
+}

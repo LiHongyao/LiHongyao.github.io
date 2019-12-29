@@ -1,11 +1,16 @@
 {
     "pages": [
+        "pages/login/login",
+        "pages/register/register",
         "pages/home/home",
         "pages/recommend/recommend",
         "pages/scenic-spot/scenic-spot",
         "pages/mine/mine",
-        "pages/login/login",
-        "pages/register/register",
+        "pages/details/details",
+        "pages/auth/auth",
+        "pages/setting/setting",
+        "pages/about/about",
+        "pages/feedback/feedback",
         "pages/logs/logs"
     ],
     "window": {

@@ -1,0 +1,9 @@
+.auth {
+    width: 90%;
+    background: #009900;
+    color: #ffffff;
+    margin: 50rpx auto;
+    font-size: 1rem;
+    letter-spacing: 6rpx;
+    line-height: 80rpx;
+}

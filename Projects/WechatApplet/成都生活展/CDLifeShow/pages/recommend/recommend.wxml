@@ -1,2 +1,5 @@
-<!--pages/recommend/recommend.wxml-->
-<text>pages/recommend/recommend.wxml</text>
+<view class="container">
+    <block wx:for="{{data}}" wx:key="{{index}}">
+        <image src="{{URL}}/images/{{item.logoImage}}" bindtap="handleItemTap" mode="widthFix" data-imgs="{{item.detailImage}}" data-des="{{item.des}}"></image>
+    </block>
+</view>

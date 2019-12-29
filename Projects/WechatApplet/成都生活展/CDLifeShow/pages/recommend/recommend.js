@@ -1,66 +1,35 @@
-// pages/recommend/recommend.js
+import {
+    URL
+} from "../../utils/util.js";
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        URL,
+        data: {}
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+    onLoad: function(options) {
+        wx.request({
+            url: `${URL}/recommend`,
+            method: 'GET',
+            dataType: 'json',
+            success: (res) => {
+                this.setData({
+                    data: res.data
+                });
+            }
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    // => Events
+    handleItemTap(event) {
+        let {
+            imgs,
+            des
+        } = event.currentTarget.dataset;
+        wx.navigateTo({
+            url: "../details/details?data=" + JSON.stringify({
+                imgs,
+                des
+            })
+        })
     }
 })

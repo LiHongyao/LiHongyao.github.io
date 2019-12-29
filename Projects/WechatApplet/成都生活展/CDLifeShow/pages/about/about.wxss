@@ -1,0 +1,13 @@
+.logo {
+    width: 85%;
+    display: block;
+    margin: 100rpx auto;
+}
+
+.text {
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    color: #C51E19;
+    font-weight: bold;
+}

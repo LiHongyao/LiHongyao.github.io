@@ -1,39 +1,33 @@
-//app.js
+const {
+    URL
+} = require("./utils/util.js");
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+    onLaunch: function() {
+        let _this = this;
+        // 判断是否授权
+        wx.getSetting({
+            success(res) {
+                // 没有授权
+                if (!res.authSetting["scope.userInfo"]) {
+                    // 跳转至授权页
+                    wx.showModal({
+                        title: '温馨提示',
+                        content: '「成都生活展」获取用户信息需要您的授权！',
+                        showCancel: false,
+                        confirmText: '去设置',
+                        success: function(res) {
+                            wx.navigateTo({
+                                url: '../auth/auth'
+                            });
+                        }
+                    })
+                }
             }
-          })
-        }
-      }
-    })
-  },
-  globalData: {
-    userInfo: null
-  }
-})
+
+        })
+    },
+
+    // 全局数据
+    globalData: {},
+
+});
