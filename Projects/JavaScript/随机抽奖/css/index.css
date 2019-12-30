@@ -22,7 +22,7 @@ body {
 
 
 .button {
-    width: 400px;
+    width: 600px;
     margin: 0 auto;
     color: #f5f5f5;
     margin: 35px auto;
@@ -30,20 +30,16 @@ body {
     font-size: 32px;
     letter-spacing: 6px;
     position: relative;
-    transition: all .25s linear;
-}
-.button:hover {
-    color: cornflowerblue;
-    letter-spacing: 8px;
 }
 
 .res-box {
-    width: 400px;
-    height: 200px;
-    margin: 0 auto;
-    background: url('../images/feather.png') no-repeat center center;
-    background-size: contain;
+    width: 600px;
+    margin: 50px auto;;
     position: relative;  
+}
+
+.res-box img {
+    width: 100%;
 }
 
 .res {
@@ -64,6 +60,6 @@ body {
         font-size: 22px;
     }
     .res {
-        font-size: 32px;
+        font-size: 24px;
     }
 }
