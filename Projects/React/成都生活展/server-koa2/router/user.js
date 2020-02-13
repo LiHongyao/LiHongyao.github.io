@@ -12,7 +12,7 @@ router.post('/login', async (ctx) => {
             errMsg: 'login：Miss the username or password params!'
         });
     } else if (username === 'admin' && password === '123') {
-        const token = jwt.sign({ username }, 'secret', { expiresIn: '1h' });
+        const token = jwt.sign({ username }, 'secret', { expiresIn: '10s' });
         ctx.body = JSON.stringify({
             status: 200,
             token,
@@ -31,6 +31,7 @@ router.post('/login', async (ctx) => {
 router.post('/auth', async (ctx) => {
     console.log(`「授权接口」 被调用！`)
     let token = ctx.request.header.authorization;
+    console.log(token)
     jwt.verify(token, 'secret', (err, decoded) => {
         if (err) {
             console.log(err.message)
@@ -41,7 +42,7 @@ router.post('/auth', async (ctx) => {
             return;
         }
         ctx.body = JSON.stringify({
-            status: 200,
+            success: true,
             token,
             user: {
                 name: 'Muzili',

@@ -1,0 +1,23 @@
+.home img {
+    width: 100%;
+    height: 150px;
+    border-radius: 2px;
+}
+.home .flash {
+    box-sizing: border-box;
+    padding: 8px;
+    
+}
+.home .wrapper {
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: gray;
+    
+}
+.home .wrapper img {
+    width: 100%;
+    height: 150px;
+    margin: 8px 0;
+}

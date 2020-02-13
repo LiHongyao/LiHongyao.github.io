@@ -1,0 +1,22 @@
+.app-footer {
+    height: 49px;
+    display: flex;
+    background: #eeeeee;
+}
+.app-footer a {
+    display: block;
+    width: 25%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #333333;
+    font-size: 12px;
+}
+
+.app-footer a.active {
+    color: orange;
+}
+

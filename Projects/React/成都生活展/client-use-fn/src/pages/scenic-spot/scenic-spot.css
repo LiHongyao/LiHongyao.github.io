@@ -1,0 +1,31 @@
+.scenic-spot {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.scenic-spot .list li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+    margin: 18px 0;
+}
+.scenic-spot img {
+    width: 30%;
+    border-radius: 4px;
+}
+.scenic-spot .infos {
+    width: 68%;
+}
+
+.scenic-spot .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: darkred;
+}
+.scenic-spot .tel {
+    font-size: 12px;
+}
+.scenic-spot .address {
+    font-size: 14px;
+}

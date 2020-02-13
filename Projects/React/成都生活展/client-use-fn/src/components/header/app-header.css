@@ -1,0 +1,26 @@
+.app-header {
+    height: 64px;
+    background: #eeeeee;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.app-header .title {
+    font-size: 14px;
+    margin: 0;
+}
+
+.app-header figure {
+    margin: 0;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+}
